@@ -1,0 +1,3 @@
+/*  Hier werden Siegbedingungen festgelegt
+*
+*/

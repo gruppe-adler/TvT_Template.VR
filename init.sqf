@@ -1,0 +1,1 @@
+[] execVM "USERSCRIPTS\userInit.sqf";

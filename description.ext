@@ -1,0 +1,58 @@
+#define MODULES_DIRECTORY node_modules
+
+
+class Header
+{
+	gameType = Team;
+};
+
+#include "USERSCRIPTS\mission.hpp"
+
+//MISSION SETTINGS =============================================================
+respawn = 3;
+respawnDelay = 9999;
+respawnVehicleDelay = 0;
+respawnTemplates[] = {"Base"};
+respawnOnStart = -1;
+respawnDialog = 0;
+disabledAI = 0;
+enableDebugConsole = 1;
+allowFunctionsRecompile = 1;
+
+corpseManagerMode = 1;
+corpseLimit = 30;
+corpseRemovalMinTime = 300;
+corpseRemovalMaxTime = 500;
+
+wreckManagerMode = 1;
+wreckLimit = 20;
+wreckRemovalMinTime = 500;
+wreckRemovalMaxTime = 1200;
+
+
+
+class missionsettings {
+	#include "USERSCRIPTS\loadouts.hpp"
+	#include "USERSCRIPTS\respawn.hpp"
+
+};
+
+
+//FUNCTIONS ====================================================================
+class CfgFunctions {
+	#include "functions\missionSetup\cfgFunctions.hpp"
+	#include "functions\waverespawn\cfgFunctions.hpp"
+	#include "USERSCRIPTS\userFunctions.hpp"
+};
+
+
+//GRAD LOADOUT =================================================================
+class Loadouts {
+    baseDelay = 1;
+    handleRadios = 1;
+    resetLoadout = 0;
+
+    class Faction {
+        #include "USERSCRIPTS\userLoadouts.hpp"
+    };
+};

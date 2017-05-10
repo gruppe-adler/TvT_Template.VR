@@ -1,0 +1,14 @@
+{
+    "name": "tvt-template",
+    "description": "Gruppe Adler TvT Template",
+    "version": "0.0.1",
+    "contributors": [
+        {
+            "name": "McDiod"
+        }
+    ],
+
+    "dependencies": {
+
+    }
+}
