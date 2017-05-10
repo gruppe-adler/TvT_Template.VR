@@ -6,7 +6,6 @@ class Header
 	gameType = Team;
 };
 
-#include "USERSCRIPTS\mission.hpp"
 
 //MISSION SETTINGS =============================================================
 respawn = 3;
@@ -30,19 +29,48 @@ wreckRemovalMinTime = 500;
 wreckRemovalMaxTime = 1200;
 
 
+//MISC =========================================================================
+#include "cfgParams.hpp"
+#include "USERSCRIPTS\mission.hpp"
 
 class missionsettings {
 	#include "USERSCRIPTS\loadouts.hpp"
 	#include "USERSCRIPTS\respawn.hpp"
+	#include "USERSCRIPTS\missionsettings.hpp"
+};
 
+class CfgScopeWeapons {
+	#include "USERSCRIPTS\scopes.hpp"
+};
+
+
+//DIALOGS ======================================================================
+#include "node_modules\grad-listBuymenu\grad_listBuymenu.hpp"
+#include "node_modules\grad-fortifications\grad_fortifications.hpp"
+
+class RscTitles {
+    #include "dialogs\preparationTime\rscTitles.hpp"
+
+    class grad_Default {
+        idd = -1;
+        fadein = 0;
+        fadeout = 0;
+        duration = 0;
+    };
 };
 
 
 //FUNCTIONS ====================================================================
 class CfgFunctions {
+	#include "functions\common\cfgFunctions.hpp"
 	#include "functions\missionSetup\cfgFunctions.hpp"
 	#include "functions\waverespawn\cfgFunctions.hpp"
+
 	#include "USERSCRIPTS\userFunctions.hpp"
+
+	#include "node_modules\grad-loadout\cfgFunctions.hpp"
+    #include "node_modules\grad-listbuymenu\cfgFunctions.hpp"
+	#include "node_modules\grad-fortifications\cfgFunctions.hpp"
 };
 
 

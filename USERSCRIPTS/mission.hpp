@@ -1,4 +1,4 @@
-/*  Allgemeine Einstellungen der Mission.
+/*  Allgemeine Info über die Mission.
 *   Ist in description.ext eingebunden, kann also auch für andere Configs benutzt werden.
 */
 

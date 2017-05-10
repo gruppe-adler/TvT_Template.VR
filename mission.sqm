@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=177;
+		nextID=179;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=4;
+		nextID=7;
 	};
 	class Camera
 	{
-		pos[]={4298.4766,30,4007.2378};
+		pos[]={4300.6914,37.312973,4001.0205};
 		dir[]={0,-0.70710683,0.70710683};
 		up[]={0,0.70710677,0.70710677};
-		aside[]={0.99999994,0,-0};
+		aside[]={0.99999994,0,0};
 	};
 };
 binarizationWanted=0;
@@ -2965,7 +2965,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={5729.7231,5.0014391,1576.5176};
-								angles[]={-0,6.262826,0};
+								angles[]={0,6.262826,0};
 							};
 							side="East";
 							flags=4;
@@ -8917,7 +8917,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={5529.7544,5,1994.1953};
-						angles[]={-0,3.9442611,0};
+						angles[]={0,3.9442611,0};
 					};
 					id=121;
 					type="ModuleCuratorAddEditableObjects";
@@ -8995,8 +8995,8 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={5327.6543,5.0014391,1579.7676};
-								angles[]={0,0.14740181,0};
+								position[]={5327.6538,5.0014391,1579.7681};
+								angles[]={0,0.14741051,0};
 							};
 							side="Independent";
 							flags=7;
@@ -9006,6 +9006,7 @@ class Mission
 								init="[this, 5] call grad_lbm_fnc_setPermissionLevel";
 								name="indepcommander";
 								description="Commander (must be selected)";
+								isPlayable=1;
 							};
 							id=129;
 							type="I_Soldier_SL_F";

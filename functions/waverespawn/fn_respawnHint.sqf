@@ -1,6 +1,7 @@
 /*    Shows formatted hint during wave respawn time
 *
 */
+#include "component.hpp"
 
 params ["_side","_status"];
 private ["_status"];
