@@ -39,7 +39,7 @@ class missionsettings {
 };
 
 class CfgScopeWeapons {
-	#include "USERSCRIPTS\scopes.hpp"
+	#include "USERSCRIPTS\scopeWeapons.hpp"
 };
 
 class CfgWinConditions {

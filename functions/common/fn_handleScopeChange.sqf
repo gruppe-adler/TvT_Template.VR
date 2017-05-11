@@ -1,5 +1,7 @@
 #include "component.hpp"
 
+if (grad_missionsettings_canUseScopes) exitWith {};
+
 params ["_unit","_container","_itemType"];
 
 _containerPos = getPosASL _container;
