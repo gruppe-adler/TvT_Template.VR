@@ -1,11 +1,11 @@
 //WAVE RESPAWN =================================================================
-waveRespawnEnabled = 1;                                                         //Wave Respawn ein-/ausschalten (1/0)
+waveRespawnEnabled = 0;                                                         //Wave Respawn ein-/ausschalten (1/0)
 
 bluforWaveSize = -1;                                                            //Wellengröße Blufor
 opforWaveSize = -1;                                                             //Wellengröße Opfor
 indepWaveSize = -1;                                                             //Wellengröße Independent
 
-bluforWaveLifes = 1;                                                         //Wie oft ein Blufor Spieler respawnen kann
+bluforWaveLifes = 9999;                                                         //Wie oft ein Blufor Spieler respawnen kann
 opforWaveLifes = 9999;                                                          //Wie oft ein Opfor Spieler respawnen kann
 indepWaveLifes = 9999;                                                          //Wie oft ein Independent Spieler respawnen kann
 

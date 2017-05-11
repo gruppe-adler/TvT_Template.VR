@@ -43,6 +43,10 @@ class CfgScopeWeapons {
 	#include "USERSCRIPTS\scopes.hpp"
 };
 
+class CfgWinConditions {
+	#include "USERSCRIPTS\winConditions.hpp"
+};
+
 
 //DIALOGS ======================================================================
 #include "node_modules\grad-listBuymenu\grad_listBuymenu.hpp"
@@ -63,6 +67,7 @@ class RscTitles {
 //FUNCTIONS ====================================================================
 class CfgFunctions {
 	#include "functions\common\cfgFunctions.hpp"
+	#include "functions\endings\cfgFunctions.hpp"
 	#include "functions\missionSetup\cfgFunctions.hpp"
 	#include "functions\waverespawn\cfgFunctions.hpp"
 
