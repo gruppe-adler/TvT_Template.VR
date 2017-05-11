@@ -46,6 +46,15 @@ class CfgWinConditions {
 	#include "USERSCRIPTS\winConditions.hpp"
 };
 
+class CfgGradBuymenu {
+    tracking = 0;
+	#include "USERSCRIPTS\userBuyables.hpp"
+};
+
+class CfgGradFortifications {
+    #include "USERSCRIPTS\userFortifications.hpp"
+};
+
 
 //DIALOGS ======================================================================
 #include "node_modules\grad-listBuymenu\grad_listBuymenu.hpp"
