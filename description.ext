@@ -34,7 +34,6 @@ wreckRemovalMaxTime = 1200;
 #include "USERSCRIPTS\mission.hpp"
 
 class missionsettings {
-	#include "USERSCRIPTS\loadouts.hpp"
 	#include "USERSCRIPTS\respawn.hpp"
 	#include "USERSCRIPTS\missionsettings.hpp"
 };
@@ -54,6 +53,7 @@ class CfgWinConditions {
 
 class RscTitles {
     #include "dialogs\preparationTime\rscTitles.hpp"
+	#include "USERSCRIPTS\userTitles.hpp"
 
     class grad_Default {
         idd = -1;
@@ -78,6 +78,11 @@ class CfgFunctions {
 	#include "node_modules\grad-fortifications\cfgFunctions.hpp"
 };
 
+
+//SOUNDS =======================================================================
+class CfgSounds {
+	#include "USERSCRIPTS\userSounds.hpp"
+};
 
 //GRAD LOADOUT =================================================================
 class Loadouts {
