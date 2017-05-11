@@ -16,13 +16,21 @@ if (serverTime - _joinTime < 30 && didJIP) exitWith {INFO("Player is JIP. Exitin
 ["Terminate"] call BIS_fnc_EGSpectator;
 ["Initialize", [player, [playerside], false, false, false, true, true, true, true, true]] call BIS_fnc_EGSpectator;
 
+private _maxRespawns = switch (playerSide) do {
+    case (WEST): {[missionConfigFile >> "missionsettings","bluforWaveLifes",9999] call BIS_fnc_returnConfigEntry};
+    case (EAST): {[missionConfigFile >> "missionsettings","opforWaveLifes",9999] call BIS_fnc_returnConfigEntry};
+    case (INDEPENDENT): {[missionConfigFile >> "missionsettings","indepWaveLifes",9999] call BIS_fnc_returnConfigEntry};
+    default {9999};
+};
+if (player getVariable ["wr_respawnCount",0] >= _maxRespawns) then {player setVariable ["wr_interrupted",true]};
+
 INFO("Starting waverespawn procedure...");
-_timeOfDeath = time;
-player setVariable ["wr_timeOfDeath",time];
+player setVariable ["wr_timeOfDeath",CBA_missionTime];
+player setVariable ["wr_respawnCount",(player getVariable ["wr_respawnCount",0]) + 1];
 
 setPlayerRespawnTime 99999;
 
 //do the steps
-[_timeOfDeath] call grad_waverespawn_fnc_playerCountdown;
-[{player getVariable "wr_playerCountdownDone"}, {_this call grad_waverespawn_fnc_waveCountdown}, [_timeOfDeath]] call CBA_fnc_waitUntilAndExecute;
+[CBA_missionTime] call grad_waverespawn_fnc_playerCountdown;
+[{player getVariable "wr_playerCountdownDone"}, {_this call grad_waverespawn_fnc_waveCountdown}, [CBA_missionTime]] call CBA_fnc_waitUntilAndExecute;
 [{player getVariable "wr_waveCountdownDone"}, {[] call grad_waverespawn_fnc_prepareRespawn}, []] call CBA_fnc_waitUntilAndExecute;

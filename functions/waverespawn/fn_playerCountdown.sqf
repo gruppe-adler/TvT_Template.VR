@@ -20,7 +20,7 @@ INFO("Starting player countdown...");
         INFO("Respawn interrupted.");
     };
 
-    if (time - _timeOfDeath > MAXRESPAWNTIME) then {
+    if (CBA_missionTime - _timeOfDeath > MAXRESPAWNTIME) then {
         [_this select 1] call CBA_fnc_removePerFrameHandler;
         player setVariable ["wr_isFreeRespawn", true];
         player setVariable ["wr_playerCountdownDone", true];
