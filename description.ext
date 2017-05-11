@@ -87,10 +87,6 @@ class Loadouts {
 
     class Faction {
         #include "USERSCRIPTS\userLoadouts.hpp"
-		#include "loadouts\ger_heer_w.hpp"
-		#include "loadouts\ger_heer_d.hpp"
-		#include "loadouts\rus_msv_w.hpp"
-		#include "loadouts\rus_msv_d.hpp"
-		#include "loadouts\us_army.hpp"
+		#include "node_modules\grad-factions-tvt\loadouts.hpp"
     };
 };
