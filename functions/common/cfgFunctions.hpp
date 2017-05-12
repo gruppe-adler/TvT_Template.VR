@@ -3,7 +3,8 @@ class grad_common {
         class coverMap {};
         class getAllowedRadios {};
         class handleScopeChange {};
-        class handleTakeRadio {};
-        class preparationTimeCountdown {};
+        class handleTakeRadio {};        
+        class restrictZone {};
+        class restrictZonePFH {};
     };
 };
