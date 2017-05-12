@@ -1,7 +1,12 @@
 #include "component.hpp"
 
 params ["_winName","presetParams"];
-_presetParams params ["_trigger","_side","_timeout"];
+_presetParams params [["_trigger","objNull"],["_side","WEST"],["_timeout",0]];
+
+_trigger = call compile _trigger;
+_side = call compile _side;
+
+if (isNull _trigger) exitWith {ERROR("Preset CONTROL: Trigger is null.")};
 
 private _activationName = switch (_side) do {
     case (WEST): {"WEST SEIZED"};

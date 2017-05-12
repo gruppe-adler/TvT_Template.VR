@@ -5,6 +5,7 @@ class grad_endings {
         class init {};
         class presetControl {};
         class presetElimination {};
+        class presetTimeout {};
         class startPreset {};
         class startWincondition {};
     };

@@ -1,5 +1,8 @@
 #include "component.hpp"
 
+params ["_winName","_sides"];
+_sides = _sides apply {call compile _x};
+
 [{
     params ["_args","_handle"];
     _args params ["_winName","_sides"];
@@ -17,4 +20,4 @@
 
         [_handle] call CBA_fnc_removePerFrameHandler;
     };
-},10,_this] call CBA_fnc_addPerFrameHandler;
+},10,[_winName,_sides]] call CBA_fnc_addPerFrameHandler;
