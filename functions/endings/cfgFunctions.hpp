@@ -4,6 +4,7 @@ class grad_endings {
         class endMissionServer {};
         class init {};
         class presetControl {};
+        class presetDestroy {};
         class presetElimination {};
         class presetTimeout {};
         class startPreset {};
