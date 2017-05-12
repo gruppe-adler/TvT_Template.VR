@@ -10,6 +10,9 @@ INFO_1("Initialized preset %1.",_preset);
 
 switch (_preset) do {
     case ("ELIMINATION"): {
-        [_winName,_presetParams select 0] call grad_endings_fnc_presetElimination;
+        [_winName,_presetParams] call grad_endings_fnc_presetElimination;
+    };
+    default {
+        ERROR_1("Preset %1 not found!",_preset);
     };
 };

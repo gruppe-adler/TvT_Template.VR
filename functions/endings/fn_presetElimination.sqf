@@ -1,21 +1,19 @@
 #include "component.hpp"
 
-params ["_winName","_side"];
-
 [{
     params ["_args","_handle"];
-    _args params ["_winName","_side"];
+    _args params ["_winName","_sides"];
 
-    if (({side _x == _side} count playableUnits) == 0) exitWith {
+    if ({_side = _x; ({side _x == _side} count playableUnits) > 0} count _sides == 0) exitWith {
 
         [{
-            params ["_winName","_side"];
-            if (({side _x == _side} count playableUnits) == 0) then {
+            params ["_winName","_sides"];
+            if ({_side = _x; ({side _x == _side} count playableUnits) > 0} count _sides == 0) then {
                 [_winName] call grad_endings_fnc_endMissionServer;
             } else {
                 _this call grad_endings_fnc_presetElimination;
             };
-        }, [_winName,_side], 10] call CBA_fnc_waitAndExecute;
+        }, [_winName,_sides], 10] call CBA_fnc_waitAndExecute;
 
         [_handle] call CBA_fnc_removePerFrameHandler;
     };
