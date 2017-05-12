@@ -16,4 +16,4 @@ if (_activationName == "") exitWith {
 
 _trigger setTriggerActivation [_activationName, "PRESENT", false];
 _trigger setTriggerTimeout [_timeout, _timeout, _timeout, true];
-_trigger setTriggerStatements ["this", format ["[%1] call grad_endings_fnc_endMissionServer",_winName], ""];
+_trigger setTriggerStatements ["this", format ["['%1'] call grad_endings_fnc_endMissionServer",_winName], ""];
