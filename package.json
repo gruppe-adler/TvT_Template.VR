@@ -12,6 +12,7 @@
         "grad-listbuymenu": ">=0.0.1",
         "grad-fortifications": ">=0.0.1",
         "grad-loadout": ">=0.0.1",
-        "grad-factions-tvt": ">=0.0.1"
+        "grad-factions-tvt": ">=0.0.1",
+        "grad-civs": ">=0.0.1"
     }
 }

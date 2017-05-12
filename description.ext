@@ -55,6 +55,10 @@ class CfgGradFortifications {
     #include "USERSCRIPTS\userFortifications.hpp"
 };
 
+class CfgGradCivs {
+	#include "USERSCRIPTS\userCivs.hpp"
+};
+
 
 //DIALOGS ======================================================================
 #include "node_modules\grad-listBuymenu\grad_listBuymenu.hpp"
@@ -85,6 +89,7 @@ class CfgFunctions {
 	#include "node_modules\grad-loadout\cfgFunctions.hpp"
     #include "node_modules\grad-listbuymenu\cfgFunctions.hpp"
 	#include "node_modules\grad-fortifications\cfgFunctions.hpp"
+	#include "node_modules\grad-civs\cfgFunctions.hpp"
 };
 
 
