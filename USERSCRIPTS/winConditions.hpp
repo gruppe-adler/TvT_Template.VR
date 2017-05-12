@@ -2,7 +2,7 @@
 *
 */
 
-class bluforeliminated {
+/*class bluforeliminated {
     preset = "ELIMINATION";
     presetParams[] = {"WEST"};
 
@@ -12,9 +12,9 @@ class bluforeliminated {
     winners[] = {"EAST","INDEPENDENT"};
     winText = "BLUFOR eliminated after %1 minutes.<br/>OPFOR wins!";
     winTextParams[] = {"round (CBA_missionTime/60)"};
-};
+};*/
 
-class opforeliminated {
+/*class opforeliminated {
     preset = "ELIMINATION";
     presetParams[] = {"EAST"};
 
@@ -24,4 +24,4 @@ class opforeliminated {
     winners[] = {"WEST","INDEPENDENT"};
     winText = "OPFOR eliminated after %1 minutes.<br/>BLUFOR wins!";
     winTextParams[] = {"round (CBA_missionTime/60)"};
-};
+};*/
