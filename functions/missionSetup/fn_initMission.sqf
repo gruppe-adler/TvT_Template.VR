@@ -6,4 +6,7 @@ grad_missionsettings_canUseScopes = ([configFile >> "missionsettings","canUseSco
 [] call grad_missionSetup_fnc_loadouts;
 [] call grad_missionSetup_fnc_createDiaryRecords;
 [] call grad_missionSetup_fnc_intro;
-[{[] call grad_endings_fnc_init}, [], 10] call CBA_fnc_waitAndExecute;
+
+if (isServer) then {
+    [{[] call grad_endings_fnc_init}, [], 10] call CBA_fnc_waitAndExecute;
+};

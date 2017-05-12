@@ -12,6 +12,9 @@ switch (_preset) do {
     case ("ELIMINATION"): {
         [_winName,_presetParams] call grad_endings_fnc_presetElimination;
     };
+    case ("CONTROL"): {
+        [_winName,_presetParams] call grad_endings_fnc_presetControl;
+    };
     default {
         ERROR_1("Preset %1 not found!",_preset);
     };
