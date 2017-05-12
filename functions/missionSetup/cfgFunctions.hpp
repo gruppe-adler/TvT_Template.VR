@@ -4,5 +4,6 @@ class grad_missionSetup {
         class initMission {postInit = 1;};
         class intro {};
         class loadouts {};
+        class startPreparationTime {};
     };
 };

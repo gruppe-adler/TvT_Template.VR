@@ -4,6 +4,5 @@ class grad_common {
         class handleScopeChange {};
         class handleTakeRadio {};
         class preparationTimeCountdown {};
-        class startPreparationTime {};
     };
 };

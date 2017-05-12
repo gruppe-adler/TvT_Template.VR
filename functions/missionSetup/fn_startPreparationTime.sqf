@@ -8,4 +8,6 @@ _this spawn {
         _preparationTime = _preparationTime - 1;
         sleep 1;
     };
+
+    GRAD_MISSIONSTARTED = true;
 };
