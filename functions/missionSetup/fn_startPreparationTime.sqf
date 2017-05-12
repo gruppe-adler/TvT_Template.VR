@@ -11,5 +11,5 @@ _this spawn {
         };
     };
 
-    GRAD_MISSIONSTARTED = true;
+    missionNamespace setVariable ["GRAD_MISSIONSTARTED",true,true];
 };
