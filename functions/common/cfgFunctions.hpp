@@ -5,6 +5,7 @@ class grad_common {
         class coverMap {};
         class getAllowedRadios {};
         class getPoints {};
+        class getPointsCategorized {};
         class handleScopeChange {};
         class handleTakeRadio {};
         class restrictZone {};
