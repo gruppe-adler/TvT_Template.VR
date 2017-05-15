@@ -1,10 +1,15 @@
 #include "component.hpp"
 
 _this spawn {
-    params ["_configName"];
+    params ["_configName","_winText","_winners","_winTextParams"];
+    private ["_winText","_winners","_winTextParams"];
 
-    private _winners = ([missionConfigFile >> "CfgWinConditions" >> _configName,"winners",[]] call BIS_fnc_returnConfigEntry) apply {call compile _x};
-    private _winText = [missionConfigFile >> "CfgWinConditions" >> _configName,"winText",""] call BIS_fnc_returnConfigEntry;
+    if (isNil "_winText") then {
+        _winText = [missionConfigFile >> "CfgWinConditions" >> _configName,"winText",""] call BIS_fnc_returnConfigEntry;
+    };
+    if (isNil "_winners") then {
+        _winners = ([missionConfigFile >> "CfgWinConditions" >> _configName,"winners",[]] call BIS_fnc_returnConfigEntry) apply {call compile _x};
+    };
     private _winTextParams = ([missionConfigFile >> "CfgWinConditions" >> _configName,"winTextParams",[]] call BIS_fnc_returnConfigEntry) apply {call compile _x};
 
     _winText = "<img size= '6' style='vertical-align:middle' shadow='false' image='data\gruppe-adler.paa'/><br/><t size='.9' color='#FFFFFF'>" + _winText + "</t>";
