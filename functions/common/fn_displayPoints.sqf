@@ -64,7 +64,7 @@ if (hasInterface && count _this > 0) then {
                 _text = [parseText format ["<t size='1.5'>Points for <t color='%1'>%2</t>:</t>",[_side,"HTML"] call grad_common_fnc_getSideColor,[_side] call grad_common_fnc_getSideDisplayName],lineBreak,lineBreak];
                 {
                     _x params ["_category","_points"];
-                    _text pushBack (parseText format ["%1: %2<t color='%3'>%4</t>",_category,if (_points > 0) then {""} else {"-"},if (_points > 0) then {"#00ff00"} else {"#ff0000"},_points]);
+                    _text pushBack (parseText format ["%1: <t color='%2'>%3</t>",_category,if (_points > 0) then {"#00ff00"} else {"#ff0000"},_points]);
                     _text pushBack lineBreak;
                     false
                 } count _x;
