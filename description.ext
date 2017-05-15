@@ -96,6 +96,7 @@ class CfgFunctions {
 	#include "functions\endings\cfgFunctions.hpp"
 	#include "functions\missionSetup\cfgFunctions.hpp"
 	#include "functions\waverespawn\cfgFunctions.hpp"
+	#include "functions\sectors\cfgFunctions.hpp"
 
 	#include "USERSCRIPTS\userFunctions.hpp"
 
