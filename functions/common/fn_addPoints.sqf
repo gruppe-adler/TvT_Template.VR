@@ -37,12 +37,12 @@ switch (_side) do {
 
 private _resultID = [_categories,_category] call BIS_fnc_findInPairs;
 if (_resultID < 0) then {
-    if (_points > 0) then {
+    if (_points != 0) then {
         _categories pushBack [_category,_points]
     };
 } else {
     _categoryPoints = (((_categories select _resultID) select 1) + _points) max 0;
-    if (_categoryPoints > 0) then {
+    if (_categoryPoints != 0) then {
         _categories set [_resultID,[_category,(((_categories select _resultID) select 1) + _points) max 0]];
     } else {
         _categories deleteAt _resultID;
