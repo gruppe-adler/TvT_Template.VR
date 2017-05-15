@@ -23,28 +23,3 @@
         winTextParams[] = {"round (CBA_missionTime/60)"};
     };
 */
-
-
-class bluforPoints {
-    preset = "POINTS";
-    presetParams[] = {"WEST",30,180};
-
-    condition = "";
-    checkInterval = 0;
-
-    winners[] = {"WEST"};
-    winText = "BLUFOR wins by points!";
-    winTextParams[] = {};
-};
-
-class opforPoints {
-    preset = "POINTS";
-    presetParams[] = {"EAST",30,180};
-
-    condition = "";
-    checkInterval = 0;
-
-    winners[] = {"WEST"};
-    winText = "BLUFOR wins by points!";
-    winTextParams[] = {};
-};
