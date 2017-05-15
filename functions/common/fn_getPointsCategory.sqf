@@ -1,6 +1,6 @@
 #include "component.hpp"
 
-params ["_side"];
+params ["_side","_category"];
 
 private _categories = switch (_side) do {
     case (WEST): {
@@ -20,4 +20,11 @@ private _categories = switch (_side) do {
     };
 };
 
-_categories
+private _resultID = [_categories,_category] call BIS_fnc_findInPairs;
+private _pointsCategory = if (_resultID < 0) then {
+    0
+} else {
+    (_categories select _resultID) select 1
+};
+
+_pointsCategory

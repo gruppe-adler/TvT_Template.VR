@@ -6,6 +6,7 @@ class grad_common {
         class getAllowedRadios {};
         class getPoints {};
         class getPointsCategorized {};
+        class getPointsCategory {};
         class handleScopeChange {};
         class handleTakeRadio {};
         class restrictZone {};
