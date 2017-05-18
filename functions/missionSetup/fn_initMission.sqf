@@ -7,8 +7,15 @@ grad_missionsettings_canUseScopes = ([configFile >> "missionsettings","canUseSco
 [] call grad_missionSetup_fnc_createDiaryRecords;
 [] call grad_missionSetup_fnc_intro;
 
-if (isServer) then {
-    [["PREPARATION_TIME", 0] call BIS_fnc_getParamValue] call grad_missionSetup_fnc_startPreparationTime;
 
-    [{CBA_missionTime > 10 && {missionNamespace getVariable ["GRAD_MISSIONSTARTED",false]}}, {[] call grad_endings_fnc_init}, []] call CBA_fnc_waitUntilAndExecute;
-};
+[{!isNull player || isDedicated},{
+
+    if (isServer) then {
+        [["PREPARATION_TIME", 0] call BIS_fnc_getParamValue] call grad_missionSetup_fnc_startPreparationTime;
+        [{CBA_missionTime > 10 && {missionNamespace getVariable ["GRAD_MISSIONSTARTED",false]}}, {[] call grad_endings_fnc_init}, []] call CBA_fnc_waitUntilAndExecute;
+    };
+
+    if (hasInterface) then {
+        [] call grad_missionSetup_fnc_addKilledEH;
+    };
+},[]] call CBA_fnc_waitUntilAndExecute;
