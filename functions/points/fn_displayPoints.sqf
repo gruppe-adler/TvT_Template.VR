@@ -16,15 +16,15 @@
 #define DIVIDERWIDTH        0.4
 
 
-if (!isServer && !isRemoteExecuted) exitWith {[] remoteExec ["grad_common_fnc_displayPoints",2,false]};
+if (!isServer && !isRemoteExecuted) exitWith {[] remoteExec ["grad_points_fnc_displayPoints",2,false]};
 
 if (isServer && count _this == 0) then {
     [
-        [([WEST] call grad_common_fnc_getPointsCategorized),[],{_x select 1},"DESCEND"] call BIS_fnc_sortBy,
-        [([EAST] call grad_common_fnc_getPointsCategorized),[],{_x select 1},"DESCEND"] call BIS_fnc_sortBy,
-        [([INDEPENDENT] call grad_common_fnc_getPointsCategorized),[],{_x select 1},"DESCEND"] call BIS_fnc_sortBy,
-        [([CIVILIAN] call grad_common_fnc_getPointsCategorized),[],{_x select 1},"DESCEND"] call BIS_fnc_sortBy
-    ] remoteExec ["grad_common_fnc_displayPoints",0,false];
+        [([WEST] call grad_points_fnc_getPointsCategorized),[],{_x select 1},"DESCEND"] call BIS_fnc_sortBy,
+        [([EAST] call grad_points_fnc_getPointsCategorized),[],{_x select 1},"DESCEND"] call BIS_fnc_sortBy,
+        [([INDEPENDENT] call grad_points_fnc_getPointsCategorized),[],{_x select 1},"DESCEND"] call BIS_fnc_sortBy,
+        [([CIVILIAN] call grad_points_fnc_getPointsCategorized),[],{_x select 1},"DESCEND"] call BIS_fnc_sortBy
+    ] remoteExec ["grad_points_fnc_displayPoints",0,false];
 };
 
 if (hasInterface && count _this > 0) then {
@@ -72,7 +72,7 @@ if (hasInterface && count _this > 0) then {
 
                 _sumCtrl = _display ctrlCreate ["RscStructuredText",-1];
                 _sumCtrl ctrlSetPosition [(0.5-_backgroundW/2) + PADDINGW + _columnCount * (PADDINGW + COLUMNW),BACKGROUNDY + PADDINGH + COLUMNH,COLUMNW,SUMH];
-                _sumCtrl ctrlSetStructuredText (parseText format ["Total: <t color = '#00ff00'>%1</t>",[_side] call grad_common_fnc_getPoints]);
+                _sumCtrl ctrlSetStructuredText (parseText format ["Total: <t color = '#00ff00'>%1</t>",[_side] call grad_points_fnc_getPoints]);
                 _sumCtrl ctrlCommit 0;
 
                 if (_columnCount > 0) then {

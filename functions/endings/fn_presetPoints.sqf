@@ -10,7 +10,7 @@ private _startTime = CBA_missionTime;
     params ["_args","_handle"];
     _args params ["_winName","_side","_pointThreshold","_timeout","_startTime"];
 
-    if (CBA_missionTime - _startTime > _timeout || [_side] call grad_common_fnc_getPoints >= _pointThreshold) exitWith {
+    if (CBA_missionTime - _startTime > _timeout || [_side] call grad_points_fnc_getPoints >= _pointThreshold) exitWith {
         [_winName,_side] call grad_endings_fnc_presetPointsEnd;
         [_handle] call CBA_fnc_removePerFrameHandler;
     };

@@ -8,7 +8,7 @@
     if (isNil "_list") exitWith {};
 
     _oldOwner = _trigger getVariable "grad_sectors_currentOwner";
-    [_oldOwner,_trigger getVariable "grad_sectors_pointsPerSecond"] call grad_common_fnc_addPoints;
+    [_oldOwner,_trigger getVariable "grad_sectors_pointsPerSecond"] call grad_points_fnc_addPoints;
 
     _countTotal = count _list;
     if (_countTotal == 0) exitWith {};
@@ -43,8 +43,8 @@
         ["grad_notification1",["SECTOR CAPTURED",format ["%1 was captured by %2.",_sectorName,_ownerName]]] remoteExec ["bis_fnc_showNotification",0,false];
 
         _points = _trigger getVariable "grad_sectors_pointsForCapture";
-        [_newOwner,_points] call grad_common_fnc_addPoints;
-        [_oldOwner,-_points] call grad_common_fnc_addPoints;
+        [_newOwner,_points] call grad_points_fnc_addPoints;
+        [_oldOwner,-_points] call grad_points_fnc_addPoints;
 
         [_trigger] call grad_sectors_fnc_updateTasks;
 

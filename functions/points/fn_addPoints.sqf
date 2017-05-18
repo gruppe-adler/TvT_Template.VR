@@ -1,6 +1,6 @@
 #include "component.hpp"
 
-if (!isServer) exitWith {_this remoteExec ["grad_common_fnc_addPoints",2,false]};
+if (!isServer) exitWith {_this remoteExec ["grad_points_fnc_addPoints",2,false]};
 
 params ["_side","_points",["_category","Other"]];
 private ["_newPoints","_categories"];

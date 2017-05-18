@@ -1,14 +1,9 @@
 class grad_common {
     class common {
         class addJipToZeus {};
-        class addPlayerKilledEH {};
-        class addPoints {};
+        class addPlayerKilledEH {};        
         class coverMap {};
-        class displayPoints {};
         class getAllowedRadios {};
-        class getPoints {};
-        class getPointsCategorized {};
-        class getPointsCategory {};
         class getSideColor {};
         class getSideDisplayName {};
         class handleScopeChange {};
@@ -17,6 +12,5 @@ class grad_common {
         class removePlayerKilledEH {};
         class restrictZone {};
         class restrictZonePFH {};
-        class setPoints {};
     };
 };

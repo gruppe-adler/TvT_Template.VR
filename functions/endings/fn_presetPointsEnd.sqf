@@ -4,8 +4,8 @@ params ["_winName","_side"];
 
 private _otherSides = [WEST,EAST,INDEPENDENT,CIVILIAN] - [_side];
 
-private _sidePoints = [_side] call grad_common_fnc_getPoints;
-private _otherPoints = _otherSides apply {[_x] call grad_common_fnc_getPoints};
+private _sidePoints = [_side] call grad_points_fnc_getPoints;
+private _otherPoints = _otherSides apply {[_x] call grad_points_fnc_getPoints};
 private _moreThanCount = {_sidePoints > _x} count _otherPoints;
 
 private _isDraw = false;
@@ -18,7 +18,7 @@ if (!_isDraw && _moreThanCount < 3) exitWith {};
 if (missionNamespace getVariable ["grad_endings_presetPoints_endInProgress",false]) exitWith {};
 missionNamespace setVariable ["grad_endings_presetPoints_endInProgress",true];
 
-[] call grad_common_fnc_displayPoints;
+[] call grad_points_fnc_displayPoints;
 
 private _winParams = [_winName];
 if (_isDraw) then {
