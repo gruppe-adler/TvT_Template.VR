@@ -41,9 +41,9 @@ if (_resultID < 0) then {
         _categories pushBack [_category,_points]
     };
 } else {
-    _categoryPoints = (((_categories select _resultID) select 1) + _points) max 0;
+    _categoryPoints = ((_categories select _resultID) select 1) + _points;
     if (_categoryPoints != 0) then {
-        _categories set [_resultID,[_category,(((_categories select _resultID) select 1) + _points) max 0]];
+        _categories set [_resultID,[_category,((_categories select _resultID) select 1) + _points]];
     } else {
         _categories deleteAt _resultID;
     };

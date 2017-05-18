@@ -16,6 +16,6 @@ grad_missionsettings_canUseScopes = ([configFile >> "missionsettings","canUseSco
     };
 
     if (hasInterface) then {
-        [] call grad_missionSetup_fnc_addKilledEH;
+
     };
 },[]] call CBA_fnc_waitUntilAndExecute;
