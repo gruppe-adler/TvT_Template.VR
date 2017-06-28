@@ -1,3 +1,3 @@
 enableEnvironment [false, true];
 
-[] execVM "USERSCRIPTS\userInit.sqf";
+[] execVM "USER\userInit.sqf";

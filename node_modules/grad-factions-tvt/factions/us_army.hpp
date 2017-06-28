@@ -6,7 +6,9 @@ class us_army {
         primaryWeaponOptics = "";
 		primaryWeaponPointer = "";
 		primaryWeaponUnderbarrel = "";
+		primaryWeaponUnderbarrelMagazine = "";
 		secondaryWeapon = "";
+		secondaryWeaponMagazine = "";
 		handgunWeapon = "rhsusf_weap_m9";
 		handgunWeaponMagazine = "rhsusf_mag_15Rnd_9x19_JHP";
 		uniform = "rhs_uniform_cu_ocp";

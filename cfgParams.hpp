@@ -7,5 +7,5 @@ class Params
         default = 0;
     };
 
-    #include "USERSCRIPTS\userParams.hpp"
+    #include "USER\userParams.hpp"
 };

@@ -18,49 +18,46 @@ disabledAI = 0;
 enableDebugConsole = 1;
 allowFunctionsRecompile = 1;
 
-corpseManagerMode = 1;
-corpseLimit = 30;
-corpseRemovalMinTime = 300;
-corpseRemovalMaxTime = 500;
-
-wreckManagerMode = 1;
-wreckLimit = 20;
-wreckRemovalMinTime = 500;
-wreckRemovalMaxTime = 1200;
-
 
 //MISC =========================================================================
 #include "cfgParams.hpp"
-#include "USERSCRIPTS\mission.hpp"
+#include "cfgCivilians.hpp"
+#include "cfgIslands.hpp"
+#include "USER\missionInfo.hpp"
+#include "USER\garbageCollector.hpp"
+#include "USER\loadouts.hpp"
 
 class missionsettings {
-	#include "USERSCRIPTS\respawn.hpp"
-	#include "USERSCRIPTS\missionsettings.hpp"
+	#include "USER\respawnSettings.hpp"
+	#include "USER\missionsettings.hpp"
 };
 
 class CfgScopeWeapons {
-	#include "USERSCRIPTS\scopeWeapons.hpp"
+	#include "USER\scopeWeapons.hpp"
 };
 
 class CfgWinConditions {
-	#include "USERSCRIPTS\winConditions.hpp"
+	#include "USER\winConditions.hpp"
 };
 
 class CfgPoints {
-	#include "USERSCRIPTS\points.hpp"
+	#include "USER\points.hpp"
 };
 
 class CfgGradBuymenu {
     tracking = 0;
-	#include "USERSCRIPTS\userBuyables.hpp"
+	#include "USER\userBuyables.hpp"
 };
 
 class CfgGradFortifications {
-    #include "USERSCRIPTS\userFortifications.hpp"
+    #include "USER\userFortifications.hpp"
 };
 
 class CfgGradCivs {
-	#include "USERSCRIPTS\userCivs.hpp"
+	#include "USER\civSettings.hpp"
+
+	autoInit = 0;
+	debugMode = 0;
 };
 
 
@@ -70,7 +67,7 @@ class CfgGradCivs {
 
 class RscTitles {
     #include "dialogs\preparationTime\rscTitles.hpp"
-	#include "USERSCRIPTS\userTitles.hpp"
+	#include "USER\userTitles.hpp"
 
     class grad_Default {
         idd = -1;
@@ -91,19 +88,20 @@ class CfgNotifications
         priority = 0;
     };
 
-	#include "USERSCRIPTS\userNotifications.hpp"
+	#include "USER\userNotifications.hpp"
 };
 
 //FUNCTIONS ====================================================================
 class CfgFunctions {
 	#include "functions\common\cfgFunctions.hpp"
 	#include "functions\endings\cfgFunctions.hpp"
+	#include "functions\groupSettings\cfgFunctions.hpp"
 	#include "functions\missionSetup\cfgFunctions.hpp"
 	#include "functions\points\cfgFunctions.hpp"
 	#include "functions\sectors\cfgFunctions.hpp"
 	#include "functions\waverespawn\cfgFunctions.hpp"
 
-	#include "USERSCRIPTS\userFunctions.hpp"
+	#include "USER\userFunctions.hpp"
 
 	#include "node_modules\grad-loadout\cfgFunctions.hpp"
     #include "node_modules\grad-listbuymenu\cfgFunctions.hpp"
@@ -114,7 +112,7 @@ class CfgFunctions {
 
 //SOUNDS =======================================================================
 class CfgSounds {
-	#include "USERSCRIPTS\userSounds.hpp"
+	#include "USER\userSounds.hpp"
 };
 
 //GRAD LOADOUT =================================================================
@@ -124,7 +122,7 @@ class Loadouts {
     resetLoadout = 0;
 
     class Faction {
-        #include "USERSCRIPTS\userLoadouts.hpp"
+        #include "USER\userLoadouts.hpp"
 		#include "node_modules\grad-factions-tvt\loadouts.hpp"
     };
 };

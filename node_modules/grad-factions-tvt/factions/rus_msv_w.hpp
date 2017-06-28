@@ -6,7 +6,9 @@ class rus_msv_w {
 		primaryWeaponOptics = "";
 		primaryWeaponPointer = "";
 		primaryWeaponUnderbarrel = "";
+		primaryWeaponUnderbarrelMagazine = "";
 		secondaryWeapon = "";
+		secondaryWeaponMagazine = "";
 		handgunWeapon = "";
 		uniform = "rhs_uniform_flora";
         vest = "rhs_6b23_rifleman";

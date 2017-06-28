@@ -6,7 +6,9 @@ class ger_heer_w {
 		primaryWeaponOptics = "rhsusf_acc_eotech_552";
 		primaryWeaponPointer = "";
 		primaryWeaponUnderbarrel = "";
+		primaryWeaponUnderbarrelMagazine = "";
 		secondaryWeapon = "";
+		secondaryWeaponMagazine = "";
 		handgunWeapon = "rhsusf_weap_m9";
         handgunWeaponMagazine = "rhsusf_mag_15Rnd_9x19_JHP";
 		uniform = "ARC_GER_Flecktarn_Uniform";
