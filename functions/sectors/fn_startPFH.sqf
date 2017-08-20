@@ -1,16 +1,26 @@
 #include "component.hpp"
 
+params ["_trigger"];
+INFO_1("PFH for %1 starting.",_trigger getVariable "grad_sectors_sectorName");
+
 [{
     params ["_trigger","_handle"];
-    if (isNull _trigger) exitWith {[_handle] call CBA_fnc_removePerFrameHandler};
+    if (isNull _trigger) exitWith {
+        [_handle] call CBA_fnc_removePerFrameHandler;
+        ERROR("A sector trigger is null. Exiting PFH.");
+    };
 
     _list = list _trigger;
     if (isNil "_list") exitWith {};
 
     _oldOwner = _trigger getVariable "grad_sectors_currentOwner";
-    [_oldOwner,_trigger getVariable "grad_sectors_pointsPerSecond"] call grad_points_fnc_addPoints;
+    _pps = _trigger getVariable "grad_sectors_pointsPerSecond";
+    if (_pps > 0) then {
+        _categoryName = format ["Held %1",_trigger getVariable "grad_sectors_sectorName"];
+        [_oldOwner,_pps,_categoryName] call grad_points_fnc_addPoints;
+    };
 
-    _countTotal = count _list;
+    _countTotal = (count _list) - (sideLogic countSide _list) - (CIVILIAN countSide _list);
     if (_countTotal == 0) exitWith {};
 
     _captureSides = _trigger getVariable "grad_sectors_captureSides";
@@ -43,8 +53,8 @@
         ["grad_notification1",["SECTOR CAPTURED",format ["%1 was captured by %2.",_sectorName,_ownerName]]] remoteExec ["bis_fnc_showNotification",0,false];
 
         _points = _trigger getVariable "grad_sectors_pointsForCapture";
-        [_newOwner,_points] call grad_points_fnc_addPoints;
-        [_oldOwner,-_points] call grad_points_fnc_addPoints;
+        [_newOwner,_points,_sectorName] call grad_points_fnc_addPoints;
+        [_oldOwner,-_points,_sectorName] call grad_points_fnc_addPoints;
 
         [_trigger] call grad_sectors_fnc_updateTasks;
 
