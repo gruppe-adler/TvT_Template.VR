@@ -21,5 +21,10 @@ _this spawn {
 
     sleep 5;
 
+    if (({[_x] call grad_points_fnc_getPoints > 0} count [WEST,EAST,INDEPENDENT,CIVILIAN]) > 0) then {
+        [] call grad_points_fnc_displayPoints;
+        sleep 16;
+    };
+
     ["end1",playerSide in _winners,true,true,true] spawn BIS_fnc_endMission;
 };
