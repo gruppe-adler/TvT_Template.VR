@@ -128,8 +128,8 @@ class Loadouts {
     resetLoadout = 0;
 
     class Faction {
-        #include "USER\userLoadouts.hpp"
 		#include "node_modules\grad-factions-tvt\loadouts.hpp"
+        #include "USER\userLoadouts.hpp"
     };
 };
 
