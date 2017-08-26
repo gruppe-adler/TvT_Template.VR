@@ -5,8 +5,6 @@ private _code = {
     params ["_victim","_victimSide","_victimIsPlayer","_killer","_killerSide","_killerIsPlayer","_killTime"];
     private ["_points","_category"];
 
-    diag_log _this;
-
     if (_killerSide == CIVILIAN) exitWith {};
     if (_victim == _killer) exitWith {};
 
