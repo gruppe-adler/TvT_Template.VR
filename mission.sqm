@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=56;
+		nextID=60;
 	};
 	class Camera
 	{
 		pos[]={4938.9604,30,1507.9312};
 		dir[]={0,-0.70710683,0.70710683};
 		up[]={0,0.70710677,0.70710677};
-		aside[]={0.99999994,0,-0};
+		aside[]={0.99999994,0,0};
 	};
 };
 binarizationWanted=0;
@@ -315,7 +315,6 @@ class Mission
 		{
 			dataType="Layer";
 			name="Template: Module";
-			state=2;
 			class Entities
 			{
 				items=27;
@@ -2416,12 +2415,12 @@ class Mission
 					dataType="Logic";
 					class PositionInfo
 					{
-						position[]={1198.1042,27.32373,1899.0471};
+						position[]={1198.104,27.323999,1899.047};
 					};
 					presenceCondition="";
 					id=119;
 					type="ACE_moduleMedicalSettings";
-					atlOffset=22.32373;
+					atlOffset=22.323999;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -2477,7 +2476,7 @@ class Mission
 											"BOOL"
 										};
 									};
-									value=1;
+									value=0;
 								};
 							};
 						};
@@ -2496,7 +2495,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=1;
+									value=1.3;
 								};
 							};
 						};
@@ -2610,7 +2609,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=1;
+									value=1.3;
 								};
 							};
 						};
@@ -2825,7 +2824,7 @@ class Mission
 				};
 			};
 			id=127;
-			atlOffset=49.115788;
+			atlOffset=49.115803;
 		};
 		class Item1
 		{
