@@ -17,7 +17,7 @@ _this spawn {
     _text = format ([_winText] + _winTextParams);
     [_text,0,0,4,2] spawn BIS_fnc_dynamicText;
 
-    diag_log [_winText,_text,_winners];
+    INFO_3("%1 %2 %3",_winText,_text,_winners);
 
     sleep 5;
 
