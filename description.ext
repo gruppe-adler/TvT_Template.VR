@@ -74,6 +74,7 @@ class CfgGradCivs {
 #include "node_modules\grad-fortifications\grad_fortifications.hpp"
 
 class RscTitles {
+	#include "node_modules\grad-fortifications\dialog\hint\title.hpp"
     #include "dialogs\preparationTime\rscTitles.hpp"
 	#include "USER\userTitles.hpp"
 
