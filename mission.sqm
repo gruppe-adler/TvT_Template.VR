@@ -53,8 +53,6 @@ addons[]=
 	"Desert",
 	"A3_Ui_F",
 	"A3_Characters_F",
-	"asr_ai3_cfgcamouflage",
-	"asr_ai3_cfgvehicles",
 	"A3_Characters_F_Mark",
 	"A3_Characters_F_Jets",
 	"ace_nouniformrestrictions"
