@@ -7,13 +7,12 @@ params ["_unit","_container","_item"];
 private _isHandheld = _item isKindOf ["ItemRadio", configFile >> "CfgWeapons"];
 private _isLongrange = _item isKindOf "TFAR_Bag_Base";
 
-
 if (!_isHandheld && !_isLongrange) exitWith {};
 
+_item = [configFile >> "CfgWeapons" >> _item,"tf_parent",_item] call BIS_fnc_returnConfigEntry;
 
 if (isNil {_unit getVariable "grad_unitAllowedRadios"}) then {_unit setVariable ["grad_unitAllowedRadios",[_unit] call grad_common_fnc_getAllowedRadios]};
 private _allowedRadios = _unit getVariable ["grad_unitAllowedRadios",[]];
-
 
 if (_item in _allowedRadios) exitWith {};
 
