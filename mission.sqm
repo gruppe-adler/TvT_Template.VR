@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=60;
+		nextID=64;
 	};
 	class Camera
 	{
@@ -982,11 +982,11 @@ class Mission
 					dataType="Logic";
 					class PositionInfo
 					{
-						position[]={1798.9531,28.643707,1801.863};
+						position[]={1798.953,28.643999,1801.863};
 					};
 					id=102;
 					type="ace_weather_ModuleSettings";
-					atlOffset=23.643707;
+					atlOffset=23.643999;
 					class CustomAttributes
 					{
 						class Attribute0
