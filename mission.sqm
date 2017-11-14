@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=64;
+		nextID=68;
 	};
 	class Camera
 	{
-		pos[]={4938.9604,30,1507.9312};
-		dir[]={0,-0.70710683,0.70710683};
-		up[]={0,0.70710677,0.70710677};
-		aside[]={0.99999994,0,0};
+		pos[]={4923.6338,30,1529.8053};
+		dir[]={0.90338212,-0.28735021,0.31835207};
+		up[]={0.27102202,0.9578225,0.095508225};
+		aside[]={0.33236971,-2.2002496e-007,-0.94316244};
 	};
 };
 binarizationWanted=0;
@@ -432,11 +432,11 @@ class Mission
 					dataType="Logic";
 					class PositionInfo
 					{
-						position[]={1997.4834,21.794235,1793.1948};
+						position[]={1997.483,21.794001,1793.1949};
 					};
 					id=97;
 					type="ace_zeus_moduleSettings";
-					atlOffset=16.794235;
+					atlOffset=16.794001;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -549,7 +549,7 @@ class Mission
 											"BOOL"
 										};
 									};
-									value=0;
+									value=1;
 								};
 							};
 						};
@@ -902,7 +902,26 @@ class Mission
 								};
 							};
 						};
-						nAttributes=3;
+						class Attribute3
+						{
+							property="ace_captives_moduleSettings_requireSurrenderAi";
+							expression="_this setVariable ['requireSurrenderAi',_value,true];";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=4;
 					};
 				};
 				class Item5
@@ -1048,8 +1067,8 @@ class Mission
 						};
 						class Attribute3
 						{
-							property="ace_weather_ModuleSettings_syncRain";
-							expression="_this setVariable ['syncRain',_value,true];";
+							property="ace_weather_ModuleSettings_syncWind";
+							expression="_this setVariable ['syncWind',_value,true];";
 							class Value
 							{
 								class data
@@ -1084,26 +1103,7 @@ class Mission
 								};
 							};
 						};
-						class Attribute5
-						{
-							property="ace_weather_ModuleSettings_syncWind";
-							expression="_this setVariable ['syncWind',_value,true];";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						nAttributes=6;
+						nAttributes=5;
 					};
 				};
 				class Item7
@@ -1137,7 +1137,26 @@ class Mission
 								};
 							};
 						};
-						nAttributes=1;
+						class Attribute1
+						{
+							property="ACE_ModuleInteraction_DisableNegativeRating";
+							expression="_this setVariable ['DisableNegativeRating',_value,true];";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=2;
 					};
 				};
 				class Item8
