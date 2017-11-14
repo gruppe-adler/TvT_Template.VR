@@ -14,8 +14,10 @@ _condition = compile _condition;
 {
     if (_time > _x) then {
         [{
-            ["grad_notification1",["TIME","There are 10min left in the round."]] remoteExec ["bis_fnc_showNotification",0,false];
-        },[],_time - _x] call CBA_fnc_waitAndExecute;
+            _timeText = if (_this < 60) then {format ["%1s",_this]} else {format ["%1min",round (_this/60)]};
+            _messageText = format ["There are %1 left in the round",_timeText];
+            ["grad_notification1",["TIME",_messageText]] remoteExec ["bis_fnc_showNotification",0,false];
+        },_x,_time - _x] call CBA_fnc_waitAndExecute;
     } else {
         ERROR_1("Cannot create a %1 second reminder for timeout. Only %2 seconds max time.",_x,_time);
     };
