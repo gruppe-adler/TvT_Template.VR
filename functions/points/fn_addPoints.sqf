@@ -35,6 +35,9 @@ switch (_side) do {
     };
 };
 
+// fix for empty side
+if (_categoriesVarName isEqualTo "none") exitWith { 0 };
+
 private _categories = missionNamespace getVariable _categoriesVarName;
 
 private _resultID = [_categories,_category] call BIS_fnc_findInPairs;
