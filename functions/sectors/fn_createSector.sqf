@@ -1,9 +1,11 @@
 #include "component.hpp"
 
 if (!isServer) exitWith {};
-if !(_logic isKindOf "LocationArea_F") exitWith {ERROR_1("%1 is not an area logic.",_logic)};
 
 params ["_logic",["_sectorName","UNKNOWN SECTOR"],["_pointsForCapture",1],["_pointsPerSecond",0],["_lockAfterCapture",false],["_captureSides",[WEST,EAST,INDEPENDENT]],["_owner",sideUnknown]];
+
+if !(_logic isKindOf "LocationArea_F") exitWith {ERROR_1("%1 is not an area logic.",_logic)};
+
 
 if (isNil "grad_sectors_sectorTriggers") then {grad_sectors_sectorTriggers = []};
 
