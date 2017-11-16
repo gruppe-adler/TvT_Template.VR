@@ -32,8 +32,12 @@ switch (_side) do {
     };
     default {
         _newPoints = 0;
+        _categoriesVarName = "none";
     };
 };
+
+// fix for empty side
+if (_categoriesVarName isEqualTo "none") exitWith { 0 };
 
 private _categories = missionNamespace getVariable _categoriesVarName;
 
