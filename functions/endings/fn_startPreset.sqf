@@ -6,7 +6,7 @@ private _preset = [_winCondition,"preset",""] call BIS_fnc_returnConfigEntry;
 private _presetParams = [_winCondition,"presetParams",[]] call BIS_fnc_returnConfigEntry;;
 private _winName = configName _winCondition;
 
-INFO_1("Initializing preset %1 (%2).",_preset,_winName);
+INFO_2("Initializing preset %1 (%2).",_preset,_winName);
 
 _preset = toUpper _preset;
 switch (_preset) do {
