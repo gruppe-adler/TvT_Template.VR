@@ -3,6 +3,8 @@
 params ["_trigger"];
 INFO_1("PFH for %1 starting.",_trigger getVariable "grad_sectors_sectorName");
 
+[_trigger] call grad_sectors_fnc_updateMarker;
+
 [{
     params ["_trigger","_handle"];
     if (isNull _trigger) exitWith {
