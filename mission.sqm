@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=84;
+		nextID=88;
 	};
 	class Camera
 	{
@@ -11349,7 +11349,7 @@ class Mission
 				position[]={10493.411,68.86274,6826.6201};
 			};
 			name="cap_areas";
-			init="call{[ " \n "    this,  " \n "    ""capture area"",  " \n "    1,  " \n "    0, " \n "    false, " \n "    [WEST], " \n "    EAST " \n "] call grad_sectors_fnc_createSector;}";
+			init="call{[ " \n "    this,  " \n "    ""capture area"",  " \n "    1,  " \n "    0, " \n "    false, " \n "    [EAST], " \n "    WEST " \n "] call grad_sectors_fnc_createSector;}";
 			id=428;
 			type="LocationArea_F";
 		};
