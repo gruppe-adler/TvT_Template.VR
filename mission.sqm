@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=431;
+		nextID=432;
 	};
 	class MarkerIDProvider
 	{
@@ -11349,45 +11349,48 @@ class Mission
 				position[]={10493.411,68.86274,6826.6201};
 			};
 			name="cap_areas";
-			init="call{[ " \n "    this,  " \n "    ""capture area"",  " \n "    1,  " \n "    0, " \n "    false, " \n "    [EAST], " \n "    WEST " \n "] call grad_sectors_fnc_createSector;}";
+			init="call{[ " \n "    this,  " \n "    ""capture area"",  " \n "    5000,  " \n "    1, " \n "    false, " \n "    [EAST], " \n "    WEST " \n "] call grad_sectors_fnc_createSector;}";
 			id=428;
 			type="LocationArea_F";
 		};
 		class Item9
 		{
 			dataType="Trigger";
-			position[]={12537.897,0,5816.8013};
+			position[]={12537.897,-0.00019073486,5816.8008};
 			angle=0.78539819;
 			class Attributes
 			{
 				name="west_escape";
+				condition="call{this}";
 				sizeA=250;
 				sizeB=500;
 				repeatable=1;
+				activationBy="WEST";
 				isRectangle=1;
 				isServerOnly=1;
 			};
 			id=429;
 			type="EmptyDetector";
-			atlOffset=62.92522;
+			atlOffset=62.924999;
 		};
 		class Item10
 		{
 			dataType="Trigger";
-			position[]={9357.3877,62.952953,8998.7949};
+			position[]={9357.3877,62.952679,8998.7949};
 			angle=0.78539819;
 			class Attributes
 			{
-				name="west_escape_1";
+				name="east_escape";
 				sizeA=250;
 				sizeB=500;
 				repeatable=1;
+				activationBy="EAST";
 				isRectangle=1;
 				isServerOnly=1;
 			};
 			id=430;
 			type="EmptyDetector";
-			atlOffset=66.959274;
+			atlOffset=66.959;
 		};
 	};
 	class Connections
