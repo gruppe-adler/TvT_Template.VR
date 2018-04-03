@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=429;
+		nextID=431;
 	};
 	class MarkerIDProvider
 	{
@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=88;
+		nextID=92;
 	};
 	class Camera
 	{
@@ -316,7 +316,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=9;
+		items=11;
 		class Item0
 		{
 			dataType="Layer";
@@ -11267,14 +11267,14 @@ class Mission
 		class Item3
 		{
 			dataType="Trigger";
-			position[]={11046.691,196.94667,7310.7002};
-			angle=5.4977851;
+			position[]={10949.153,185.65891,7406.6641};
+			angle=5.4977865;
 			class Attributes
 			{
 				name="restricted_area";
 				text="AO";
 				sizeA=500;
-				sizeB=1500;
+				sizeB=2500;
 				isRectangle=1;
 			};
 			id=423;
@@ -11352,6 +11352,42 @@ class Mission
 			init="call{[ " \n "    this,  " \n "    ""capture area"",  " \n "    1,  " \n "    0, " \n "    false, " \n "    [EAST], " \n "    WEST " \n "] call grad_sectors_fnc_createSector;}";
 			id=428;
 			type="LocationArea_F";
+		};
+		class Item9
+		{
+			dataType="Trigger";
+			position[]={12537.897,0,5816.8013};
+			angle=0.78539819;
+			class Attributes
+			{
+				name="west_escape";
+				sizeA=250;
+				sizeB=500;
+				repeatable=1;
+				isRectangle=1;
+				isServerOnly=1;
+			};
+			id=429;
+			type="EmptyDetector";
+			atlOffset=62.92522;
+		};
+		class Item10
+		{
+			dataType="Trigger";
+			position[]={9357.3877,62.952953,8998.7949};
+			angle=0.78539819;
+			class Attributes
+			{
+				name="west_escape_1";
+				sizeA=250;
+				sizeB=500;
+				repeatable=1;
+				isRectangle=1;
+				isServerOnly=1;
+			};
+			id=430;
+			type="EmptyDetector";
+			atlOffset=66.959274;
 		};
 	};
 	class Connections
