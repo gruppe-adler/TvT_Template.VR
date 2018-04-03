@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=425;
+		nextID=429;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=80;
+		nextID=84;
 	};
 	class Camera
 	{
-		pos[]={11566.804,243.70901,7003.0161};
-		dir[]={-0.89892894,-0.34973773,0.26383761};
-		up[]={-0.3355802,0.93684775,0.098500967};
-		aside[]={0.28162518,-6.6906214e-006,0.95952463};
+		pos[]={10733.211,295.00983,7555.5713};
+		dir[]={-0.85243219,-0.52281141,-0.0074037863};
+		up[]={-0.5228014,0.85243875,-0.0045332224};
+		aside[]={-0.0086812433,-6.901867e-006,0.99997562};
 	};
 };
 binarizationWanted=0;
@@ -316,7 +316,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=5;
+		items=9;
 		class Item0
 		{
 			dataType="Layer";
@@ -6722,7 +6722,7 @@ class Mission
 							};
 							id=264;
 							type="B_support_AMort_F";
-							atlOffset=-1.5258789e-005;
+							atlOffset=0.00021362305;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -9605,6 +9605,7 @@ class Mission
 							};
 							id=306;
 							type="O_spotter_F";
+							atlOffset=-0.00023651123;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -9751,6 +9752,7 @@ class Mission
 					{
 					};
 					id=305;
+					atlOffset=-0.00023651123;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -11266,7 +11268,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={11046.691,196.94667,7310.7002};
-			angle=5.4977856;
+			angle=5.4977851;
 			class Attributes
 			{
 				name="restricted_area";
@@ -11290,16 +11292,77 @@ class Mission
 			type="LocationArea_F";
 			atlOffset=44.719006;
 		};
+		class Item5
+		{
+			dataType="Trigger";
+			position[]={11606.197,71.875504,6752.3291};
+			angle=0.78539819;
+			class Attributes
+			{
+				name="trigger_cap3";
+				sizeA=300;
+				sizeB=500;
+				isRectangle=1;
+				isServerOnly=1;
+			};
+			id=425;
+			type="EmptyDetector";
+		};
+		class Item6
+		{
+			dataType="Trigger";
+			position[]={11180.998,151.49208,7175.9468};
+			angle=0.78539819;
+			class Attributes
+			{
+				name="trigger_cap2";
+				sizeA=300;
+				sizeB=500;
+				isRectangle=1;
+				isServerOnly=1;
+			};
+			id=426;
+			type="EmptyDetector";
+			atlOffset=1.5258789e-005;
+		};
+		class Item7
+		{
+			dataType="Trigger";
+			position[]={10757.381,237.42751,7599.563};
+			angle=0.78539819;
+			class Attributes
+			{
+				name="trigger_cap1";
+				sizeA=300;
+				sizeB=500;
+				isRectangle=1;
+				isServerOnly=1;
+			};
+			id=427;
+			type="EmptyDetector";
+		};
+		class Item8
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={10493.411,68.86274,6826.6201};
+			};
+			name="cap_areas";
+			init="call{[ " \n "    this,  " \n "    ""capture area"",  " \n "    1,  " \n "    0, " \n "    false, " \n "    [WEST], " \n "    EAST " \n "] call grad_sectors_fnc_createSector;}";
+			id=428;
+			type="LocationArea_F";
+		};
 	};
 	class Connections
 	{
 		class LinkIDProvider
 		{
-			nextID=93;
+			nextID=96;
 		};
 		class Links
 		{
-			items=93;
+			items=96;
 			class Item0
 			{
 				linkID=0;
@@ -12225,6 +12288,36 @@ class Mission
 				linkID=92;
 				item0=424;
 				item1=423;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item93
+			{
+				linkID=93;
+				item0=428;
+				item1=427;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item94
+			{
+				linkID=94;
+				item0=428;
+				item1=426;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item95
+			{
+				linkID=95;
+				item0=428;
+				item1=425;
 				class CustomData
 				{
 					type="Sync";
