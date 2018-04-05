@@ -3,7 +3,7 @@
 params ["_winCondition"];
 
 private _condition = compile ([_winCondition,"condition","false"] call BIS_fnc_returnConfigEntry);
-private _checkInterval = [_x,"checkInterval",1] call BIS_fnc_returnConfigEntry;
+private _checkInterval = [_winCondition,"checkInterval",1] call BIS_fnc_returnConfigEntry;
 private _winName = configName _winCondition;
 
 INFO_1("Initialized wincondition %1.",_winName);
