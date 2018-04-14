@@ -20,7 +20,6 @@ if (isNil "grad_extracts_sectorTriggers") then {grad_extracts_sectorTriggers = [
       [_x, if (playerSide in _extractSides)] call grad_extracts_fnc_createMarker;
     };
     [_x] call grad_extracts_fnc_createTasks;
-    [{!isNull (_this select 0)}, {[_this select 0] call grad_extracts_fnc_startPFH}, [_x]] call CBA_fnc_waitUntilAndExecute;
 
     grad_extracts_sectorTriggers pushBack _x;
 } forEach (_logic call bis_fnc_moduleTriggers);

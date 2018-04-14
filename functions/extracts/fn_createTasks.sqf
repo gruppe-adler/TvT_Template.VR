@@ -12,7 +12,17 @@ private _preventDescription = [format ["Prevent enemy extraction at %1", _sector
 {
     _description = if (_x == playerSide) then {_extractDescription} else {_attackDescription};
     _marker = if (_x == playerSide) then {"extract"} else {"prevent"};
-    _task = [_x,format ["grad_extracts_task_%1_%2",_x,getPos _trigger],_description,getPos _trigger,true,1,false,_marker,true] call BIS_fnc_taskCreate;
+    _task = [
+        _x,
+        format ["grad_extracts_task_%1_%2",_x,getPos _trigger],
+        _description,
+        getPos _trigger,
+        true,
+        1,
+        false,
+        _marker,
+        true
+    ] call BIS_fnc_taskCreate;
 
     _trigger setVariable [format ["grad_extracts_task_%1",_x],_task];
     false
