@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=432;
+		nextID=434;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=92;
+		nextID=96;
 	};
 	class Camera
 	{
-		pos[]={10733.211,295.00983,7555.5713};
-		dir[]={-0.85243219,-0.52281141,-0.0074037863};
-		up[]={-0.5228014,0.85243875,-0.0045332224};
-		aside[]={-0.0086812433,-6.901867e-006,0.99997562};
+		pos[]={10288.063,1449.4707,5766.6211};
+		dir[]={0.5837267,-0.77034485,0.25666595};
+		up[]={0.70519465,0.63761854,0.31006724};
+		aside[]={0.40251315,-4.9474183e-006,-0.9154405};
 	};
 };
 binarizationWanted=0;
@@ -316,7 +316,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=11;
+		items=13;
 		class Item0
 		{
 			dataType="Layer";
@@ -2954,7 +2954,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={10660.593,225.5379,7678.0796};
+								position[]={9268.5918,28.785557,8714.7217};
 							};
 							side="West";
 							flags=5;
@@ -2966,6 +2966,7 @@ class Mission
 							};
 							id=209;
 							type="B_medic_F";
+							atlOffset=-3.8146973e-006;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -11268,7 +11269,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={10949.153,185.65891,7406.6641};
-			angle=5.4977865;
+			angle=5.4977856;
 			class Attributes
 			{
 				name="restricted_area";
@@ -11392,16 +11393,40 @@ class Mission
 			type="EmptyDetector";
 			atlOffset=66.959;
 		};
+		class Item11
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={11434.987,-14.418308,5690.2588};
+			};
+			init="call{[ " \n "    this,  " \n "    ""extract opfor area"",  " \n "    1000,  " \n "    [EAST]" \n "] call grad_sectors_fnc_createSector;}";
+			id=432;
+			type="LocationArea_F";
+			atlOffset=44.842003;
+		};
+		class Item12
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={8730.5195,-10.675902,8581.9336};
+			};
+			init="call{[ " \n "    this,  " \n "    ""extract opfor area"",  " \n "    1000,  " \n "    [WEST]" \n "] call grad_sectors_fnc_createSector;}";
+			id=433;
+			type="LocationArea_F";
+			atlOffset=6.0539999;
+		};
 	};
 	class Connections
 	{
 		class LinkIDProvider
 		{
-			nextID=96;
+			nextID=98;
 		};
 		class Links
 		{
-			items=96;
+			items=98;
 			class Item0
 			{
 				linkID=0;
@@ -12357,6 +12382,26 @@ class Mission
 				linkID=95;
 				item0=428;
 				item1=425;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item96
+			{
+				linkID=96;
+				item0=433;
+				item1=430;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item97
+			{
+				linkID=97;
+				item0=432;
+				item1=429;
 				class CustomData
 				{
 					type="Sync";
