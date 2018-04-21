@@ -17,8 +17,6 @@ private _startTime = CBA_missionTime;
 
     private _currentThreshold = [] call _pointThreshold;
     private _sidePoints = [_side] call grad_points_fnc_getPoints;
-
-
     if (
       CBA_missionTime - _startTime > _timeout
       || _sidePoints >= _currentThreshold
