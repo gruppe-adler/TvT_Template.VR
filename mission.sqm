@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=96;
+		nextID=100;
 	};
 	class Camera
 	{
@@ -2954,10 +2954,10 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={9268.5918,28.785557,8714.7217};
+								position[]={12604.159,0.0014381409,6054.7397};
 							};
 							side="West";
-							flags=5;
+							flags=1;
 							class Attributes
 							{
 								description="Zugarzt";
@@ -2966,7 +2966,7 @@ class Mission
 							};
 							id=209;
 							type="B_medic_F";
-							atlOffset=-3.8146973e-006;
+							atlOffset=44.062752;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -11269,7 +11269,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={10949.153,185.65891,7406.6641};
-			angle=5.4977856;
+			angle=5.4977851;
 			class Attributes
 			{
 				name="restricted_area";
@@ -11400,7 +11400,7 @@ class Mission
 			{
 				position[]={11434.987,-14.418308,5690.2588};
 			};
-			init="call{[ " \n "    this,  " \n "    ""extract opfor area"",  " \n "    1000,  " \n "    [EAST]" \n "] call grad_sectors_fnc_createSector;}";
+			init="call{[ " \n "    this,  " \n "    ""extract blufor area"",  " \n "    1000,  " \n "    [WEST]" \n "] call grad_extracts_fnc_createExtract;}";
 			id=432;
 			type="LocationArea_F";
 			atlOffset=44.842003;
@@ -11412,7 +11412,7 @@ class Mission
 			{
 				position[]={8730.5195,-10.675902,8581.9336};
 			};
-			init="call{[ " \n "    this,  " \n "    ""extract opfor area"",  " \n "    1000,  " \n "    [WEST]" \n "] call grad_sectors_fnc_createSector;}";
+			init="call{[ " \n "    this,  " \n "    ""extract opfor area"",  " \n "    1000,  " \n "    [EAST]" \n "] call grad_extracts_fnc_createExtract;}";
 			id=433;
 			type="LocationArea_F";
 			atlOffset=6.0539999;
