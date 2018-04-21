@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=100;
+		nextID=104;
 	};
 	class Camera
 	{
-		pos[]={10288.063,1449.4707,5766.6211};
-		dir[]={0.5837267,-0.77034485,0.25666595};
-		up[]={0.70519465,0.63761854,0.31006724};
-		aside[]={0.40251315,-4.9474183e-006,-0.9154405};
+		pos[]={12013.644,2531.6157,5031.5254};
+		dir[]={0.08642672,-0.85448915,0.51228201};
+		up[]={0.14215952,0.51945788,0.84258509};
+		aside[]={0.98609161,-3.7057034e-006,-0.16636986};
 	};
 };
 binarizationWanted=0;
@@ -2954,7 +2954,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={12604.159,0.0014381409,6054.7397};
+								position[]={12427.6,0.0014388561,6062.3369};
 							};
 							side="West";
 							flags=1;
@@ -2966,7 +2966,7 @@ class Mission
 							};
 							id=209;
 							type="B_medic_F";
-							atlOffset=44.062752;
+							atlOffset=48.1679;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -11366,7 +11366,7 @@ class Mission
 				sizeA=250;
 				sizeB=500;
 				repeatable=1;
-				activationBy="WEST";
+				activationBy="ANYPLAYER";
 				isRectangle=1;
 				isServerOnly=1;
 			};
