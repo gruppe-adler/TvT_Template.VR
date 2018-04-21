@@ -16,9 +16,7 @@ if (isNil "grad_extracts_sectorTriggers") then {grad_extracts_sectorTriggers = [
 
 {
     [_x, _sectorName, _pointsForExtract, _extractSides] call grad_extracts_fnc_initTrigger;
-    if (hasInterface) then {
-      [_x, if (playerSide in _extractSides)] call grad_extracts_fnc_createMarker;
-    };
+    [_x] call grad_extracts_fnc_createMarker;
     [_x] call grad_extracts_fnc_createTasks;
 
     grad_extracts_sectorTriggers pushBack _x;
