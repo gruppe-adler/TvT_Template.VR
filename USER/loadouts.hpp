@@ -16,7 +16,7 @@
 
 
 loadoutFactionBlu = "us_army";
-loadoutFactionOpf = "";
+loadoutFactionOpf = "rus_msv_d";
 loadoutFactionInd = "";
 
 
