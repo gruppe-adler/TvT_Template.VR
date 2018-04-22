@@ -54,7 +54,7 @@ INFO_1("PFH for %1 starting.",_trigger getVariable "grad_sectors_sectorName");
 
         ["grad_notification1",["SECTOR CAPTURED",format ["%1 was captured by %2.",_sectorName,_ownerName]]] remoteExec ["bis_fnc_showNotification",0,false];
 
-        _points = _trigger getVariable "grad_sectors_pointsForCapture";
+        _points = [] call (_trigger getVariable "grad_sectors_get_pointsForCapture");
         [_newOwner,_points,_sectorName] call grad_points_fnc_addPoints;
         [_oldOwner,-_points,_sectorName] call grad_points_fnc_addPoints;
 
