@@ -23,7 +23,7 @@ class opforeliminated {
 
 class bluforWinPoints {
     preset = "POINTS";
-    presetParams[] = {"WEST", "['PointsWest'] call BIS_fnc_getParamValue", 3600};
+    presetParams[] = {"WEST", "['PointsWest'] call BIS_fnc_getParamValue"};
 
     condition = "";
     checkInterval = 1;
@@ -35,7 +35,7 @@ class bluforWinPoints {
 
 class opforWinPoints {
     preset = "POINTS";
-    presetParams[] = {"EAST", "['PointsEast'] call BIS_fnc_getParamValue", 9999};
+    presetParams[] = {"EAST", "['PointsEast'] call BIS_fnc_getParamValue"};
 
     condition = "";
     checkInterval = 1;
