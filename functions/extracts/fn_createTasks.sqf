@@ -10,11 +10,11 @@ private _extractDescription = [format ["Extract at %1.",_sectorName],"Extract","
 private _preventDescription = [format ["Prevent enemy extraction at %1", _sectorName], "Prevent", ""];
 
 {
-    _description = if (_x == playerSide) then {_extractDescription} else {_attackDescription};
-    _marker = if (_x == playerSide) then {"extract"} else {"prevent"};
+    _description = _extractDescription;
+    _marker = "exit";
     _task = [
         _x,
-        format ["grad_extracts_task_%1_%2",_x,getPos _trigger],
+        format ["grad_extracts_task_%1_%2",_x, getPos _trigger],
         _description,
         getPos _trigger,
         true,
