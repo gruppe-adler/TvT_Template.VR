@@ -9337,7 +9337,7 @@ class Mission
 				position[]={10493.411,68.86274,6826.6201};
 			};
 			name="cap_areas";
-			init="call{[ " \n "    this,  " \n "    ""capture area"",  " \n "    5000,  " \n "    1, " \n "    false, " \n "    [EAST], " \n "    WEST " \n "] call grad_sectors_fnc_createSector;}";
+			init="call{[ " \n "    this,  " \n "    ""capture area"",  " \n "    {POINTSFORCAPTURE_OPFOR},  " \n "    1, " \n "    false, " \n "    [EAST], " \n "    WEST " \n "] call grad_sectors_fnc_createSector;}";
 			id=428;
 			type="LocationArea_F";
 		};
@@ -9387,7 +9387,7 @@ class Mission
 			{
 				position[]={11434.987,-14.418308,5690.2588};
 			};
-			init="call{[ " \n "    this,  " \n "    ""extract blufor area"",  " \n "    1000,  " \n "    [WEST]" \n "] call grad_extracts_fnc_createExtract;}";
+			init="call{[ " \n "    this,  " \n "    ""extract blufor area"",  " \n "    GET_POINTSFOREXTRACT_BLUFOR,  " \n "    [WEST]" \n "] call grad_extracts_fnc_createExtract;}";
 			id=432;
 			type="LocationArea_F";
 			atlOffset=44.842003;
@@ -9399,7 +9399,7 @@ class Mission
 			{
 				position[]={8730.5195,-10.675902,8581.9336};
 			};
-			init="call{[ " \n "    this,  " \n "    ""extract opfor area"",  " \n "    1000,  " \n "    [EAST]" \n "] call grad_extracts_fnc_createExtract;}";
+			init="call{[ " \n "    this,  " \n "    ""extract opfor area"",  " \n "    GET_POINTSFOREXTRACT_OPFOR,  " \n "    [EAST]" \n "] call grad_extracts_fnc_createExtract;}";
 			id=433;
 			type="LocationArea_F";
 			atlOffset=6.0539999;
