@@ -1,4 +1,5 @@
 #include "component.hpp"
+#define PLAYABLE_UNITS (playableUnits + switchableUnits)
 
 params ["_winName","_sides"];
 _sides = _sides apply {call compile _x};
@@ -26,11 +27,11 @@ _taskDesc = _taskDesc + ".";
     params ["_args","_handle"];
     _args params ["_winName","_sides","_taskID"];
 
-    if ({_side = _x; ({side _x == _side} count playableUnits) > 0} count _sides == 0) exitWith {
+    if ({_side = _x; ({side _x == _side} count PLAYABLE_UNITS) > 0} count _sides == 0) exitWith {
 
         [{
             params ["_winName","_sides","_taskID"];
-            if ({_side = _x; ({side _x == _side} count playableUnits) > 0} count _sides == 0) then {
+            if ({_side = _x; ({side _x == _side} count PLAYABLE_UNITS) > 0} count _sides == 0) then {
 
                 [_taskID,"SUCCEEDED",true] call BIS_fnc_taskSetState;
                 [_winName] call grad_endings_fnc_endMissionServer;
