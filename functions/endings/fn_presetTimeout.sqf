@@ -19,6 +19,6 @@ _condition = compile _condition;
             ["grad_notification1",["TIME",_messageText]] remoteExec ["bis_fnc_showNotification",0,false];
         },_x,_time - _x] call CBA_fnc_waitAndExecute;
     } else {
-        ERROR_1("Cannot create a %1 second reminder for timeout. Only %2 seconds max time.",_x,_time);
+        ERROR_2("Cannot create a %1 second reminder for timeout. Only %2 seconds max time.",_x,_time);
     };
 } forEach _reminders;
