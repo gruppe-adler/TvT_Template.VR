@@ -5,10 +5,10 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=641;
+	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=552;
+		nextID=559;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=108;
+		nextID=112;
 	};
 	class Camera
 	{
-		pos[]={12013.644,2531.6157,5031.5254};
-		dir[]={0.08642672,-0.85448915,0.51228201};
-		up[]={0.14215952,0.51945788,0.84258509};
-		aside[]={0.98609161,-3.7057034e-006,-0.16636986};
+		pos[]={11777.654,337.24384,6220.2026};
+		dir[]={-0.40821844,-0.66094261,0.62983161};
+		up[]={-0.35949218,0.75039762,0.554667};
+		aside[]={0.83924234,-5.5935525e-006,0.54393852};
 	};
 };
 binarizationWanted=0;
@@ -54,13 +54,16 @@ addons[]=
 	"A3_Ui_F",
 	"A3_Characters_F",
 	"A3_Modules_F",
-	"A3_Soft_F_Quadbike_01"
+	"A3_Soft_F_Quadbike_01",
+	"A3_Boat_F_Boat_Transport_01",
+	"A3_Boat_F_Gamma_Boat_Transport_01",
+	"A3_Modules_F_Multiplayer"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=26;
+		items=28;
 		class Item0
 		{
 			className="A3_Modules_F_Curator";
@@ -241,6 +244,20 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item26
+		{
+			className="A3_Boat_F";
+			name="Arma 3 Alpha - Boats and Submersibles";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item27
+		{
+			className="A3_Boat_F_Gamma";
+			name="Arma 3 - Boats and Submersibles";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
 };
 randomSeed=7199820;
@@ -300,7 +317,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=24;
+		items=31;
 		class Item0
 		{
 			dataType="Layer";
@@ -8726,7 +8743,7 @@ class Mission
 							};
 							id=545;
 							type="O_Soldier_LAT_F";
-							atlOffset=7.6293945e-006;
+							atlOffset=-0.00015258789;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -9562,7 +9579,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={10749.354,240.39009,7608.9243};
-				angles[]={-0,0,6.1558771};
+				angles[]={0,0,6.1558771};
 			};
 			side="Empty";
 			flags=4;
@@ -9571,7 +9588,7 @@ class Mission
 			};
 			id=443;
 			type="B_Quadbike_01_F";
-			atlOffset=-0.031982422;
+			atlOffset=-0.032104492;
 		};
 		class Item23
 		{
@@ -9590,16 +9607,317 @@ class Mission
 			type="B_Quadbike_01_F";
 			atlOffset=-0.043334961;
 		};
+		class Item24
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={11695.414,1.2427262,6412.7324};
+				angles[]={0,1.7862839,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=552;
+			type="B_Boat_Transport_01_F";
+			atlOffset=0.60372806;
+		};
+		class Item25
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={11701.706,1.2427262,6423.9243};
+				angles[]={0,2.807991,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=553;
+			type="B_Boat_Transport_01_F";
+			atlOffset=1.2555615;
+		};
+		class Item26
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={11713.045,1.2427262,6426.9951};
+				angles[]={0,3.4543822,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=554;
+			type="B_Boat_Transport_01_F";
+			atlOffset=1.0953931;
+		};
+		class Item27
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={11797.224,1.2427262,6422.5532};
+				angles[]={0,1.6435609,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=555;
+			type="B_G_Boat_Transport_01_F";
+			atlOffset=3.0783288;
+		};
+		class Item28
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={12183.264,1.2427262,6669.1348};
+				angles[]={0,2.8684232,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=556;
+			type="B_G_Boat_Transport_01_F";
+			atlOffset=1.7627221;
+		};
+		class Item29
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={12187.779,0.89445972,6670.3369};
+				angles[]={0,3.2078996,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=557;
+			type="B_G_Boat_Transport_01_F";
+			atlOffset=1.0202894;
+		};
+		class Item30
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={11704.28,-0.00065255165,6409.6382};
+			};
+			id=558;
+			type="ModuleRespawnVehicle_F";
+			atlOffset=2.187;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleRespawnVehicle_F_ForcedRespawn";
+					expression="_this setVariable ['ForcedRespawn',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleRespawnVehicle_F_Init";
+					expression="_this setVariable ['Init',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleRespawnVehicle_F_RespawnWhenDisabled";
+					expression="_this setVariable ['RespawnWhenDisabled',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleRespawnVehicle_F_DesertedDistance";
+					expression="_this setVariable ['DesertedDistance',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="50";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="ModuleRespawnVehicle_F_PositionType";
+					expression="_this setVariable ['PositionType',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="ModuleRespawnVehicle_F_RespawnCount";
+					expression="_this setVariable ['RespawnCount',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="25";
+						};
+					};
+				};
+				class Attribute6
+				{
+					property="ModuleRespawnVehicle_F_Position";
+					expression="_this setVariable ['Position',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute7
+				{
+					property="ModuleRespawnVehicle_F_Wreck";
+					expression="_this setVariable ['Wreck',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute8
+				{
+					property="ModuleRespawnVehicle_F_Delay";
+					expression="_this setVariable ['Delay',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="120";
+						};
+					};
+				};
+				class Attribute9
+				{
+					property="ModuleRespawnVehicle_F_ShowNotification";
+					expression="_this setVariable ['ShowNotification',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				nAttributes=10;
+			};
+		};
 	};
 	class Connections
 	{
 		class LinkIDProvider
 		{
-			nextID=32;
+			nextID=35;
 		};
 		class Links
 		{
-			items=32;
+			items=35;
 			class Item0
 			{
 				linkID=0;
@@ -9915,6 +10233,36 @@ class Mission
 				linkID=31;
 				item0=432;
 				item1=429;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item32
+			{
+				linkID=32;
+				item0=558;
+				item1=553;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item33
+			{
+				linkID=33;
+				item0=558;
+				item1=554;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item34
+			{
+				linkID=34;
+				item0=558;
+				item1=552;
 				class CustomData
 				{
 					type="Sync";
