@@ -46,8 +46,6 @@ private _fnc_check = [
     }
 ] select (([missionConfigFile >> "missionsettings","waveRespawnEnabled",0] call BIS_fnc_returnConfigEntry) == 1);
 
-diag_log ["_fnc_check",_fnc_check];
-
 [{
     params ["_args","_handle"];
     _args params ["_winName","_sides","_taskID","_fnc_check","_respawningPlayersArrays"];
