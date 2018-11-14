@@ -1,7 +1,9 @@
 class GRAD_waverespawn {
     class waverespawn {
+        class addToWaiting {};
         class addToWave {};
         class canRespawn {};
+        class checkEnoughForWave {};
         class getStatus {};
         class init {postInit = 1;};
         class onPlayerKilled {};

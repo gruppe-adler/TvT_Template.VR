@@ -8,7 +8,7 @@
     if (WAVERESPAWNBLU) exitWith {};
 
     //start countdown once first player is added to wave
-    if (count deadPlayersBlu > 0) then {
+    if (count wavePlayernamesBlu > 0) then {
         WAVERESPAWNTIMELEFTBLU = (WAVERESPAWNTIMELEFTBLU - 1) max 0;
         publicVariable "WAVERESPAWNTIMELEFTBLU";
     } else {
@@ -26,7 +26,7 @@
             WAVERESPAWNBLU = false;
             publicVariable "WAVERESPAWNBLU";
             WAVERESPAWNTIMELEFTBLU = WAVERESPAWNTIMEBLU;
-            publicVariable    "WAVERESPAWNTIMELEFTBLU";
+            publicVariable "WAVERESPAWNTIMELEFTBLU";
             INFO("Respawning no longer possible for Blufor.");
         },[],(RESPAWNWAVEEXTRATIME max 7)] call CBA_fnc_waitAndExecute;
     };
@@ -41,7 +41,7 @@
     if (WAVERESPAWNOPF) exitWith {};
 
     //start countdown once first player is added to wave
-    if (count deadPlayersOpf > 0) then {
+    if (count wavePlayernamesOpf > 0) then {
         WAVERESPAWNTIMELEFTOPF = (WAVERESPAWNTIMELEFTOPF - 1) max 0;
         publicVariable "WAVERESPAWNTIMELEFTOPF";
     } else {
@@ -74,7 +74,7 @@
     if (WAVERESPAWNIND) exitWith {};
 
     //start countdown once first player is added to wave
-    if (count deadPlayersInd > 0) then {
+    if (count wavePlayernamesInd > 0) then {
         WAVERESPAWNTIMELEFTIND = (WAVERESPAWNTIMELEFTIND - 1) max 0;
         publicVariable "WAVERESPAWNTIMELEFTIND";
     } else {

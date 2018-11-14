@@ -1,5 +1,6 @@
 #include "component.hpp"
 
+// do not add default values here - some params are nil by design and will be read from config in fnc_endMissionClient
 params ["_configName","_winText","_winners","_winTextParams"];
 
 if (missionNamespace getVariable ["grad_endings_endingInProgress",false]) exitWith {};

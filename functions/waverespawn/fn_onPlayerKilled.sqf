@@ -10,7 +10,7 @@ if (player getVariable ["wr_interrupted", false]) exitWith {};
 [] call grad_waverespawn_fnc_resetPlayerVars;
 
 //check JIP player is spawning for the first time
-_joinTime = player getVariable ["joinTime", 0];
+private _joinTime = player getVariable ["joinTime", 0];
 if (serverTime - _joinTime < 30 && didJIP) exitWith {INFO("Player is JIP. Exiting onPlayerKilled.")};
 
 ["Terminate"] call BIS_fnc_EGSpectator;
@@ -22,7 +22,12 @@ private _maxRespawns = switch (playerSide) do {
     case (INDEPENDENT): {[missionConfigFile >> "missionsettings","indepWaveLifes",9999] call BIS_fnc_returnConfigEntry};
     default {9999};
 };
-if (player getVariable ["wr_respawnCount",0] >= _maxRespawns) then {player setVariable ["wr_interrupted",true]};
+
+if (player getVariable ["wr_respawnCount",0] >= _maxRespawns) then {
+    player setVariable ["wr_interrupted",true,true]
+} else {
+    [player,playerSide] remoteExec ["grad_waverespawn_fnc_addToWaiting",2,false];
+};
 
 INFO("Starting waverespawn procedure...");
 player setVariable ["wr_timeOfDeath",CBA_missionTime];

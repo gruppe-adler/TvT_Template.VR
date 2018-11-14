@@ -9,7 +9,7 @@ if (_side == WEST) then {
         case (WAVERESPAWNTIMELEFTBLU > 0): {
             "Waiting for wave-countdown.";
         };
-        case (count deadPlayersBlu < BLUFORWAVESIZE): {
+        case (count wavePlayernamesBlu < BLUFORWAVESIZE): {
             "Waiting for more players.";
         };
         default {
@@ -23,7 +23,7 @@ if (_side == EAST) then {
         case (OPFORWAVESIZE > 0): {
             "Waiting for wave-countdown.";
         };
-        case (count deadPlayersOpf < OPFORWAVESIZE): {
+        case (count wavePlayernamesOpf < OPFORWAVESIZE): {
             "Waiting for more players.";
         };
         default {
@@ -37,7 +37,7 @@ if (_side == INDEPENDENT) then {
         case (INDEPWAVESIZE > 0): {
             "Waiting for wave-countdown.";
         };
-        case (count deadPlayersInd < INDEPWAVESIZE): {
+        case (count wavePlayernamesInd < INDEPWAVESIZE): {
             "Waiting for more players.";
         };
         default {

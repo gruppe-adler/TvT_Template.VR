@@ -6,29 +6,29 @@ _unitName = [_unitName] call BIS_fnc_filterString;
 
 switch (_side) do {
     case (WEST): {
-        if (_unitName in deadPlayersBlu) then {
-            deadPlayersBlu deleteAt (([deadPlayersBlu,_unitName] call BIS_fnc_arrayFindDeep) select 0);
-            INFO_1("Player %1 respawned and has been removed from deadPlayersBlu.", _unitName);
+        if (_unitName in wavePlayernamesBlu) then {
+            wavePlayernamesBlu deleteAt (([wavePlayernamesBlu,_unitName] call BIS_fnc_arrayFindDeep) select 0);
+            INFO_1("Player %1 respawned and has been removed from wavePlayernamesBlu.", _unitName);
         } else {
-            ERROR_1("Player %1 is not in deadPlayersBlu.", _unitName);
+            ERROR_1("Player %1 is not in wavePlayernamesBlu.", _unitName);
         };
     };
 
     case (EAST): {
-        if (_unitName in deadPlayersOpf) then {
-            deadPlayersOpf deleteAt (([deadPlayersOpf,_unitName] call BIS_fnc_arrayFindDeep) select 0);
-            INFO_1("Player %1 respawned and has been removed from deadPlayersOpf.", _unitName);
+        if (_unitName in wavePlayernamesOpf) then {
+            wavePlayernamesOpf deleteAt (([wavePlayernamesOpf,_unitName] call BIS_fnc_arrayFindDeep) select 0);
+            INFO_1("Player %1 respawned and has been removed from wavePlayernamesOpf.", _unitName);
         } else {
-            ERROR_1("Player %1 is not in deadPlayersOpf", _unitName);
+            ERROR_1("Player %1 is not in wavePlayernamesOpf", _unitName);
         };
     };
 
     case (INDEPENDENT): {
-        if (_unitName in deadPlayersInd) then {
-            deadPlayersInd deleteAt (([deadPlayersInd,_unitName] call BIS_fnc_arrayFindDeep) select 0);
-            INFO_1("Player %1 respawned and has been removed from deadPlayersInd.", _unitName);
+        if (_unitName in wavePlayernamesInd) then {
+            wavePlayernamesInd deleteAt (([wavePlayernamesInd,_unitName] call BIS_fnc_arrayFindDeep) select 0);
+            INFO_1("Player %1 respawned and has been removed from wavePlayernamesInd.", _unitName);
         } else {
-            ERROR_1("Player %1 is not in deadPlayersInd", _unitName);
+            ERROR_1("Player %1 is not in wavePlayernamesInd", _unitName);
         };
     };
 
@@ -36,9 +36,9 @@ switch (_side) do {
 };
 
 [{
-    WAVERESPAWNPLAYERSLEFTBLU = BLUFORWAVESIZE - (count deadPlayersBlu);
-    WAVERESPAWNPLAYERSLEFTOPF = OPFORWAVESIZE - (count deadPlayersOpf);
-    WAVERESPAWNPLAYERSLEFTIND = INDEPWAVESIZE - (count deadPlayersInd);
+    WAVERESPAWNPLAYERSLEFTBLU = BLUFORWAVESIZE - (count wavePlayernamesBlu);
+    WAVERESPAWNPLAYERSLEFTOPF = OPFORWAVESIZE - (count wavePlayernamesOpf);
+    WAVERESPAWNPLAYERSLEFTIND = INDEPWAVESIZE - (count wavePlayernamesInd);
     publicVariable "WAVERESPAWNPLAYERSLEFTBLU";
     publicVariable "WAVERESPAWNPLAYERSLEFTOPF";
     publicVariable "WAVERESPAWNPLAYERSLEFTIND";
