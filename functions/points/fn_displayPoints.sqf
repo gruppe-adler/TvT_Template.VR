@@ -18,7 +18,7 @@
 
 if (!isServer && !isRemoteExecuted) exitWith {[] remoteExec ["grad_points_fnc_displayPoints",2,false]};
 
-if (isServer && count _this == 0) then {
+if (isServer && count _this == 0) exitWith {
     [
         [([WEST] call grad_points_fnc_getPointsCategorized),[],{_x select 1},"DESCEND"] call BIS_fnc_sortBy,
         [([EAST] call grad_points_fnc_getPointsCategorized),[],{_x select 1},"DESCEND"] call BIS_fnc_sortBy,
@@ -64,7 +64,7 @@ if (hasInterface && count _this > 0) then {
                 _text = [parseText format ["<t size='1.5'>Points for <t color='%1'>%2</t>:</t>",[_side,"HTML"] call grad_common_fnc_getSideColor,[_side] call grad_common_fnc_getSideDisplayName],lineBreak,lineBreak];
                 {
                     _x params ["_category","_points"];
-                    _text pushBack (parseText format ["%1: <t color='%2'>%3</t>",_category,if (_points > 0) then {"#00ff00"} else {"#ff0000"},_points]);
+                    _text pushBack (parseText format ["%1: <t color='%2'>%3</t>",_category,if (_points > 0) then {"#00ff00"} else {"#ff0000"},round _points]);
                     _text pushBack lineBreak;
                     false
                 } count _x;
@@ -72,7 +72,7 @@ if (hasInterface && count _this > 0) then {
 
                 _sumCtrl = _display ctrlCreate ["RscStructuredText",-1];
                 _sumCtrl ctrlSetPosition [(0.5-_backgroundW/2) + PADDINGW + _columnCount * (PADDINGW + COLUMNW),BACKGROUNDY + PADDINGH + COLUMNH,COLUMNW,SUMH];
-                _sumCtrl ctrlSetStructuredText (parseText format ["Total: <t color = '#00ff00'>%1</t>",[_side] call grad_points_fnc_getPoints]);
+                _sumCtrl ctrlSetStructuredText (parseText format ["Total: <t color = '#00ff00'>%1</t>",round ([_side] call grad_points_fnc_getPoints)]);
                 _sumCtrl ctrlCommit 0;
 
                 if (_columnCount > 0) then {
