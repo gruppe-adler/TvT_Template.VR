@@ -7,7 +7,7 @@
 
 if (player getVariable ["wr_interrupted", false]) exitWith {};
 
-[] call grad_waverespawn_fnc_resetPlayerVars;
+[] call FUNC(resetPlayerVars);
 
 //check JIP player is spawning for the first time
 private _joinTime = player getVariable ["joinTime", 0];
@@ -26,7 +26,7 @@ private _maxRespawns = switch (playerSide) do {
 if (player getVariable ["wr_respawnCount",0] >= _maxRespawns) then {
     player setVariable ["wr_interrupted",true,true]
 } else {
-    [player,playerSide] remoteExec ["grad_waverespawn_fnc_addToWaiting",2,false];
+    [player,playerSide] remoteExec [QFUNC(addToWaiting),2,false];
 };
 
 INFO("Starting waverespawn procedure...");
@@ -36,6 +36,6 @@ player setVariable ["wr_respawnCount",(player getVariable ["wr_respawnCount",0])
 setPlayerRespawnTime 99999;
 
 //do the steps
-[CBA_missionTime] call grad_waverespawn_fnc_playerCountdown;
-[{player getVariable "wr_playerCountdownDone"}, {_this call grad_waverespawn_fnc_waveCountdown}, [CBA_missionTime]] call CBA_fnc_waitUntilAndExecute;
-[{player getVariable "wr_waveCountdownDone"}, {[] call grad_waverespawn_fnc_prepareRespawn}, []] call CBA_fnc_waitUntilAndExecute;
+[CBA_missionTime] call FUNC(playerCountdown);
+[{player getVariable "wr_playerCountdownDone"}, {_this call FUNC(waveCountdown)}, [CBA_missionTime]] call CBA_fnc_waitUntilAndExecute;
+[{player getVariable "wr_waveCountdownDone"}, {[] call FUNC(prepareRespawn)}, []] call CBA_fnc_waitUntilAndExecute;

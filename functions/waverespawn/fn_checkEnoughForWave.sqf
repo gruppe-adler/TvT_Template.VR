@@ -6,9 +6,9 @@
 params ["_side",["_iteration",0]];
 
 private _waitingPlayersArray = switch (_side) do {
-    case (WEST): {waitingPlayersBlu};
-    case (EAST): {waitingPlayersOpf};
-    case (INDEPENDENT): {waitingPlayersInd};
+    case (WEST): {GVAR(waitingPlayersBlu)};
+    case (EAST): {GVAR(waitingPlayersOpf)};
+    case (INDEPENDENT): {GVAR(waitingPlayersInd)};
     default {[]};
 };
 
@@ -22,14 +22,14 @@ if (_iteration == 2) exitWith {
 
 
 private _waveSize = switch (_side) do {
-    case (WEST): {BLUFORWAVESIZE};
-    case (EAST): {OPFORWAVESIZE};
-    case (INDEPENDENT): {INDEPWAVESIZE};
+    case (WEST): {GVAR(BLUFORWAVESIZE)};
+    case (EAST): {GVAR(OPFORWAVESIZE)};
+    case (INDEPENDENT): {GVAR(INDEPWAVESIZE)};
     default {-1};
 };
 if (_waveSize < 0) exitWith {};
 
 
 if ((({side _x == _side} count playableUnits) + (count _waitingPlayersArray)) < _waveSize) then {
-    [grad_waverespawn_fnc_checkEnoughForWave,[_side,_iteration + 1],5] call CBA_fnc_waitAndExecute;
+    [FUNC(checkEnoughForWave),[_side,_iteration + 1],5] call CBA_fnc_waitAndExecute;
 };

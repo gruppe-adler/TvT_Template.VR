@@ -2,28 +2,28 @@
 
 if (([missionConfigFile >> "missionsettings","waveRespawnEnabled",0] call BIS_fnc_returnConfigEntry) == 0) exitWith {};
 
-wavePlayersBlu = [];
-wavePlayersOpf = [];
-wavePlayersInd = [];
-waitingPlayersBlu = [];
-waitingPlayersOpf = [];
-waitingPlayersInd = [];
-newBluSpawns = [];
-newOpfSpawns = [];
-newIndSpawns = [];
+GVAR(wavePlayersBlu) = [];
+GVAR(wavePlayersOpf) = [];
+GVAR(wavePlayersInd) = [];
+GVAR(waitingPlayersBlu) = [];
+GVAR(waitingPlayersOpf) = [];
+GVAR(waitingPlayersInd) = [];
+GVAR(newBluSpawns) = [];
+GVAR(newOpfSpawns) = [];
+GVAR(newIndSpawns) = [];
 
 if (isServer) then {
-    [] call grad_waverespawn_fnc_setWaveSize;
-    [] call grad_waverespawn_fnc_startWaveLoops;
+    [] call FUNC(setWaveSize);
+    [] call FUNC(startWaveLoops);
     addMissionEventHandler ["HandleDisconnect", {
         params [["_unit",objNull]];
-        [_unit,side _unit] call grad_waverespawn_fnc_removeFromWave;
-        [_unit,side _unit,false] call grad_waverespawn_fnc_addToWaiting;
+        [_unit,side _unit] call FUNC(removeFromWave);
+        [_unit,side _unit,false] call FUNC(addToWaiting);
     }];
 };
 
 if (hasInterface) then {
     player setVariable ["joinTime", serverTime];
     player setVariable ["wr_respawnCount",0];
-    [] call grad_waverespawn_fnc_resetPlayerVars;
+    [] call FUNC(resetPlayerVars);
 };

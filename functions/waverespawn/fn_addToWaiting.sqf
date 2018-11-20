@@ -2,15 +2,15 @@
 
 params ["_deadPlayer",["_deadPlayerSide", sideUnknown],["_add",true]];
 
-if (isNil "waitingPlayersBlu") then {waitingPlayersBlu = []};
-if (isNil "waitingPlayersOpf") then {waitingPlayersOpf = []};
-if (isNil "waitingPlayersInd") then {waitingPlayersInd = []};
+if (isNil QGVAR(waitingPlayersBlu)) then {GVAR(waitingPlayersBlu) = []};
+if (isNil QGVAR(waitingPlayersOpf)) then {GVAR(waitingPlayersOpf) = []};
+if (isNil QGVAR(waitingPlayersInd)) then {GVAR(waitingPlayersInd) = []};
 
 //add player to array
 private _array = switch (_deadPlayerSide) do {
-    case (WEST): {waitingPlayersBlu};
-    case (EAST): {waitingPlayersOpf};
-    case (INDEPENDENT): {waitingPlayersInd};
+    case (WEST): {GVAR(waitingPlayersBlu)};
+    case (EAST): {GVAR(waitingPlayersOpf)};
+    case (INDEPENDENT): {GVAR(waitingPlayersInd)};
     default {[]};
 };
 
@@ -24,4 +24,4 @@ if (_add) then {
     };
 };
 
-[_deadPlayerSide] call grad_waverespawn_fnc_checkEnoughForWave;
+[_deadPlayerSide] call FUNC(checkEnoughForWave);

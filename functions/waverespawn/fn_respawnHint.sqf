@@ -11,9 +11,9 @@ _lineBreak = parseText "<br />";
 
 if (isNil "_status") then {
     _status = switch (_side) do {
-        case (WEST): {WAVERESPAWNSTATUSBLU};
-        case (EAST): {WAVERESPAWNSTATUSOPF};
-        case (INDEPENDENT): {WAVERESPAWNSTATUSIND};
+        case (WEST): {GVAR(WAVERESPAWNSTATUSBLU)};
+        case (EAST): {GVAR(WAVERESPAWNSTATUSOPF)};
+        case (INDEPENDENT): {GVAR(WAVERESPAWNSTATUSIND)};
         default {"ERROR - UNKOWN SIDE"};
     };
 };
@@ -29,7 +29,7 @@ _playersLeft = call (player getVariable "wr_playersLeft");
 _waveSize = call (player getVariable "wr_waveSize");
 _waveLeftStr = parseText format ["<t align='center' size='1.4'>Wave: <t color='%3'>%1/%2</t> - <t color ='%4'>%5</t></t>", _waveSize - _playersLeft, _waveSize, if (_playersLeft > 0) then {'#ffff00'} else {'#00ff00'},if (_waveTimeLeft > 0) then {'#ffff00'} else {'#00ff00'}, _timeLeftStr];
 
-_maxTime = parseText format ["<t align ='center' size='0.7'>Skipping waiting time in: %1.</t>", [MAXRESPAWNTIME - (time - (player getVariable ["wr_timeOfDeath",time])),"MM:SS"] call BIS_fnc_secondsToString];
+_maxTime = parseText format ["<t align ='center' size='0.7'>Skipping waiting time in: %1.</t>", [GVAR(MAXRESPAWNTIME) - (time - (player getVariable ["wr_timeOfDeath",time])),"MM:SS"] call BIS_fnc_secondsToString];
 
 
 _hintArray = [
