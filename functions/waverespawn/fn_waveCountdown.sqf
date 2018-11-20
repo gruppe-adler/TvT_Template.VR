@@ -5,7 +5,7 @@ if (player getVariable "wr_isFreeRespawn") exitWith {player setVariable ["wr_wav
 
 INFO("Player countdown done. Starting wave countdown...");
 
-[profileName, playerSide] remoteExec ["grad_waverespawn_fnc_addToWave",2,false];
+[player,playerSide] remoteExec [QFUNC(addToWave),2,false];
 
 [{
 
@@ -20,7 +20,7 @@ INFO("Player countdown done. Starting wave countdown...");
     };
 
     //check max respawn time
-    if ((time - _timeOfDeath) > MAXRESPAWNTIME) then {
+    if ((time - _timeOfDeath) > GVAR(MAXRESPAWNTIME)) then {
         [_this select 1] call CBA_fnc_removePerFrameHandler;
         player setVariable ["wr_isFreeRespawn", true];
         player setVariable ["wr_waveCountdownDone", true];
@@ -32,6 +32,6 @@ INFO("Player countdown done. Starting wave countdown...");
         player setVariable ["wr_waveCountdownDone", true];
     };
 
-    [playerSide] call grad_waverespawn_fnc_respawnHint;
+    [playerSide] call FUNC(respawnHint);
 
 }, 1, _this] call CBA_fnc_addPerFrameHandler;

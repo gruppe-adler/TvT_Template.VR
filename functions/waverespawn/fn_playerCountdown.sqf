@@ -20,7 +20,7 @@ INFO("Starting player countdown...");
         INFO("Respawn interrupted.");
     };
 
-    if (CBA_missionTime - _timeOfDeath > MAXRESPAWNTIME) then {
+    if (CBA_missionTime - _timeOfDeath > GVAR(MAXRESPAWNTIME)) then {
         [_this select 1] call CBA_fnc_removePerFrameHandler;
         player setVariable ["wr_isFreeRespawn", true];
         player setVariable ["wr_playerCountdownDone", true];
@@ -29,7 +29,7 @@ INFO("Starting player countdown...");
 
     _playerTimeLeft = (player getVariable "wr_playerRespawnTimeLeft") - 1;
     player setVariable ["wr_playerRespawnTimeLeft", _playerTimeLeft];
-    [playerSide,"Waiting for player-countdown."] call grad_waverespawn_fnc_respawnHint;
+    [playerSide,"Waiting for player-countdown."] call FUNC(respawnHint);
 
     if (_playerTimeLeft <= 0) exitWith {
         [_this select 1] call CBA_fnc_removePerFrameHandler;

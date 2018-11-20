@@ -7,10 +7,10 @@
 
 if (player getVariable ["wr_interrupted", false]) exitWith {};
 
-[] call grad_waverespawn_fnc_resetPlayerVars;
+[] call FUNC(resetPlayerVars);
 
 //check JIP player is spawning for the first time
-_joinTime = player getVariable ["joinTime", 0];
+private _joinTime = player getVariable ["joinTime", 0];
 if (serverTime - _joinTime < 30 && didJIP) exitWith {INFO("Player is JIP. Exiting onPlayerKilled.")};
 
 ["Terminate"] call BIS_fnc_EGSpectator;
@@ -22,7 +22,12 @@ private _maxRespawns = switch (playerSide) do {
     case (INDEPENDENT): {[missionConfigFile >> "missionsettings","indepWaveLifes",9999] call BIS_fnc_returnConfigEntry};
     default {9999};
 };
-if (player getVariable ["wr_respawnCount",0] >= _maxRespawns) then {player setVariable ["wr_interrupted",true]};
+
+if (player getVariable ["wr_respawnCount",0] >= _maxRespawns) then {
+    player setVariable ["wr_interrupted",true,true]
+} else {
+    [player,playerSide] remoteExec [QFUNC(addToWaiting),2,false];
+};
 
 INFO("Starting waverespawn procedure...");
 player setVariable ["wr_timeOfDeath",CBA_missionTime];
@@ -31,6 +36,6 @@ player setVariable ["wr_respawnCount",(player getVariable ["wr_respawnCount",0])
 setPlayerRespawnTime 99999;
 
 //do the steps
-[CBA_missionTime] call grad_waverespawn_fnc_playerCountdown;
-[{player getVariable "wr_playerCountdownDone"}, {_this call grad_waverespawn_fnc_waveCountdown}, [CBA_missionTime]] call CBA_fnc_waitUntilAndExecute;
-[{player getVariable "wr_waveCountdownDone"}, {[] call grad_waverespawn_fnc_prepareRespawn}, []] call CBA_fnc_waitUntilAndExecute;
+[CBA_missionTime] call FUNC(playerCountdown);
+[{player getVariable "wr_playerCountdownDone"}, {_this call FUNC(waveCountdown)}, [CBA_missionTime]] call CBA_fnc_waitUntilAndExecute;
+[{player getVariable "wr_waveCountdownDone"}, {[] call FUNC(prepareRespawn)}, []] call CBA_fnc_waitUntilAndExecute;

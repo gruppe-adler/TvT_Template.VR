@@ -2,98 +2,98 @@
 
 //BLUFOR =======================================================================
 [{
-    ["WAVERESPAWNSTATUSBLU",[WEST] call grad_waverespawn_fnc_getStatus] call CBA_fnc_publicVariable;
+    [QGVAR(WAVERESPAWNSTATUSBLU),[WEST] call FUNC(getStatus)] call CBA_fnc_publicVariable;
 
     //dont execute while respawning is possible
-    if (WAVERESPAWNBLU) exitWith {};
+    if (GVAR(WAVERESPAWNBLU)) exitWith {};
 
     //start countdown once first player is added to wave
-    if (count deadPlayersBlu > 0) then {
-        WAVERESPAWNTIMELEFTBLU = (WAVERESPAWNTIMELEFTBLU - 1) max 0;
-        publicVariable "WAVERESPAWNTIMELEFTBLU";
+    if (count GVAR(wavePlayersBlu) > 0) then {
+        GVAR(WAVERESPAWNTIMELEFTBLU) = (GVAR(WAVERESPAWNTIMELEFTBLU) - 1) max 0;
+        publicVariable QGVAR(WAVERESPAWNTIMELEFTBLU);
     } else {
-        ["WAVERESPAWNTIMELEFTBLU",WAVERESPAWNTIMEBLU] call CBA_fnc_publicVariable;
+        [QGVAR(WAVERESPAWNTIMELEFTBLU),GVAR(WAVERESPAWNTIMEBLU)] call CBA_fnc_publicVariable;
     };
 
     //enable respawning when wave is full
-    if (["WEST"] call grad_waverespawn_fnc_canRespawn) then {
+    if (["WEST"] call FUNC(canRespawn)) then {
 
-        WAVERESPAWNBLU = true;
-        publicVariable "WAVERESPAWNBLU";
+        GVAR(WAVERESPAWNBLU) = true;
+        publicVariable QGVAR(WAVERESPAWNBLU);
         INFO("Respawning now possible for Blufor.");
 
         [{
-            WAVERESPAWNBLU = false;
-            publicVariable "WAVERESPAWNBLU";
-            WAVERESPAWNTIMELEFTBLU = WAVERESPAWNTIMEBLU;
-            publicVariable    "WAVERESPAWNTIMELEFTBLU";
+            GVAR(WAVERESPAWNBLU) = false;
+            publicVariable QGVAR(WAVERESPAWNBLU);
+            GVAR(WAVERESPAWNTIMELEFTBLU) = GVAR(WAVERESPAWNTIMEBLU);
+            publicVariable QGVAR(WAVERESPAWNTIMELEFTBLU);
             INFO("Respawning no longer possible for Blufor.");
-        },[],(RESPAWNWAVEEXTRATIME max 7)] call CBA_fnc_waitAndExecute;
+        },[],(GVAR(RESPAWNWAVEEXTRATIME) max 7)] call CBA_fnc_waitAndExecute;
     };
 }, 1, []] call CBA_fnc_addPerFrameHandler;
 
 
 //OPFOR ========================================================================
 [{
-    ["WAVERESPAWNSTATUSOPF",[EAST] call grad_waverespawn_fnc_getStatus] call CBA_fnc_publicVariable;
+    [QGVAR(WAVERESPAWNSTATUSOPF),[EAST] call FUNC(getStatus)] call CBA_fnc_publicVariable;
 
     //dont execute while respawning is possible
-    if (WAVERESPAWNOPF) exitWith {};
+    if (GVAR(WAVERESPAWNOPF)) exitWith {};
 
     //start countdown once first player is added to wave
-    if (count deadPlayersOpf > 0) then {
-        WAVERESPAWNTIMELEFTOPF = (WAVERESPAWNTIMELEFTOPF - 1) max 0;
-        publicVariable "WAVERESPAWNTIMELEFTOPF";
+    if (count GVAR(wavePlayersOpf) > 0) then {
+        GVAR(WAVERESPAWNTIMELEFTOPF) = (GVAR(WAVERESPAWNTIMELEFTOPF) - 1) max 0;
+        publicVariable QGVAR(WAVERESPAWNTIMELEFTOPF);
     } else {
-        ["WAVERESPAWNTIMELEFTOPF",WAVERESPAWNTIMEOPF] call CBA_fnc_publicVariable;
+        [QGVAR(WAVERESPAWNTIMELEFTOPF),GVAR(WAVERESPAWNTIMEOPF)] call CBA_fnc_publicVariable;
     };
 
     //enable respawning when wave is full
-    if (["EAST"] call grad_waverespawn_fnc_canRespawn) then {
+    if (["EAST"] call FUNC(canRespawn)) then {
 
-        WAVERESPAWNOPF = true;
-        publicVariable "WAVERESPAWNOPF";
+        GVAR(WAVERESPAWNOPF) = true;
+        publicVariable QGVAR(WAVERESPAWNOPF);
         INFO("Respawning now possible for Opfor.");
 
         [{
-            WAVERESPAWNOPF = false;
-            publicVariable "WAVERESPAWNOPF";
-            WAVERESPAWNTIMELEFTOPF = WAVERESPAWNTIMEOPF;
-            publicVariable "WAVERESPAWNTIMELEFTOPF";
+            GVAR(WAVERESPAWNOPF) = false;
+            publicVariable QGVAR(WAVERESPAWNOPF);
+            GVAR(WAVERESPAWNTIMELEFTOPF) = GVAR(WAVERESPAWNTIMEOPF);
+            publicVariable QGVAR(WAVERESPAWNTIMELEFTOPF);
             INFO("Respawning no longer possible for Opfor.");
-        },[],(RESPAWNWAVEEXTRATIME max 7)] call CBA_fnc_waitAndExecute;
+        },[],(GVAR(RESPAWNWAVEEXTRATIME) max 7)] call CBA_fnc_waitAndExecute;
     };
 }, 1, []] call CBA_fnc_addPerFrameHandler;
 
 
 //INDEP ========================================================================
 [{
-    ["WAVERESPAWNSTATUSIND",[INDEPENDENT] call grad_waverespawn_fnc_getStatus] call CBA_fnc_publicVariable;
+    [QGVAR(WAVERESPAWNSTATUSIND),[INDEPENDENT] call FUNC(getStatus)] call CBA_fnc_publicVariable;
 
     //dont execute while respawning is possible
-    if (WAVERESPAWNIND) exitWith {};
+    if (GVAR(WAVERESPAWNIND)) exitWith {};
 
     //start countdown once first player is added to wave
-    if (count deadPlayersInd > 0) then {
-        WAVERESPAWNTIMELEFTIND = (WAVERESPAWNTIMELEFTIND - 1) max 0;
-        publicVariable "WAVERESPAWNTIMELEFTIND";
+    if (count GVAR(wavePlayersInd) > 0) then {
+        GVAR(WAVERESPAWNTIMELEFTIND) = (GVAR(WAVERESPAWNTIMELEFTIND) - 1) max 0;
+        publicVariable QGVAR(WAVERESPAWNTIMELEFTIND);
     } else {
-        ["WAVERESPAWNTIMELEFTIND",WAVERESPAWNTIMEIND] call CBA_fnc_publicVariable;
+        [QGVAR(WAVERESPAWNTIMELEFTIND),GVAR(WAVERESPAWNTIMEIND)] call CBA_fnc_publicVariable;
     };
 
     //enable respawning when wave is full
-    if (["INDEPENDENT"] call grad_waverespawn_fnc_canRespawn) then {
+    if (["INDEPENDENT"] call FUNC(canRespawn)) then {
 
-        WAVERESPAWNIND = true;
-        publicVariable "WAVERESPAWNIND";
+        GVAR(WAVERESPAWNIND) = true;
+        publicVariable QGVAR(WAVERESPAWNIND);
         INFO("Respawning now possible for Independent.");
 
         [{
-            WAVERESPAWNIND = false;
-            publicVariable "WAVERESPAWNIND";
-            WAVERESPAWNTIMELEFTIND = WAVERESPAWNTIMEIND;
-            publicVariable "WAVERESPAWNTIMELEFTIND";
+            GVAR(WAVERESPAWNIND) = false;
+            publicVariable QGVAR(WAVERESPAWNIND);
+            GVAR(WAVERESPAWNTIMELEFTIND) = GVAR(WAVERESPAWNTIMEIND);
+            publicVariable QGVAR(WAVERESPAWNTIMELEFTIND);
             INFO("Respawning no longer possible for Independent.");
-        },[],(RESPAWNWAVEEXTRATIME max 7)] call CBA_fnc_waitAndExecute;
+        },[],(GVAR(RESPAWNWAVEEXTRATIME) max 7)] call CBA_fnc_waitAndExecute;
     };
 }, 1, []] call CBA_fnc_addPerFrameHandler;

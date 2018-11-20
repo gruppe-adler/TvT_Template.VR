@@ -1,45 +1,43 @@
 #include "component.hpp"
 
-params ["_unitName","_side"];
-
-_unitName = [_unitName] call BIS_fnc_filterString;
+params ["_unit","_side"];
 
 switch (_side) do {
     case (WEST): {
-        if (_unitName in deadPlayersBlu) then {
-            deadPlayersBlu deleteAt (([deadPlayersBlu,_unitName] call BIS_fnc_arrayFindDeep) select 0);
-            INFO_1("Player %1 respawned and has been removed from deadPlayersBlu.", _unitName);
+        if (_unit in GVAR(wavePlayersBlu)) then {
+            GVAR(wavePlayersBlu) deleteAt (GVAR(wavePlayersBlu) find _unit);
+            INFO_1("Player %1 respawned and has been removed from wavePlayersBlu.", _unit);
         } else {
-            ERROR_1("Player %1 is not in deadPlayersBlu.", _unitName);
+            ERROR_1("Player %1 is not in wavePlayersBlu.", _unit);
         };
     };
 
     case (EAST): {
-        if (_unitName in deadPlayersOpf) then {
-            deadPlayersOpf deleteAt (([deadPlayersOpf,_unitName] call BIS_fnc_arrayFindDeep) select 0);
-            INFO_1("Player %1 respawned and has been removed from deadPlayersOpf.", _unitName);
+        if (_unit in GVAR(wavePlayersOpf)) then {
+            GVAR(wavePlayersOpf) deleteAt (GVAR(wavePlayersOpf) find _unit);
+            INFO_1("Player %1 respawned and has been removed from wavePlayersOpf.", _unit);
         } else {
-            ERROR_1("Player %1 is not in deadPlayersOpf", _unitName);
+            ERROR_1("Player %1 is not in wavePlayersOpf", _unit);
         };
     };
 
     case (INDEPENDENT): {
-        if (_unitName in deadPlayersInd) then {
-            deadPlayersInd deleteAt (([deadPlayersInd,_unitName] call BIS_fnc_arrayFindDeep) select 0);
-            INFO_1("Player %1 respawned and has been removed from deadPlayersInd.", _unitName);
+        if (_unit in GVAR(wavePlayersInd)) then {
+            GVAR(wavePlayersInd) deleteAt (GVAR(wavePlayersInd) find _unit);
+            INFO_1("Player %1 respawned and has been removed from wavePlayersInd.", _unit);
         } else {
-            ERROR_1("Player %1 is not in deadPlayersInd", _unitName);
+            ERROR_1("Player %1 is not in wavePlayersInd", _unit);
         };
     };
 
-    default {ERROR_1("Player %1 is neither WEST nor EAST nor INDEPENDENT.", _unitName)};
+    default {ERROR_1("Player %1 is neither WEST nor EAST nor INDEPENDENT.", _unit)};
 };
 
 [{
-    WAVERESPAWNPLAYERSLEFTBLU = BLUFORWAVESIZE - (count deadPlayersBlu);
-    WAVERESPAWNPLAYERSLEFTOPF = OPFORWAVESIZE - (count deadPlayersOpf);
-    WAVERESPAWNPLAYERSLEFTIND = INDEPWAVESIZE - (count deadPlayersInd);
-    publicVariable "WAVERESPAWNPLAYERSLEFTBLU";
-    publicVariable "WAVERESPAWNPLAYERSLEFTOPF";
-    publicVariable "WAVERESPAWNPLAYERSLEFTIND";
-}, [], (RESPAWNWAVEEXTRATIME max 7)] call CBA_fnc_waitAndExecute;
+    GVAR(WAVERESPAWNPLAYERSLEFTBLU) = GVAR(BLUFORWAVESIZE) - (count GVAR(wavePlayersBlu));
+    GVAR(WAVERESPAWNPLAYERSLEFTOPF) = GVAR(OPFORWAVESIZE) - (count GVAR(wavePlayersOpf));
+    GVAR(WAVERESPAWNPLAYERSLEFTIND) = GVAR(INDEPWAVESIZE) - (count GVAR(wavePlayersInd));
+    publicVariable QGVAR(WAVERESPAWNPLAYERSLEFTBLU);
+    publicVariable QGVAR(WAVERESPAWNPLAYERSLEFTOPF);
+    publicVariable QGVAR(WAVERESPAWNPLAYERSLEFTIND);
+}, [], (GVAR(RESPAWNWAVEEXTRATIME) max 7)] call CBA_fnc_waitAndExecute;
