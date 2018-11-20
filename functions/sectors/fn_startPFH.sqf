@@ -3,8 +3,6 @@
 params ["_trigger"];
 INFO_1("PFH for %1 starting.",_trigger getVariable "grad_sectors_sectorName");
 
-[_trigger] call grad_sectors_fnc_updateMarker;
-
 [{
     params ["_trigger","_handle"];
     if (isNull _trigger) exitWith {
@@ -17,7 +15,7 @@ INFO_1("PFH for %1 starting.",_trigger getVariable "grad_sectors_sectorName");
 
     _oldOwner = _trigger getVariable "grad_sectors_currentOwner";
     _pps = _trigger getVariable "grad_sectors_pointsPerSecond";
-    if (_pps > 0) then {
+    if (_pps > 0 && {_oldOwner != sideUnknown}) then {
         _categoryName = format ["Held %1",_trigger getVariable "grad_sectors_sectorName"];
         [_oldOwner,_pps,_categoryName] call grad_points_fnc_addPoints;
     };
