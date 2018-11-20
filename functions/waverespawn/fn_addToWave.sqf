@@ -1,34 +1,32 @@
 #include "component.hpp"
 
-params ["_deadPlayerName", ["_deadPlayerSide", sideUnknown]];
+params ["_deadPlayer", ["_deadPlayerSide", sideUnknown]];
 
-if (isNil "wavePlayernamesBlu") then {wavePlayernamesBlu = []};
-if (isNil "wavePlayernamesOpf") then {wavePlayernamesOpf = []};
-if (isNil "wavePlayernamesInd") then {wavePlayernamesInd = []};
-
-_deadPlayerName = [_deadPlayerName] call BIS_fnc_filterString;
+if (isNil "wavePlayersBlu") then {wavePlayersBlu = []};
+if (isNil "wavePlayersOpf") then {wavePlayersOpf = []};
+if (isNil "wavePlayersInd") then {wavePlayersInd = []};
 
 //add player to array
 switch (_deadPlayerSide) do {
     case (WEST): {
-        wavePlayernamesBlu pushBackUnique _deadPlayerName;
-        INFO_2("Added player %1 to wavePlayernamesBlu. %2 dead blufor total.", _deadPlayerName, count wavePlayernamesBlu);
-        WAVERESPAWNPLAYERSLEFTBLU = BLUFORWAVESIZE - (count wavePlayernamesBlu);
+        wavePlayersBlu pushBackUnique _deadPlayer;
+        INFO_2("Added player %1 to wavePlayersBlu. %2 dead blufor total.", _deadPlayer, count wavePlayersBlu);
+        WAVERESPAWNPLAYERSLEFTBLU = BLUFORWAVESIZE - (count wavePlayersBlu);
         publicVariable "WAVERESPAWNPLAYERSLEFTBLU";
     };
     case (EAST): {
-        wavePlayernamesOpf pushBackUnique _deadPlayerName;
-        INFO_2("Added player %1 to wavePlayernamesOpf. %2 dead opfor total.", _deadPlayerName, count wavePlayernamesOpf);
-        WAVERESPAWNPLAYERSLEFTOPF = OPFORWAVESIZE - (count wavePlayernamesOpf);
+        wavePlayersOpf pushBackUnique _deadPlayer;
+        INFO_2("Added player %1 to wavePlayersOpf. %2 dead opfor total.", _deadPlayer, count wavePlayersOpf);
+        WAVERESPAWNPLAYERSLEFTOPF = OPFORWAVESIZE - (count wavePlayersOpf);
         publicVariable "WAVERESPAWNPLAYERSLEFTOPF";
     };
     case (INDEPENDENT): {
-        wavePlayernamesInd pushBackUnique _deadPlayerName;
-        INFO_2("Added player %1 to wavePlayernamesOpf. %2 dead opfor total.", _deadPlayerName, count wavePlayernamesInd);
-        WAVERESPAWNPLAYERSLEFTIND = INDEPWAVESIZE - (count wavePlayernamesInd);
+        wavePlayersInd pushBackUnique _deadPlayer;
+        INFO_2("Added player %1 to wavePlayersOpf. %2 dead opfor total.", _deadPlayer, count wavePlayersInd);
+        WAVERESPAWNPLAYERSLEFTIND = INDEPWAVESIZE - (count wavePlayersInd);
         publicVariable "WAVERESPAWNPLAYERSLEFTIND";
     };
     default {
-        ERROR_1("Unknown side for player %1", _deadPlayerName);
+        ERROR_1("Unknown side for player %1", _deadPlayer);
     };
 };

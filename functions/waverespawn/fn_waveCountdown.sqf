@@ -5,7 +5,7 @@ if (player getVariable "wr_isFreeRespawn") exitWith {player setVariable ["wr_wav
 
 INFO("Player countdown done. Starting wave countdown...");
 
-[profileName, playerSide] remoteExec ["grad_waverespawn_fnc_addToWave",2,false];
+[player,playerSide] remoteExec ["grad_waverespawn_fnc_addToWave",2,false];
 
 [{
 

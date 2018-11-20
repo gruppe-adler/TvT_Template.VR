@@ -4,15 +4,15 @@ params ["_side"];
 
 _canRespawn = switch (_side) do {
     case ("WEST"): {
-        count wavePlayernamesBlu >= BLUFORWAVESIZE &&
+        count wavePlayersBlu >= BLUFORWAVESIZE &&
         WAVERESPAWNTIMELEFTBLU <= 0
     };
     case ("EAST"): {
-        count wavePlayernamesOpf >= OPFORWAVESIZE &&
+        count wavePlayersOpf >= OPFORWAVESIZE &&
         WAVERESPAWNTIMELEFTOPF <= 0
     };
     case ("INDEPENDENT"): {
-        count wavePlayernamesInd >= INDEPWAVESIZE &&
+        count wavePlayersInd >= INDEPWAVESIZE &&
         WAVERESPAWNTIMELEFTIND <= 0
     };
     default {

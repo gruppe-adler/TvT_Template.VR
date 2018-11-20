@@ -8,7 +8,7 @@
     if (WAVERESPAWNBLU) exitWith {};
 
     //start countdown once first player is added to wave
-    if (count wavePlayernamesBlu > 0) then {
+    if (count wavePlayersBlu > 0) then {
         WAVERESPAWNTIMELEFTBLU = (WAVERESPAWNTIMELEFTBLU - 1) max 0;
         publicVariable "WAVERESPAWNTIMELEFTBLU";
     } else {
@@ -41,7 +41,7 @@
     if (WAVERESPAWNOPF) exitWith {};
 
     //start countdown once first player is added to wave
-    if (count wavePlayernamesOpf > 0) then {
+    if (count wavePlayersOpf > 0) then {
         WAVERESPAWNTIMELEFTOPF = (WAVERESPAWNTIMELEFTOPF - 1) max 0;
         publicVariable "WAVERESPAWNTIMELEFTOPF";
     } else {
@@ -74,7 +74,7 @@
     if (WAVERESPAWNIND) exitWith {};
 
     //start countdown once first player is added to wave
-    if (count wavePlayernamesInd > 0) then {
+    if (count wavePlayersInd > 0) then {
         WAVERESPAWNTIMELEFTIND = (WAVERESPAWNTIMELEFTIND - 1) max 0;
         publicVariable "WAVERESPAWNTIMELEFTIND";
     } else {
