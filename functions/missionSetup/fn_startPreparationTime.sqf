@@ -1,15 +1,22 @@
 #include "component.hpp"
 
-_this spawn {
-    params [["_preparationTime",0]];
+params [["_preparationTime",0],["_onComplete",{}]];
 
-    if (_preparationTime > 0) then {
-        while {_preparationTime > -1} do {
-            [_preparationTime] remoteExec ["grad_missionSetup_fnc_preparationTimeCountdown",0,false];
-            _preparationTime = _preparationTime - 1;
-            sleep 1;
-        };
+if (_preparationTime <= 0) exitWith {};
+_preparationTime = _preparationTime max 5;
+
+[{
+    params ["_args","_handle"];
+    _args params [["_preparationTime",0],["_onComplete",{}]];
+
+    [_preparationTime] remoteExec ["grad_missionSetup_fnc_preparationTimeCountdown",0,false];
+
+    if (_preparationTime <= 0) exitWith {
+        [_handle] call CBA_fnc_removePerFrameHandler;
+        [] call _onComplete;
     };
 
-    missionNamespace setVariable ["GRAD_MISSIONSTARTED",true,true];
-};
+    if (EGVAR(common,gamePaused)) exitWith {};
+    _args set [0,_preparationTime - 1];
+
+},1,[_preparationTime,_onComplete]] call CBA_fnc_addPerFrameHandler;

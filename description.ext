@@ -117,6 +117,7 @@ class CfgFunctions {
 	#include "functions\common\cfgFunctions.hpp"
 	#include "functions\endings\cfgFunctions.hpp"
 	#include "functions\groupSettings\cfgFunctions.hpp"
+    #include "functions\linearSD\cfgFunctions.hpp"
 	#include "functions\missionSetup\cfgFunctions.hpp"
 	#include "functions\points\cfgFunctions.hpp"
 	#include "functions\sectors\cfgFunctions.hpp"

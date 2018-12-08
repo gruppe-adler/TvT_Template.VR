@@ -2,6 +2,8 @@
 
 //BLUFOR =======================================================================
 [{
+    if (EGVAR(common,gamePaused)) exitWith {};
+
     [QGVAR(WAVERESPAWNSTATUSBLU),[WEST] call FUNC(getStatus)] call CBA_fnc_publicVariable;
 
     //dont execute while respawning is possible
@@ -35,6 +37,8 @@
 
 //OPFOR ========================================================================
 [{
+    if (EGVAR(common,gamePaused)) exitWith {};
+
     [QGVAR(WAVERESPAWNSTATUSOPF),[EAST] call FUNC(getStatus)] call CBA_fnc_publicVariable;
 
     //dont execute while respawning is possible
@@ -68,6 +72,8 @@
 
 //INDEP ========================================================================
 [{
+    if (EGVAR(common,gamePaused)) exitWith {};
+        
     [QGVAR(WAVERESPAWNSTATUSIND),[INDEPENDENT] call FUNC(getStatus)] call CBA_fnc_publicVariable;
 
     //dont execute while respawning is possible
