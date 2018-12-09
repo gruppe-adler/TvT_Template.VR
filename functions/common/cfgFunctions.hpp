@@ -4,13 +4,14 @@ class grad_common {
         class addUnitKilledEH {};
         class coverMap {};
         class displayDateAndTime {};
-        class getAllowedRadios {};
         class getSideColor {};
         class getSideDisplayName {};
         class handleScopeChange {};
         class handleTakeRadio {};
         class handleUnitKilled {};
+        class onLoadoutApplied {};
         class onUnitKilled {};
+        class receiveSwRadioSide {};
         class removeUnitKilledEH {};
         class restrictZone {};
         class restrictZonePFH {};

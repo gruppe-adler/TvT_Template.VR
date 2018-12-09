@@ -1,7 +1,7 @@
 #include "component.hpp"
 
-grad_missionsettings_canTakeEnemyRadios = ([missionConfigFile >> "missionsettings","canTakeEnemyRadios",0] call BIS_fnc_returnConfigEntry) == 1;
-grad_missionsettings_canUseScopes = ([missionConfigFile >> "missionsettings","canUseScopes",0] call BIS_fnc_returnConfigEntry) == 1;
+EGVAR(missionsettings,canTakeEnemyRadios) = ([missionConfigFile >> "missionsettings","canTakeEnemyRadios",0] call BIS_fnc_returnConfigEntry) == 1;
+EGVAR(missionsettings,canUseScopes) = ([missionConfigFile >> "missionsettings","canUseScopes",0] call BIS_fnc_returnConfigEntry) == 1;
 
 [] call grad_missionSetup_fnc_loadouts;
 [] call grad_missionSetup_fnc_createDiaryRecords;
@@ -9,6 +9,9 @@ grad_missionsettings_canUseScopes = ([missionConfigFile >> "missionsettings","ca
 [] call grad_missionSetup_fnc_initCivs;
 [] call grad_groupsettings_fnc_setGroupSettings;
 [] call FUNC(addChatCommands);
+
+["grad_loadout_loadoutApplied",EFUNC(common,onLoadoutApplied)] call CBA_fnc_addEventHandler;
+
 if (!isServer) then {[] call GRAD_replay_fnc_init};
 
 [{!isNull player || isDedicated},{
@@ -29,6 +32,7 @@ if (!isServer) then {[] call GRAD_replay_fnc_init};
     };
 
     if (hasInterface) then {
-
+        [QGVAR(onRadiosReceivedEH),"OnRadiosReceived",{[playerSide,_newRadios] remoteExec [QEFUNC(common,receiveSwRadioSide),2,false]},player] call TFAR_fnc_addEventHandler;
     };
+
 },[]] call CBA_fnc_waitUntilAndExecute;
