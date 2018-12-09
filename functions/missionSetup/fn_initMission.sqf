@@ -16,8 +16,13 @@ if (!isServer) then {[] call GRAD_replay_fnc_init};
     if (isServer) then {
         missionNamespace setVariable [QEGVAR(common,gamePaused),false,true];
 
-        [["PREPARATION_TIME", 0] call BIS_fnc_getParamValue,{missionNamespace setVariable ["GRAD_MISSIONSTARTED",true,true]}] call grad_missionSetup_fnc_startPreparationTime;
-        [{CBA_missionTime > 10 && {missionNamespace getVariable ["GRAD_MISSIONSTARTED",false]}}, {
+        [
+            {missionNamespace getVariable ["CBA_missionTime",0] > 0},
+            FUNC(startPreparationTime),
+            [["PREPARATION_TIME", 0] call BIS_fnc_getParamValue,{missionNamespace setVariable ["GRAD_MISSIONSTARTED",true,true]}]
+        ] call CBA_fnc_waitUntilAndExecute;
+
+        [{(missionNamespace getVariable ["CBA_missionTime",0] > 10) && {missionNamespace getVariable ["GRAD_MISSIONSTARTED",false]}},{
             [] call grad_endings_fnc_init;
             [] call GRAD_replay_fnc_init;
         }, []] call CBA_fnc_waitUntilAndExecute;
