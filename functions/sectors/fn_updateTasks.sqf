@@ -1,6 +1,6 @@
 #include "component.hpp"
 
-params ["_trigger"];
+params ["_trigger",["_showHint",true]];
 
 private _captureSides = _trigger getVariable "grad_sectors_captureSides";
 private _owner = _trigger getVariable "grad_sectors_currentOwner";
@@ -17,7 +17,7 @@ if (_lockAfterCapture) then {
     {
         _task = _trigger getVariable (format ["grad_sectors_task_%1",_x]);
         _state = if (_x == _owner) then {"Succeeded"} else {"Failed"};
-        [_task,_state,true] spawn BIS_fnc_taskSetState;
+        [_task,_state,_showHint] spawn BIS_fnc_taskSetState;
 
         false
     } count _captureSides;
@@ -28,7 +28,7 @@ if (_lockAfterCapture) then {
 
         if (_previousOwner != sideUnknown || _marker == "defend") then {
             _task = _trigger getVariable (format ["grad_sectors_task_%1",_x]);
-            [_task,_description] call BIS_fnc_taskSetDescription;
+            [_task,_description] call FUNC(taskSetDescription);
             [_task,_marker] call BIS_fnc_taskSetType;
         };
 

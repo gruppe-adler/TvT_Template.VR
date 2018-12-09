@@ -50,6 +50,8 @@ private _fnc_check = [
     params ["_args","_handle"];
     _args params ["_winName","_sides","_taskID","_fnc_check","_respawningPlayersArrays"];
 
+    if (EGVAR(common,gamePaused)) exitWith {};
+
     if (call _fnc_check) exitWith {
 
         [{
