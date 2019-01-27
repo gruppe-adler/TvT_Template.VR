@@ -10,6 +10,7 @@ private _insertChildrenFunc = {
             format ["grad_linearSD_teleportAction_%1",_forEachIndex],
             _x getVariable [QEGVAR(sectors,sectorName),"ERROR: Sector unknown"],
             "",
+            // action
             {
                 params ["_unit","",["_sector",objNull]];
                 if (isNull _sector) exitWith {systemChat "ERROR: Sector unknown."};
@@ -18,7 +19,11 @@ private _insertChildrenFunc = {
                 if (count _pos == 0) then {_pos = getPos _sector};
                 [_unit,_pos] call EFUNC(common,teleport);
             },
-            {true},
+            // condition
+            {
+                params ["_unit","",["_sector",objNull]];
+                !(_unit inArea _sector)
+            },
             {},
             _x
         ] call ace_interact_menu_fnc_createAction;
