@@ -2,7 +2,7 @@
 
 params [["_preparationTime",0],["_onComplete",{}]];
 
-if (_preparationTime <= 0) exitWith {};
+if (_preparationTime <= 0) exitWith _onComplete;
 _preparationTime = _preparationTime max 5;
 
 [{

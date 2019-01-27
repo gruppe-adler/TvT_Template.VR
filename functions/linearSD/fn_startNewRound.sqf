@@ -49,8 +49,8 @@ publicVariable QGVAR(roundNumber);
     sleep 8;
 
     // preparation time is handled by mission setup in first round
-    if (GVAR(roundNumber) > 1) then {
-        [["PREPARATION_TIME", 0] call BIS_fnc_getParamValue,{
+    if (GVAR(roundNumber) > 1 || (["PREPARATION_TIME", 0] call BIS_fnc_getParamValue) == 0) then {
+        [(["PREPARATION_TIME", 0] call BIS_fnc_getParamValue) max 10,{
             missionNamespace setVariable [QGVAR(roundTimeLeft),GVAR(roundLength),true];
             missionNamespace setVariable [QGVAR(roundInProgress),true,true];
         }] call EFUNC(missionSetup,startPreparationTime);
