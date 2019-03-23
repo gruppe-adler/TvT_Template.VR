@@ -111,7 +111,7 @@ class CfgIslands {
 	};
 
 	class Tembelan {
-		displayName = "Tanoa";
+		displayName = "Tembelan";
 		type = "tropical";
 		isWoodland = true;
 	};
