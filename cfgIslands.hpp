@@ -110,6 +110,12 @@ class CfgIslands {
 		isWoodland = true;
 	};
 
+	class Tembelan {
+		displayName = "Tembelan";
+		type = "tropical";
+		isWoodland = true;
+	};
+	
 	class utes {
 		displayName = "Utes";
 		type = "russian";
