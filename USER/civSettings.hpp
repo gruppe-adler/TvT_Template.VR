@@ -17,6 +17,7 @@ spawnDistancesOnFoot[] = {1000,4500};
 spawnDistancesInVehicles[] = {1800,5000};
 spawnDistancesResidents[] = {750, 1500};                                        // Mindest- und Maximalabstand zu allen Spielern, in denen Zivilisten spawnen
 
+initialGroupSize = 4;                                                           // Gruppengröße für Zivilisten zwischen 0..N
 automaticVehicleGroupSize = 1;                                                  // Autos werden zufällig mit Passagieren bedacht
 
 class userEquipment {
