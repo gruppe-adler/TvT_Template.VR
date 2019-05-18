@@ -11,10 +11,10 @@ class ger_heer_w {
 		secondaryWeaponMagazine = "";
 		handgunWeapon = "rhsusf_weap_m9";
         handgunWeaponMagazine = "rhsusf_mag_15Rnd_9x19_JHP";
-		uniform = "ARC_GER_Flecktarn_Uniform";
-        vest = "ARC_GER_Flecktarn_PlateCarrier_1";
+		uniform = "SMM_Uniform_BW_FT";
+        vest = "SMM_Vest_BW_FT";
 		backpack = "";
-		headgear = "ARC_GER_Flecktarn_Helmet_simple";
+		headgear = "SMM_Helmet_A_BW_FT";
 		nvgoggles = "";
 		radio = "TFAR_anprc152";
 		binoculars = "Binocular";
@@ -51,7 +51,7 @@ class ger_heer_w {
             primaryWeaponMagazine = "rhs_200rnd_556x45_M_SAW";
             handgunWeapon = "";
             handgunWeaponMagazine = "";
-            backpack = "ARC_GER_Kitbag_compact_Flecktarn";
+            backpack = "SMM_Kitbag_BW_FT";
             addItemsToVest[] = {
 				LIST_2("hlc_50Rnd_762x51_B_MG3"),
 				LIST_2("rhs_mag_an_m8hc"),
@@ -69,7 +69,7 @@ class ger_heer_w {
 
         //ammo bearer
 		class Soldier_A_F: Soldier_F {
-            backpack = "ARC_GER_Kitbag_compact_Flecktarn";
+            backpack = "SMM_Kitbag_BW_FT";
             addItemsToBackpack[] = {
                 LIST_3("hlc_100Rnd_762x51_M_MG3")
             };
@@ -77,7 +77,7 @@ class ger_heer_w {
 
 		//assistant autorifleman
 		class Soldier_AAR_F: Soldier_F {
-            backpack = "ARC_GER_Kitbag_compact_Flecktarn";
+            backpack = "SMM_Kitbag_BW_FT";
             addItemsToBackpack[] = {
                 LIST_2("rhs_200rnd_556x45_M_SAW"),
                 "rhs_200rnd_556x45_T_SAW"
@@ -86,8 +86,7 @@ class ger_heer_w {
 
         //medic
 		class Medic_F: Soldier_F {
-            headgear = "ARC_GER_Flecktarn_Helmet_Medic";
-            backpack = "ARC_GER_Backpack_Flecktarn_Med";
+            backpack = "SMM_Kitbag_BW_FT";
             addItemsToBackpack[] = {
                 LIST_20("ACE_fieldDressing"),
                 LIST_10("ACE_fieldDressing"),
@@ -99,8 +98,6 @@ class ger_heer_w {
 
         //squad leader
         class Soldier_SL_F: Soldier_F {
-            uniform  = "ARC_GER_Flecktarn_Uniform_vest";
-            headgear = "ARC_GER_Flecktarn_Helmet_Light";
             backpack = "TFAR_rt1523g_bwmod";
             addItemsToBackpack[] =  {
 				LIST_2("rhs_mag_m18_green"),
@@ -111,10 +108,8 @@ class ger_heer_w {
 
         //team leader
 		class Soldier_TL_F: Soldier_F {
-            uniform  = "ARC_GER_Flecktarn_Uniform_vest";
-            headgear = "ARC_GER_Flecktarn_Helmet_Light";
             primaryWeapon = "rhs_weap_g36kv_ag36";
-            backpack = "ARC_GER_Backpack_compact_Flecktarn";
+            backpack = "SMM_Kitbag_BW_FT";
             addItemsToBackpack[] = {
 				LIST_2("1Rnd_SmokeGreen_Grenade_shell"),
 				LIST_2("1Rnd_SmokePurple_Grenade_shell"),
@@ -126,7 +121,7 @@ class ger_heer_w {
 	class Rank {
 		class LIEUTENANT {
             backpack = "TFAR_rt1523g_big_bwmod";
-            headgear = "ARC_GER_Flecktarn_Milcap";
+            headgear = "SMM_MilCap_BW_FT";
 		};
 	};
 };
