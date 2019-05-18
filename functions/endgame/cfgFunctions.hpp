@@ -1,11 +1,15 @@
 class grad_endgame {
     class endgame {
-        class addIntelInteraction {};
+        class addObjectiveInteraction {};
         class createFob {};
         class createIntel {};
+        class createObjective {};
         class fobPFH {};
         class onFobCaptured {};
-        class searchIntel {};
+        class onObjectiveComplete {};
+        class requestCancelSearchObjective {};
+        class requestSearchObjective {};
+        class searchObjective {};
         class startEndgame {};
     };
 };
