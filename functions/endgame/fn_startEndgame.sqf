@@ -10,3 +10,5 @@ GVAR(phase3Threshold) = _phase3Threshold;
     [EAST,0] call FUNC(createTasks);
 
 },[]] call CBA_fnc_waitUntilAndExecute;
+
+{missionNamespace setVariable [_x,0,true]} forEach [QGVAR(gamePhaseIDEast),QGVAR(gamePhaseIDWest)];

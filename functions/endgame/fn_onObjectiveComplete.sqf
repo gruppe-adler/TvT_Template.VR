@@ -13,6 +13,12 @@ _objective setVariable [QGVAR(searchingPlayer),objNull,true];
 
 private _otherSide = [WEST,EAST] select (_side == WEST);
 
+// start phase 3 if threshold is met
+private _completedObjectivesAmount = {_side in (_x getVariable [QGVAR(objectiveCompletedSides),[]])} count GVAR(objectives);
+if (_completedObjectivesAmount >= GVAR(phase3Threshold)) exitWith {
+    [_side] call FUNC(startPhase3);
+};
+
 // lock objective
 if ((_objective getVariable [QGVAR(singleUse),false]) || (count _completedSides == 2)) then {
     _objective setVariable [QGVAR(objectiveCompletedFinal),true,true];

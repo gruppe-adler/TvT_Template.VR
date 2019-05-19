@@ -10,6 +10,10 @@
     _side = _trigger getVariable QGVAR(fobSide);
     _unitsInTrigger = list _trigger;
 
+    if ((missionNamespace getVariable [[QGVAR(gamePhaseIDEast),QGVAR(gamePhaseIDWest)] select (_side == WEST),0]) > 0) exitWith {
+        [_handle] call CBA_fnc_removePerFrameHandler;
+    };
+
     if ((independent countSide _unitsInTrigger) == 0 && {(_side countSide _unitsInTrigger) > 0}) then {
         [_trigger] call FUNC(onFobCaptured);
         [_handle] call CBA_fnc_removePerFrameHandler;

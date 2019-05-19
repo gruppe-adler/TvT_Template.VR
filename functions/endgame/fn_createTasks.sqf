@@ -13,7 +13,7 @@ if (_phaseID == 0) exitWith {
 
             [_taskID,_side,[_taskText,_taskTitle,"attack"],_taskPos,"CREATED",nil,true] call BIS_fnc_setTask;
 
-            _x setVariable [QGVAR(taskID),_taskID,false];
+            _x setVariable [[QGVAR(taskIDEast),QGVAR(taskIDWest)] select (_side == WEST),_taskID,false];
         };
     } forEach GVAR(fobs);
 };
@@ -36,11 +36,6 @@ if (_phaseID == 1) exitWith {
 
         [_taskID,_side,[_taskText,_taskTitle,"default"],_taskPos,_taskState,nil,true] call BIS_fnc_setTask;
 
-        _x setVariable [QGVAR(taskID),_taskID,false];
+        _x setVariable [[QGVAR(taskIDEast),QGVAR(taskIDWest)] select (_side == WEST),_taskID,false];
     } forEach GVAR(objectives);
-};
-
-// INTEL PICKUP TASKS===========================================================
-if (_phaseID == 2) exitWith {
-
 };

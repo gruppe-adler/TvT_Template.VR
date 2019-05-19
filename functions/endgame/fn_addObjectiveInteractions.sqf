@@ -13,9 +13,9 @@ private _condition = {
 
     // get gamephase for team (other team might still be trying to capture FOB)
     private _gamephaseVar = [QGVAR(gamePhaseIDEast),QGVAR(gamePhaseIDWest)] select (side _caller == WEST);
-    private _gamePhase = missionNamespace getVariable [_gamephaseVar,1];
+    private _gamePhaseID = missionNamespace getVariable [_gamephaseVar,1];
 
-    (_gamePhase == 1) &&
+    (_gamePhaseID == 1) &&
     {isNull (_objective getVariable [QGVAR(searchingPlayer),objNull])} &&
     {!(_objective getVariable [QGVAR(objectiveCompletedFinal),false])} &&
     {!(_objective getVariable [QGVAR(objectiveDestroyed),false])} &&
@@ -37,9 +37,9 @@ private _condition = {
 
     // get gamephase for team (other team might still be trying to capture FOB)
     private _gamephaseVar = [QGVAR(gamePhaseIDEast),QGVAR(gamePhaseIDWest)] select (side _caller == WEST);
-    private _gamePhase = missionNamespace getVariable [_gamephaseVar,1];
+    private _gamePhaseID = missionNamespace getVariable [_gamephaseVar,1];
 
-    (_gamePhase == 1) &&
+    (_gamePhaseID == 1) &&
     {!(_objective getVariable [QGVAR(objectiveDestroyed),false])} &&
     {!(_objective getVariable [QGVAR(singleUse),false])} &&
     {(side _caller) in (_objective getVariable [QGVAR(objectiveCompletedSides),[]])}

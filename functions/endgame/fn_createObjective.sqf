@@ -21,4 +21,4 @@ _objective setVariable [QGVAR(taskTitle),_taskTitle,false];
 _objective setVariable [QGVAR(taskText),_taskText,false];
 _objective setVariable [QGVAR(objectiveTrigger),_trigger,true];
 
-[_objective] remoteExec [QFUNC(addObjectiveInteractions),0,false];
+[_objective] remoteExec [QFUNC(addObjectiveInteractions),0,true];
