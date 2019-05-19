@@ -2,8 +2,14 @@
 
 params ["_trigger"];
 
-systemChat "FOB captured";
-systemChat str (_trigger getVariable QGVAR(fobSide));
+private _side = _trigger getVariable [QGVAR(fobSide),sideUnknown];
 
-private _gamephaseVar = [QGVAR(gamePhaseEast),QGVAR(gamePhaseWest)] select ((_trigger getVariable [QGVAR(fobSide),sideUnknown]) == WEST);
+private _gamephaseVar = [QGVAR(gamePhaseIDEast),QGVAR(gamePhaseIDWest)] select (_side == WEST);
 missionNamespace setVariable [_gamephaseVar,1,true];
+
+private _taskID = _trigger getVariable [QGVAR(taskID),""];
+if ([_taskID] call BIS_fnc_taskExists) then {
+    [_taskID,"SUCCEEDED",true] call BIS_fnc_taskSetState;
+};
+
+[_side,1] call FUNC(createTasks);
