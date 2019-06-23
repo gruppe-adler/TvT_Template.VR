@@ -1,6 +1,6 @@
 #include "component.hpp"
 
-params [["_startingSectorID",-1],["_roundLength",60],["_opforDirection",1],["_dateAndTimeArray",[]]];
+params [["_startingSectorID",-1],["_roundLength",60],["_opforDirection",1],["_dateAndTimeArray",[]],["_weatherArray",[]]];
 
 if (hasInterface) then {
     [] call FUNC(addTeleportAction);
@@ -28,6 +28,7 @@ if (isServer) then {
 
     GVAR(opforDirection) = _opforDirection;
     GVAR(dateAndTimeArray) = _dateAndTimeArray;
+    GVAR(weatherArray) = _weatherArray;
     GVAR(defendingSide) = sideUnknown;
     GVAR(allAttackerVehicles) = [];
     GVAR(isLastRound) = false;

@@ -10,6 +10,7 @@ class grad_linearSD {
         class createSector {};
         class dynamicText {};
         class endRound {};
+        class getWeather {};
         class isLastSector {};
         class movePlayerToRespawnPos {};
         class moveRespawnPositions {};
@@ -20,6 +21,7 @@ class grad_linearSD {
         class setActiveSectors {};
         class setLastRound {};
         class setTimeAndDate {};
+        class setWeather {};
         class spawnSectorVehicles {};
         class startEliminationCheck {};
         class startLinearSD {};

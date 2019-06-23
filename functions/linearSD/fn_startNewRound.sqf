@@ -24,6 +24,7 @@ publicVariable QGVAR(roundNumber);
         [] remoteExec [QFUNC(respawnPlayer),0,false];
         [] call FUNC(playzoneCleanup);
         [] call FUNC(setTimeAndDate);
+        [] call FUNC(setWeather);
 
     // move players to respawn position manually in first round
     } else {
