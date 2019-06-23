@@ -12,7 +12,10 @@ private _insertChildrenFunc = {
             "",
             // action
             {
-                params ["_unit","",["_sector",objNull]];
+                params ["_unit","","_args"];
+                _args params [["_sectors",[]],["_sectorID",0]];
+
+                private _sector = _sectors param [_sectorID,objNull];
                 if (isNull _sector) exitWith {systemChat "ERROR: Sector unknown."};
 
                 _pos = _sector getVariable [QGVAR(respawnPosition),(getPos _sector) findEmptyPosition [0,100,"B_Soldier_F"]];
@@ -21,11 +24,19 @@ private _insertChildrenFunc = {
             },
             // condition
             {
-                params ["_unit","",["_sector",objNull]];
-                !(_unit inArea _sector)
+                params ["_unit","","_args"];
+                _args params [["_sectors",[]],["_sectorID",0]];
+
+                private _sector = _sectors param [_sectorID,objNull];
+
+                // don't allow teleport to current sector
+                !(_unit inArea _sector) &&
+
+                // don't allow teleport from outside a sector
+                {_unit inArea _x} count _sectors > 0
             },
             {},
-            _x
+            [_sectors,_forEachIndex]
         ] call ace_interact_menu_fnc_createAction;
         _actions pushBack [_action,[],_target];
     } forEach _sectors;
