@@ -25,5 +25,6 @@ class grad_linearSD {
         class startLinearSD {};
         class startNewRound {};
         class startTimeout {};
+        class transferRadiosAcrossRespawn {};
     };
 };

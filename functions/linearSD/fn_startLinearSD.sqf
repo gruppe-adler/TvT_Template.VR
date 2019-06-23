@@ -5,6 +5,7 @@ params [["_startingSectorID",-1],["_roundLength",60],["_opforDirection",1],["_da
 if (hasInterface) then {
     [] call FUNC(addTeleportAction);
     [] call FUNC(addChatCommands);
+    [] call FUNC(transferRadiosAcrossRespawn);
 
     if (didJIP) then {
         [{!isNull player},FUNC(movePlayerToRespawnPos),[]] call CBA_fnc_waitUntilAndExecute;
