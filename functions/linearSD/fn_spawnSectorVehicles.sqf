@@ -6,7 +6,9 @@ private _vehicleArraysVarNames = [
     [QGVAR(attackerVehiclesWest),QGVAR(defenderVehiclesWest)],
     [QGVAR(attackerVehiclesEast),QGVAR(defenderVehiclesEast)]
 ] select (_side == EAST);
-private _vehicleArrayVarName = _vehicleArraysVarNames select (_side == GVAR(defendingSide));
+
+private _isDefendingSide = _side == GVAR(defendingSide);
+private _vehicleArrayVarName = _vehicleArraysVarNames select _isDefendingSide;
 
 private _sectorVehiclesArray = _trigger getVariable [_vehicleArrayVarName,[]];
 
@@ -20,7 +22,8 @@ private _sectorVehiclesArray = _trigger getVariable [_vehicleArrayVarName,[]];
         ["_weaponCargo",[]],
         ["_backpackCargo",[]],
         ["_objectTextures",[]],
-        ["_magazinesAllTurrets",[]]
+        ["_magazinesAllTurrets",[]],
+        ["_onSpawn",{}]
     ];
 
     _veh = createVehicle [_type,[0,0,0],[],0,"CAN_COLLIDE"];
@@ -58,6 +61,8 @@ private _sectorVehiclesArray = _trigger getVariable [_vehicleArrayVarName,[]];
         _x params [["_magName",""],["_turretPath",[0]],["_ammoCount",0]];
         _veh addMagazineTurret [_magName,_turretPath,_ammoCount];
     } forEach _magazinesAllTurrets;
+
+    [_veh,_side,_isDefendingSide,GVAR(roundNumber)] call _onSpawn;
 
     GVAR(allAttackerVehicles) pushBack _veh;
 } forEach _sectorVehiclesArray;
