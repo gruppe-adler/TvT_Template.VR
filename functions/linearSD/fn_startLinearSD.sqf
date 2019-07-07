@@ -8,7 +8,15 @@ if (hasInterface) then {
     [] call FUNC(transferRadiosAcrossRespawn);
 
     if (didJIP) then {
-        [{!isNull player},FUNC(movePlayerToRespawnPos),[]] call CBA_fnc_waitUntilAndExecute;
+        [{!isNil QGVAR(roundInProgress) && {!isNull player}},{
+            if (GVAR(roundInProgress)) then {
+                player setDamage 1;
+            } else {
+                [] call FUNC(movePlayerToRespawnPos);
+            };
+        },[]] call CBA_fnc_waitUntilAndExecute;
+
+
     };
 };
 
