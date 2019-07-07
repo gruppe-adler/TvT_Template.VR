@@ -2,7 +2,7 @@
 
 if (!isServer) exitWith {};
 
-params [["_logic",objNull],["_side",sideUnknown],["_mode","ATTACK"]];
+params [["_logic",objNull],["_side",sideUnknown],["_mode","ATTACK"],["_onSpawn",{}]];
 
 if !(_side in [WEST,EAST]) exitWith {ERROR_1("Side %1 not supported in linearSD.",_side)};
 
@@ -27,7 +27,8 @@ private _defenderArrayVarName = [QGVAR(defenderVehiclesWest),QGVAR(defenderVehic
         getWeaponCargo _x,
         getBackpackCargo _x,
         getObjectTextures _x,
-        magazinesAllTurrets _x
+        magazinesAllTurrets _x,
+        _onSpawn
     ];
 
     deleteVehicle _x;
