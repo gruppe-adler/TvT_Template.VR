@@ -23,7 +23,6 @@ class ger_heer_w {
 		compass = "ItemCompass";
         addItemsToUniform[] = {
             LIST_6("ACE_fieldDressing"),
-			LIST_3("ACE_CableTie"),
 			LIST_2("ACE_morphine"),
             LIST_2("ACE_Chemlight_HiWhite"),
 			"ACE_epinephrine",

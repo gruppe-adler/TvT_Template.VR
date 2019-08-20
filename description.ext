@@ -65,7 +65,6 @@ class CfgGradFortifications {
 class CfgGradCivs {
 	#include "USER\civSettings.hpp"
 
-	autoInit = 0;
 	debugCivState = 0;
 	debugFps = 0;
 };
