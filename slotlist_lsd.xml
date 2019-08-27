@@ -1,0 +1,46 @@
+<match>
+  <company side="blufor" natosymbol="inf" callsign="GERMANY" vehicletype="">
+    <slot shortcode="SQL" description="Squad Leader"/>
+    <slot shortcode="SQA" description="Assistant Squad Leader"/>
+    <squad side="" natosymbol="inf" callsign="Alpha" vehicletype="">
+      <slot shortcode="TL" description="Teamleader"/>
+      <slot shortcode="LMG" description="MG Gunner"/>
+      <slot shortcode="MGA" description="MG Assistant"/>
+      <slot shortcode="R" description="Rifleman"/>
+    </squad>
+    <squad side="" natosymbol="inf" callsign="Bravo" vehicletype="">
+      <slot shortcode="TL" description="Teamleader"/>
+      <slot shortcode="LAT" description="Light AT"/>
+      <slot shortcode="GRE" description="Grenadier"/>
+      <slot shortcode="R" description="Rifleman"/>
+    </squad>
+    <squad side="" natosymbol="inf" callsign="Charlie" vehicletype="">
+      <slot shortcode="TL" description="Teamleader"/>
+      <slot shortcode="LAT" description="Light AT"/>
+      <slot shortcode="GRE" description="Grenadier"/>
+      <slot shortcode="R" description="Rifleman"/>
+    </squad>
+  </company>
+  <company side="opfor" natosymbol="inf" callsign="RUSSIA" vehicletype="">
+    <slot shortcode="SQL" description="Squad Leader"/>
+    <slot shortcode="SQA" description="Assistant Squad Leader"/>
+    <squad side="" natosymbol="inf" callsign="Alpha" vehicletype="">
+      <slot shortcode="TL" description="Teamleader"/>
+      <slot shortcode="LMG" description="MG Gunner"/>
+      <slot shortcode="MGA" description="MG Assistant"/>
+      <slot shortcode="R" description="Rifleman"/>
+    </squad>
+    <squad side="" natosymbol="inf" callsign="Bravo" vehicletype="">
+      <slot shortcode="TL" description="Teamleader"/>
+      <slot shortcode="LAT" description="Light AT"/>
+      <slot shortcode="GRE" description="Grenadier"/>
+      <slot shortcode="R" description="Rifleman"/>
+    </squad>
+    <squad side="" natosymbol="inf" callsign="Charlie" vehicletype="">
+      <slot shortcode="TL" description="Teamleader"/>
+      <slot shortcode="LAT" description="Light AT"/>
+      <slot shortcode="GRE" description="Grenadier"/>
+      <slot shortcode="R" description="Rifleman"/>
+    </squad>
+  </company>
+</match>
