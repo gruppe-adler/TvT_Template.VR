@@ -9,7 +9,7 @@ publicVariable QGVAR(roundNumber);
 
 [_activeSectorID] call FUNC(setActiveSectors);
 [] call FUNC(moveRespawnPositions);
-
+[] call FUNC(drawBorder);
 
 [] spawn {
 

@@ -16,6 +16,7 @@ class grad_common {
         class restrictZone {};
         class restrictZonePFH {};
         class setGamePaused {};
+        class sortShortestPath {};
         class teleport {};
     };
 };
