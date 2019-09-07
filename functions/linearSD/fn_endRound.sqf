@@ -5,6 +5,7 @@ params [["_endMessage",""],["_winner",sideUnknown],["_isLastSector",false]];
 if !(GVAR(roundInProgress)) exitWith {INFO("A different ending is already in progress.")};
 
 missionNamespace setVariable [QGVAR(roundInProgress),false,true];
+INFO_3("Round ended: <%1>, winner: %2, this was the lastSector: %3",_endMessage,_winner,_isLastSector);
 
 // attacker is winner --> set sectors captured
 if (_winner != GVAR(defendingSide)) then {
