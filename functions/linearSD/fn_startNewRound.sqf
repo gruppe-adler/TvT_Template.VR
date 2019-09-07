@@ -9,7 +9,9 @@ publicVariable QGVAR(roundNumber);
 
 [_activeSectorID] call FUNC(setActiveSectors);
 [] call FUNC(moveRespawnPositions);
-[] call FUNC(drawBorder);
+
+// disabled for now - border couldn't handle if defendersectors were behind one another
+/* [] call FUNC(drawBorder); */
 
 [] spawn {
 
