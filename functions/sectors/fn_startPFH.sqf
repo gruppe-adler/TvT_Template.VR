@@ -49,6 +49,7 @@ private _previousCapturingSide = _trigger getVariable QGVAR(currentOwner);
         _ownerName = [_newOwner] call EFUNC(common,getSideDisplayName);
 
         ["grad_notification1",["SECTOR CAPTURED",format ["%1 was captured by %2.",_sectorName,_ownerName]]] remoteExec ["bis_fnc_showNotification",0,false];
+        deleteMarker (_trigger getVariable [QGVAR(captureMarker),""]);
 
         _points = _trigger getVariable "grad_sectors_pointsForCapture";
         [_newOwner,_points,_sectorName] call grad_points_fnc_addPoints;

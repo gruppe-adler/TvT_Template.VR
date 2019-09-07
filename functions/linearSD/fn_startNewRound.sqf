@@ -10,6 +10,11 @@ publicVariable QGVAR(roundNumber);
 [_activeSectorID] call FUNC(setActiveSectors);
 [] call FUNC(moveRespawnPositions);
 
+// disabled for now - border couldn't handle if defendersectors were behind one another
+/* [] call FUNC(drawBorder); */
+
+// delete any leftover capture markers from sectors
+{{deleteMarker (_x getVariable [QEGVAR(sectors,captureMarker),""])} forEach _x} forEach GVAR(sectorTriggers);
 
 [] spawn {
 

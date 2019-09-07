@@ -8,6 +8,7 @@ class grad_linearSD {
         class addTeleportAction {};
         class addVehicles {};
         class createSector {};
+        class drawBorder {};
         class dynamicText {};
         class endRound {};
         class getWeather {};
