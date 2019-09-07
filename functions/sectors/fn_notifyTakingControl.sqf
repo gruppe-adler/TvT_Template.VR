@@ -19,6 +19,8 @@ if (_capturingSide != _previousCapturingSide) then {
         ["grad_notification1",["SECTOR CAPTURING",format ["%1 is taking control of %2.",_capturingSideName,_sectorName]]] remoteExec ["bis_fnc_showNotification",0,false];
 
         // create map marker displaying current sector status
+        deleteMarker (_trigger getVariable [QGVAR(captureMarker),""]);
+
         private _markerText = format ["%1 CAPTURING!",_capturingSideName];
         private _markerName = [format ["%1_captureMarker",_sectorName]] call BIS_fnc_filterString;
         private _mrk = createMarker [_markerName,(getPos _trigger) vectorAdd [50,-50,0]];
