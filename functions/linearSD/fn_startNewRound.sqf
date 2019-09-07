@@ -10,6 +10,13 @@ publicVariable QGVAR(roundNumber);
 [_activeSectorID] call FUNC(setActiveSectors);
 [] call FUNC(moveRespawnPositions);
 
+INFO_3("Starting round %1. %2 attacking. %3 defending.",GVAR(roundNumber)GVAR(attackingSide),GVAR(defendingSide));
+INFO("Activated sectors:");
+{
+    _sectorName = _x getVariable [QEGVAR(sectors,sectorName),"ERROR: Sector unknown."];
+    INFO_1("- %1",_sectorName);
+} forEach GVAR(activeSectors);
+
 // disabled for now - border couldn't handle if defendersectors were behind one another
 /* [] call FUNC(drawBorder); */
 
@@ -50,7 +57,6 @@ publicVariable QGVAR(roundNumber);
     _roundText = format ["Round %1",GVAR(roundNumber)];
     [_roundText,"You are attacking.","cfg\gametypes\seize_ca"] remoteExec [QFUNC(dynamicText),GVAR(attackingSide),false];
     [_roundText,"You are defending.","cfg\gametypes\defend_ca"] remoteExec [QFUNC(dynamicText),GVAR(defendingSide),false];
-
 
     sleep 8;
 
