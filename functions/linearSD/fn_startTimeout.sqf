@@ -15,6 +15,11 @@ params [["_start",true]];
         if !([] call FUNC(activeSectorBeingCaptured)) then {
             // fn_endRound sets GVAR(roundInProgress) to false
             ["Sectors defended!",GVAR(defendingSide)] call FUNC(endRound);
+        } else {
+            GVAR(roundTimeLeft) = 180;
+            _timeText = format ["%1min",round (GVAR(roundTimeLeft)/60)];
+            _messageText = format ["Time extended %1. Sector contested.",_timeText];
+            ["grad_notification1",["TIME",_messageText]] remoteExec ["bis_fnc_showNotification",0,false];
         };
     };
 
