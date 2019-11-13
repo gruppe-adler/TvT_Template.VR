@@ -18,7 +18,7 @@ params [["_start",true]];
         } else {
             GVAR(roundTimeLeft) = 180;
             _timeText = format ["%1min",round (GVAR(roundTimeLeft)/60)];
-            _messageText = format ["Time extended %1. Sector contested.",_timeText];
+            _messageText = format ["Time extended by %1. Sector contested.",_timeText];
             ["grad_notification1",["TIME",_messageText]] remoteExec ["bis_fnc_showNotification",0,false];
         };
     };
