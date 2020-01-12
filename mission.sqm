@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=92;
+		nextID=97;
 	};
 	class Camera
 	{
@@ -170,7 +170,7 @@ class CustomAttributes
 								};
 								class value
 								{
-									items=53;
+									items=54;
 									class Item0
 									{
 										class data
@@ -913,6 +913,20 @@ class CustomAttributes
 											value="ace_medical_treatment_advancedmedication";
 										};
 									};
+									class Item53
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"STRING"
+												};
+											};
+											value="ace_medical_treatment_allowselfiv";
+										};
+									};
 								};
 							};
 						};
@@ -929,7 +943,7 @@ class CustomAttributes
 								};
 								class value
 								{
-									items=53;
+									items=54;
 									class Item0
 									{
 										class data
@@ -3293,6 +3307,51 @@ class CustomAttributes
 															type[]=
 															{
 																"BOOL"
+															};
+														};
+														value=0;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"SCALAR"
+															};
+														};
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item53
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"ARRAY"
+												};
+											};
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"SCALAR"
 															};
 														};
 														value=0;
