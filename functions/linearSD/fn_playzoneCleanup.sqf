@@ -12,7 +12,8 @@ private _objectTypesToDelete = [
     "WeaponHolderSimulated",
     "WeaponHolderSimulated_Scripted",
     "GroundWeaponHolder",
-    "GroundWeaponHolder_Scripted"
+    "GroundWeaponHolder_Scripted",
+    "BagFence_base_F"
 ];
 
 private _sectorTriggersCopy = +GVAR(sectorTriggers);
