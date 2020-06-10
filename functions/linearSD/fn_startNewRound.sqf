@@ -42,11 +42,13 @@ INFO("Activated sectors:");
     } else {
         {
             [{
-                _respawnMarker = ["respawn_west","respawn_east"] select (side _this == EAST);
+                params ["_unit"];
+
+                _respawnMarker = ["respawn_west","respawn_east"] select (side _unit == EAST);
                 _pos = (getMarkerPos _respawnMarker) findEmptyPosition [0,30,"B_Soldier_F"];
                 if (_pos isEqualTo []) then {_pos = getMarkerPos _respawnMarker};
-                [_this,_pos,nil,nil,nil,false] remoteExec [QEFUNC(common,teleport),_this,false];
-            },_x,random 3] call CBA_fnc_waitAndExecute;
+                [_unit,_pos,nil,nil,nil,false] remoteExec [QEFUNC(common,teleport),_unit,false];
+            },[_x],random 3] call CBA_fnc_waitAndExecute;
         } forEach playableUnits;
     };
 
