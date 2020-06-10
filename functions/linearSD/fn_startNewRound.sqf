@@ -42,7 +42,7 @@ INFO("Activated sectors:");
     } else {
         {
             [{
-                params ["_unit"];
+                params [["_unit", objNull]];
 
                 _respawnMarker = ["respawn_west","respawn_east"] select (side _unit == EAST);
                 _pos = (getMarkerPos _respawnMarker) findEmptyPosition [0,30,"B_Soldier_F"];
