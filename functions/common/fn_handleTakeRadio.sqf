@@ -50,17 +50,26 @@ if (_isHandheld) then {
         }
     };
 
-    [_waitCondition,{
-        params ["_unit","_item","_container"];
+    [
+        _waitCondition,
+        {
+            params ["_unit","_item","_container"];
 
-        _backpackContainer = backpackContainer _unit;
-        _unitSide = side _unit;
+            _backpackContainer = backpackContainer _unit;
+            _unitSide = side _unit;
 
-        if (_unitSide != (_backpackContainer getVariable [QGVAR(longRangeSide),_unitSide])) then {
-            systemChat "You cannot take this radio.";
-            playSound "3DEN_notificationWarning";
+            if (_unitSide != (_backpackContainer getVariable [QGVAR(longRangeSide),_unitSide])) then {
+                systemChat "You cannot take this radio.";
+                playSound "3DEN_notificationWarning";
 
-            if (backpack _unit == _item) then {removeBackpackGlobal _unit} else {_unit removeItem _item};
-        };
-    },[_unit,_item,_container,_previousFrequencies],1,{ERROR_1("Unit %1 picked up a backpack, but backpackContainer timed out.",_this select 0)}] call CBA_fnc_waitUntilAndExecute;
+                if (backpack _unit == _item) then {removeBackpackGlobal _unit} else {_unit removeItem _item};
+            };
+        },
+        [_unit,_item,_container,_previousFrequencies],
+        1,
+        {
+            params ["_unit"];
+            ERROR_1("Unit %1 picked up a backpack - but backpackContainer timed out.", _unit);
+        }
+    ] call CBA_fnc_waitUntilAndExecute;
 };

@@ -1,6 +1,6 @@
 #include "component.hpp"
 
-params ["_winName","presetParams"];
+params ["_winName","_presetParams"];
 _presetParams params [["_trigger","objNull"],["_side","WEST"],["_timeout",0]];
 
 _trigger = call compile _trigger;
