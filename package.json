@@ -9,10 +9,9 @@
     ],
     "dependencies": {
         "@gruppe-adler/replay": "^1.4.0",
-        "grad-civs": "^2.0.0",
         "grad-factions-tvt": "^0.5.2",
         "grad-fortifications": "^0.9.3",
-        "grad-listbuymenu": ">=0.0.1",
+        "grad-listbuymenu": "^0.8.1",
         "grad-loadout": "^4.11.4",
         "grad-tvtsettings": ">=0.0.1"
     }
