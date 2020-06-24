@@ -20,5 +20,5 @@ if (player getVariable ["wr_interrupted", false]) exitWith {
 };
 
 
-setPlayerRespawnTime 0;
+setPlayerRespawnTime 2;
 forceRespawn player;
