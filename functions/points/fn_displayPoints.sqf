@@ -27,6 +27,8 @@ if (isServer && count _this == 0) exitWith {
     ] remoteExec [QFUNC(displayPoints),0,false];
 };
 
+ISNILS(GVAR(displayPointsDuration),15);
+
 if (hasInterface && count _this > 0) then {
     "grad_common_displayPoints" cutRsc ["RscTitleDisplayEmpty","PLAIN",0,false];
 
@@ -86,7 +88,7 @@ if (hasInterface && count _this > 0) then {
             };
         } forEach _this;
 
-        [{"grad_common_displayPoints" cutRsc ["RscTitleDisplayEmpty","PLAIN",0,false];}, [], 15] call CBA_fnc_waitAndExecute;
+        [{"grad_common_displayPoints" cutRsc ["RscTitleDisplayEmpty","PLAIN",0,false];}, [], GVAR(displayPointsDuration)] call CBA_fnc_waitAndExecute;
 
     }, _this] call CBA_fnc_waitUntilAndExecute;
 };

@@ -15,8 +15,8 @@
 */
 
 
-loadoutFactionBlu = "us_army";
-loadoutFactionOpf = "";
+loadoutFactionBlu = "blufor";
+loadoutFactionOpf = "opfor";
 loadoutFactionInd = "";
 
 

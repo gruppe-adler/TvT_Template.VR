@@ -23,7 +23,8 @@ cba_settings_hasSettingsFile = 1;
 //mcdiod, nomisum
 enableDebugConsole[] = {
 	"76561198044320063",
-	"76561197961080101"
+	"76561197961080101",
+	"76561197961080101" // Fusselwurm
 };
 
 
