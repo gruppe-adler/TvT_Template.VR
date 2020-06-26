@@ -1,5 +1,4 @@
 #include "component.hpp"
-#define PLAYABLE_UNITS (playableUnits + switchableUnits)
 
 _blugroups = [];
 _opfgroups = [];
