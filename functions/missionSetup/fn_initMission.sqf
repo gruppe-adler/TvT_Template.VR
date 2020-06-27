@@ -6,7 +6,6 @@ EGVAR(missionsettings,canUseScopes) = ([missionConfigFile >> "missionsettings","
 [] call grad_missionSetup_fnc_loadouts;
 [] call grad_missionSetup_fnc_createDiaryRecords;
 [] call grad_missionSetup_fnc_intro;
-[] call grad_missionSetup_fnc_initCivs;
 [] call grad_groupsettings_fnc_setGroupSettings;
 [] call FUNC(addChatCommands);
 

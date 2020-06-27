@@ -64,9 +64,6 @@ class CfgGradFortifications {
 
 class CfgGradCivs {
 	#include "USER\civSettings.hpp"
-
-	debugCivState = 0;
-	debugFps = 0;
 };
 
 class GRAD_Replay {
