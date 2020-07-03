@@ -8,7 +8,7 @@ if (_mode == "PRECHECK") then {
         params ["_side","_handle"];
         if (!GVAR(roundInProgress)) exitWith {};
 
-        if ({side _x == _side} count playableUnits == 0) exitWith {
+        if ({side _x == _side} count PLAYABLE_UNITS == 0) exitWith {
             [_handle] call CBA_fnc_removePerFrameHandler;
             [_side,"POSTCHECK"] call FUNC(startEliminationCheck);
         };
@@ -27,7 +27,7 @@ if (_mode == "PRECHECK") then {
             [_side,"PRECHECK"] call FUNC(startEliminationCheck);
         };
 
-        if ({side _x == _side} count playableUnits > 0) then {
+        if ({side _x == _side} count PLAYABLE_UNITS > 0) then {
             [_handle] call CBA_fnc_removePerFrameHandler;
             [_side,"PRECHECK"] call FUNC(startEliminationCheck);
         } else {

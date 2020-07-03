@@ -47,7 +47,7 @@ INFO("Activated sectors:");
                 if (_pos isEqualTo []) then {_pos = getMarkerPos _respawnMarker};
                 [_this,_pos,nil,nil,nil,false] remoteExec [QEFUNC(common,teleport),_this,false];
             },_x,random 3] call CBA_fnc_waitAndExecute;
-        } forEach playableUnits;
+        } forEach PLAYABLE_UNITS;
     };
 
     [] call FUNC(activateFortifications);

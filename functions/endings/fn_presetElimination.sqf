@@ -38,10 +38,10 @@ private _respawningPlayersArrays = [];
 
 private _fnc_check = [
     {
-        {(side _x) in _sides} count playableUnits == 0
+        {(side _x) in _sides} count PLAYABLE_UNITS == 0
     },
     {
-        {(side _x) in _sides} count playableUnits == 0 &&
+        {(side _x) in _sides} count PLAYABLE_UNITS == 0 &&
         {{({!isNull _x} count _x) > 0} count _respawningPlayersArrays == 0}
     }
 ] select (([missionConfigFile >> "missionsettings","waveRespawnEnabled",0] call BIS_fnc_returnConfigEntry) == 1);
