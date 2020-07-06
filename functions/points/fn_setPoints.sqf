@@ -1,15 +1,21 @@
 #include "component.hpp"
 
-params ["_side","_points"];
+params [
+    ["_side", sideUnknown, [sideUnknown]],
+    ["_points", 0, [0]],
+    ["_category","Other", [""]]
+];
+
+if (_side isEqualTo sideUnknown) exitWith {
+    WARNING("cannot set points to sideUnknown!");
+    false
+};
 
 _points = _points max 0;
 
-private _successful = switch (_side) do {
-    case (WEST): {missionNamespace setVariable ["grad_common_points_west",_points,true]; true};
-    case (EAST): {missionNamespace setVariable ["grad_common_points_east",_points,true]; true};
-    case (INDEPENDENT): {missionNamespace setVariable ["grad_common_points_independent",_points,true]; true};
-    case (CIVILIAN): {missionNamespace setVariable ["grad_common_points_civilian",_points,true]; true};
-    default {false};
-};
+private _sidePoints = [GVAR(points), _side] call CBA_fnc_hashGet;
+private _oldSidePointsForCategory = [_sidePoints, _category] call CBA_fnc_hashGet;
+[_sidePoints, _category, _points] call CBA_fnc_hashSet;
 
-_successful
+publicVariable QGVAR(points);
+true

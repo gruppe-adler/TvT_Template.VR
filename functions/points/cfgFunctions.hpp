@@ -6,7 +6,6 @@ class grad_points {
         class getPoints {};
         class getPointsCategorized {};
         class getPointsCategory {};
-        class getPointsVar {};
         class initPoints {preInit = 1;};
         class setPoints {};
     };
