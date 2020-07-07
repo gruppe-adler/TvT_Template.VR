@@ -11,7 +11,7 @@ private _code = {
         case (_victimSide == CIVILIAN): {
             ["civKilled", "Civilians killed"]
         };
-        case (_victimSide getFriend _killerSide > 0): {
+        case (_victimSide getFriend _killerSide >= 0.6): {
             ["", ""]
         };
         case (_victimIsPlayer): {
