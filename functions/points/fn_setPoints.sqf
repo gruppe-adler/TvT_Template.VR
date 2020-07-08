@@ -14,6 +14,7 @@ if (_side isEqualTo sideUnknown) exitWith {
 private _sidePoints = [GVAR(points), _side] call CBA_fnc_hashGet;
 private _oldSidePointsForCategory = [_sidePoints, _category] call CBA_fnc_hashGet;
 [_sidePoints, _category, _points] call CBA_fnc_hashSet;
+[GVAR(points), _side, _sidePoints] call CBA_fnc_hashSet; // returning the default value does *not* imply setting it - so we need to explicitly set this at least once.
 
 publicVariable QGVAR(points);
 true
