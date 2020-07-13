@@ -53,6 +53,23 @@ if (isServer) then {
 
     }] call CBA_fnc_addEventHandler;
 
+    ["grad_civs_legacy_civ_added", {
+        params [
+            ["_civ", objNull, [objNull]]
+        ];
+        if (random 1 > 0.2) exitWith {};
+        // give weapon
+        private _wp = "";//
+        // and ammo
+
+        // attack some FOB
+        private _ataka = selectRandom ([east, west] select { civilian getFriend _x < 0.6 });
+
+        // WIP
+
+        INFO("civ added. adding grievance to %1.", side _thief);
+    }] call CBA_fnc_addEventHandler;
+
     [QGVAR(handleIndependentKilled), {
         params ["_victim","_victimSide","_victimIsPlayer","_killer","_killerSide","_killerIsPlayer","_killTime"];
         if (_victimSide != independent) exitWith {};
