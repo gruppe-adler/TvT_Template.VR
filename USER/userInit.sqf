@@ -58,9 +58,6 @@ if (isServer) then {
             ["_civ", objNull, [objNull]]
         ];
         if (random 1 > 0.2) exitWith {};
-        // give weapon
-        private _wp = "";//
-        // and ammo
 
         // attack some FOB
         private _ataka = selectRandom ([east, west] select { civilian getFriend _x < 0.6 });
