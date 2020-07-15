@@ -53,30 +53,57 @@ if (isServer) then {
 
     }] call CBA_fnc_addEventHandler;
 
-    ["grad_civs_legacy_civ_added", {
-        params [
-            ["_civ", objNull, [objNull]]
-        ];
-        if (!local _civ) exitWith {};
-        INFO_1("local civ %1 added. in 20% we'll continue ", _civ);
-        if (leader _civ != _civ) exitWith {};
-        if (random 1 > 0.2) exitWith {};
-
+    ISNILS(GVAR(attackingCivs), []);
+    [{
+        // if (random 1 > 0.2) exitWith {};
+        GVAR(attackingCivs) = GVAR(attackingCivs) select { alive _x};
+        if (count GVAR(attackingCivs) > 50) exitWith { WARNING("a lot of civs are attacking. not spawning any more.")};
         // attack some FOB
         private _sideToAttack = selectRandom ([east, west] select { civilian getFriend _x < 0.6 });
+        if (isNil "_sideToAttack") exitWith {};
         INFO_1("side to attack %1", _sideToAttack);
         private _fob = switch (_sideToAttack) do {
-            case (east): { fob_opf };
-            case (west): { fob_blu };
+            case (east): { pen_opf };
+            case (west): { pen_blu };
             default { objNull };
         };
+        private _group = createGroup [civilian, true];
+        private _count = round linearConversion [0.6, 0.0, civilian getFriend _sideToAttack, 1, 16, false];
+        private _house = [
+            allPlayers,
+            500,
+            1000,
+            "house"
+        ] call grad_civs_legacy_fnc_findSpawnPosition;
+        if (isNull _house) exitWith {INFO("cant find house for attacking civs, sad");};
 
-        INFO_2("civ leader %1 added - will attack %2 starting in 15s.", _civ, _fob);
+        for "_i" from 1 to _count do {
+            private _unit = _group createUnit ["C_Man_1", getPos _house, [], 0, "NONE"];
+            _unit addUniform selectRandom ["LOP_U_TAK_Civ_Fatigue_01", "LOP_U_TAK_Civ_Fatigue_02", "LOP_U_TAK_Civ_Fatigue_06", "LOP_U_TAK_Civ_Fatigue_08", "LOP_U_TAK_Civ_Fatigue_10", "LOP_U_TAK_Civ_Fatigue_11", "LOP_U_TAK_Civ_Fatigue_14"]; // capacity = 100
+            _unit addHeadgear "LOP_H_Turban";
+            if (random 1 > 0.5) then {
+                _unit addWeapon "rhs_weap_m38";
+                [_unit, "rhsgref_5Rnd_762x54_m38"] call CBA_fnc_addMagazine;
+                [_unit, "rhsgref_5Rnd_762x54_m38"] call CBA_fnc_addMagazine;
+                [_unit, "rhsgref_5Rnd_762x54_m38"] call CBA_fnc_addMagazine;
+                [_unit, "rhsgref_5Rnd_762x54_m38"] call CBA_fnc_addMagazine;
+                [_unit, "rhsgref_5Rnd_762x54_m38"] call CBA_fnc_addMagazine;
+            } else {
+                _unit addWeapon "rhs_weap_makarov_pm";
+                [_unit, "rhs_mag_9x18_8_57N181S"] call CBA_fnc_addMagazine;
+                [_unit, "rhs_mag_9x18_8_57N181S"] call CBA_fnc_addMagazine;
+                [_unit, "rhs_mag_9x18_8_57N181S"] call CBA_fnc_addMagazine;
+            };
+        };
+        GVAR(attackingCivs) = GVAR(attackingCivs) + (units _group);
 
-        [{
-            [_civ, _fob] call EFUNC(grievances,attackLocation);
-        }, [], 15] call CBA_fnc_waitAndExecute;
-    }] call CBA_fnc_addEventHandler;
+        private _icon = _group addGroupIcon ["o_inf", [0, 0]];
+        //_group setGroupIcon [_icon, "hc_selectedEnemy"];
+        _group setGroupIconParams [[0.8, 0, 0.8, 1],"attacking civs", 1, true, true, [0, 0, 0, 1]];
+
+        INFO_3("%1 is at %2 and will attack %3", _group, getPos leader _group, _fob);
+        [_group, _fob] call EFUNC(grievances,attackLocation);
+    }, 15] call CBA_fnc_addPerFrameHandler;
 
     [QGVAR(handleIndependentKilled), {
         params ["_victim","_victimSide","_victimIsPlayer","_killer","_killerSide","_killerIsPlayer","_killTime"];
