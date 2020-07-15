@@ -6,7 +6,8 @@ class MISSION_grievances {
         file = "USER\functions\grievances";
         class addGrievance {};
         class armyRetaliation {};
-        class isArmyRetaliating {};
+        class attackLocation {};
+        class isArmyRetaliating {};        
     };
 };
 class MISSION_win {

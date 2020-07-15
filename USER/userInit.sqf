@@ -57,14 +57,25 @@ if (isServer) then {
         params [
             ["_civ", objNull, [objNull]]
         ];
+        if (!local _civ) exitWith {};
+        INFO_1("local civ %1 added. in 20% we'll continue ", _civ);
+        if (leader _civ != _civ) exitWith {};
         if (random 1 > 0.2) exitWith {};
 
         // attack some FOB
-        private _ataka = selectRandom ([east, west] select { civilian getFriend _x < 0.6 });
+        private _sideToAttack = selectRandom ([east, west] select { civilian getFriend _x < 0.6 });
+        INFO_1("side to attack %1", _sideToAttack);
+        private _fob = switch (_sideToAttack) do {
+            case (east): { fob_opf };
+            case (west): { fob_blu };
+            default { objNull };
+        };
 
-        // WIP
+        INFO_2("civ leader %1 added - will attack %2 starting in 15s.", _civ, _fob);
 
-        INFO("civ added. adding grievance to %1.", side _thief);
+        [{
+            [_civ, _fob] call EFUNC(grievances,attackLocation);
+        }, [], 15] call CBA_fnc_waitAndExecute;
     }] call CBA_fnc_addEventHandler;
 
     [QGVAR(handleIndependentKilled), {
