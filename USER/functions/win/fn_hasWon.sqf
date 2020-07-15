@@ -28,6 +28,7 @@ if (_timeIsUp) then {
 if (_otherSideIsEliminated || _timeIsUp) exitWith {
     private _win = ([_side] call grad_points_fnc_getPoints) > ([_otherSide] call grad_points_fnc_getPoints);
     if (_win) then {
+        
         INFO_1("%1 has won", _side);
     };
     _win

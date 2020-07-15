@@ -169,6 +169,72 @@ if (hasInterface) then {
 
 
     [QEGVAR(win,player_extracted), EFUNC(win,onPlayerExtracted)] call CBA_fnc_addEventHandler;
+
+    // tasks
+     [
+        "stayAlive",
+        player,
+        ["stay alive", "no one wants to die, you included", ""],
+        case (playerSide): { case (east): {trigger_south}; case (west): { trigger_north};},
+        "CREATED",
+        1,
+        false,
+        false,
+        "",
+        false
+    ] call BIS_fnc_setTask;
+
+    player addEventHandler ["Killed", {
+        params ["_unit", "_killer", "_instigator", "_useEffects"];
+        ["stayAlive", "FAILED", false] call BIS_fnc_taskSetState;
+    }];
+
+    [
+       "fobSheep",
+       player,
+       ["get more sheep", "get sheep to your FOB", ""],
+       case (playerSide): { case (east): {pen_opf}; case (west): { pen_blu};},
+       "ASSIGNED",
+       3,
+       false,
+       false,
+       "",
+       false
+   ] call BIS_fnc_setTask;
+
+   ["mission_news", {
+       params ["_type","_side"];
+       if (type == "army_retaliation" && _side == playerSide) then {
+            ["fobSheep", "CANCELED", false] call BIS_fnc_taskSetState;
+       };
+   }] call CBA_fnc_addEventHandler;
+
+    [
+       "extractSheep",
+       player,
+       ["get more sheep", "get sheep to your extraction zone", ""],
+       case (playerSide): { case (east): {trigger_south}; case (west): { trigger_north};},
+       "ASSIGNED",
+       2,
+       false,
+       false,
+       "",
+       false
+   ] call BIS_fnc_setTask;
+
+   [
+      "moreSheep",
+      player,
+      ["have more sheep than the other side over there", "be quick, get more sheep than the others do!", ""],
+      case (playerSide): { case (east): {fob_blu}; case (west): { fob_opf};},
+      "ASSIGNED",
+      4,
+      true,
+      false,
+      "",
+      false
+  ] call BIS_fnc_setTask;
+
 };
 
 ISNILS(MISSION_timeout,3600);

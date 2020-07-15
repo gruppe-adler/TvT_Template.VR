@@ -7,7 +7,7 @@ class MISSION_grievances {
         class addGrievance {};
         class armyRetaliation {};
         class attackLocation {};
-        class isArmyRetaliating {};        
+        class isArmyRetaliating {};
     };
 };
 class MISSION_win {
