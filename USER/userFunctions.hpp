@@ -14,6 +14,9 @@ class MISSION_win {
     class does_not_matter {
         file = "USER\functions\win";
         class extractPlayers {};
+        class hasWon {};
+        class isDraw {};
+        class isLost {};
         class onPlayerExtracted {};
         class updateFobSheepCount {};
     };

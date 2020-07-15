@@ -1,42 +1,19 @@
-class bluforeliminated {
-    preset = "ELIMINATION";
-    presetParams[] = {"WEST"};
-
-    condition = "";
-    checkInterval = 0;
-
-    winners[] = {"EAST","INDEPENDENT"};
-    winText = "BLUFOR eliminated after %1 minutes.<br/>OPFOR wins!";
-    winTextParams[] = {"round (CBA_missionTime/60)"};
-};
-class opforeliminated {
-    preset = "ELIMINATION";
-    presetParams[] = {"EAST"};
-
-    condition = "";
-    checkInterval = 0;
-
-    winners[] = {"WEST","INDEPENDENT"};
-    winText = "OPFOR eliminated after %1 minutes.<br/>BLUFOR wins!";
-    winTextParams[] = {"round (CBA_missionTime/60)"};
-};
-
-class sheepWinOpfor {
+class opforWins {
     preset = "";
     presetParams[] = {};
 
-    condition = "(CBA_missionTime > MISSION_timeout) && ([EAST] call grad_points_fnc_getPoints) > ([WEST] call grad_points_fnc_getPoints)";
+    condition = "[east] call mission_win_fnc_hasWon";
     checkInterval = 5;
 
     winners[] = {"EAST"};
     winText = "OPFOR hat %1 und BLUFOR nur %2 Schafe ergattert.<br/>OPFOR gewinnt.";
     winTextParams[] = {"([EAST] call grad_points_fnc_getPoints)","([WEST] call grad_points_fnc_getPoints)"};
 };
-class sheepWinBlufor {
+class bluforWins {
     preset = "";
     presetParams[] = {};
 
-    condition = "(CBA_missionTime > MISSION_timeout) && ([WEST] call grad_points_fnc_getPoints) > ([EAST] call grad_points_fnc_getPoints)";
+    condition = "[west] call mission_win_fnc_hasWon";
     checkInterval = 5;
 
     winners[] = {"WEST"};
@@ -44,14 +21,26 @@ class sheepWinBlufor {
     winTextParams[] = {"([WEST] call grad_points_fnc_getPoints)","([EAST] call grad_points_fnc_getPoints)"};
 };
 
-class sheepDraw {
+class isDraw {
     preset = "";
     presetParams[] = {};
 
-    condition = "(CBA_missionTime > MISSION_timeout) && ([WEST] call grad_points_fnc_getPoints) == ([EAST] call grad_points_fnc_getPoints)";
+    condition = "[] call mission_win_fnc_isDraw";
     checkInterval = 5;
 
-    winners[] = {};
+    winners[] = {"EAST", "WEST"};
     winText = "BLUFOR wie auch OPFOR haben %1 Schafe ergattert.";
     winTextParams[] = {"([WEST] call grad_points_fnc_getPoints)"};
+};
+
+class playersLost {
+    preset = "";
+    presetParams[] = {};
+
+    condition = "[] call mission_win_fnc_isLost";
+    checkInterval = 5;
+
+    winners[] = {"CIVILIAN"};
+    winText = "BLUFOR wie auch OPFOR sind eliminiert worden";
+    winTextParams[] = {};
 };
