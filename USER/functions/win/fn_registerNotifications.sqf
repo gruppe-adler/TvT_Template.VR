@@ -40,8 +40,27 @@
                 [
                     "grad_notification1",
                     [
-                        format["Army hates against %1!", _side],
-                        format["The army is considering %1 as enemy faction now.", _side]
+                        format["Army hates %1", _side],
+                        format["They are considering %1 as enemy faction now.", _side]
+                    ]
+                ] call BIS_fnc_showNotification;
+            };
+        };
+        case ("civ_enemy"): {
+            if (_side == playerSide) then {
+                [
+                    "grad_notification1",
+                    [
+                        "Civilians hate us",
+                        "They might even attack our FOB"
+                    ]
+                ] call BIS_fnc_showNotification;
+            } else {
+                [
+                    "grad_notification1",
+                    [
+                        format["Civilians hate %1", _side],
+                        "They might even attack their FOB"
                     ]
                 ] call BIS_fnc_showNotification;
             };

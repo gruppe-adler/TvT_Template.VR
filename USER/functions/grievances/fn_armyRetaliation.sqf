@@ -16,19 +16,7 @@ private _attackPos = switch (_side) do {
     default { ERROR_1("retaliation called for %1, this should not happen", _side); };
 };
 
-// extend time
-MISSION_timeout = MISSION_timeout + 1800;
-
-// spawn the army
-
-// 2 Mi-24
-
+// NOTE: retaliating army units are being controlled via script in waypoints -> mission.sqm
 
 // inform players
 ["mission_news", ["army_retaliation", _side]] call CBA_fnc_globalEvent;
-
-private _spawnPoint = [-2000, 5000, 500];
-
-private _wing = createGroup independent;
-
-_wing createUnit ["LOP_IRAN_AH1Z_GS", _spawnPoint, [], 50, "NONE"];
