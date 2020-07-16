@@ -127,12 +127,13 @@ if (isServer) then {
         ["_animal", objNull, [objNull]],
         ["_instigator", objNull, [objNull]]
     ];
-    if ((side _vehicle) isEqualTo (side _instigator)) exitWith {};
-        // do not check for vehicle side, because empty vehicles will be 'civilian'
-        // do not check for empty vehicle, because owner mightve been forced to dismount.
-        // instead check for civ owner close by
-    private _owners = units (_vehicle getVariable ["grad_civs_owner", grpNull]);
-    if ((_owners findIf { (_x distance _vehicle) < 50 }) == -1) exitWith {}; /*owners are far away, it seems */
+    // do not check for vehicle side, because empty vehicles will be 'civilian'
+    // do not check for empty vehicle, because owner mightve been forced to dismount.
+    // instead check for civ owner
+    if (isNull (_vehicle getVariable ["grad_civs_owner", grpNull])) exitWith {};
+    // in that case - because vehicle mightve been stolen long ago - check if sheep have the "stolen" flag already set
+    if (_animal getVariable ["mission_isStolen", false]) exitWith {};
+    _animal setVariable ["mission_isStolen", true, true];
     ["mission_animal_theft", [_animal, _instigator]] call CBA_fnc_serverEvent;
 }] call CBA_fnc_addEventHandler;
 
