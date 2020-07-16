@@ -24,15 +24,3 @@ assert(isServer);
     [west, ["bluSheepFob", "bluSheep"], "bluSheepFob"],
     [west, ["bluSheepExtract", "bluSheep"], "bluSheepExtract"]
 ];
-
-["mission_news", {
-   params ["_type","_side"];
-   if (_type == "army_retaliation") then {
-        private _id = switch (_side) do {
-            case (east): {"opfSheepFob"};
-            case (west): {"bluSheepFob"};
-            default { throw "logic error"};
-        };
-        [_id, "CANCELED", true] call BIS_fnc_taskSetState;
-   };
-}] call CBA_fnc_addEventHandler;

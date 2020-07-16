@@ -173,6 +173,7 @@ if (hasInterface) then {
     [QEGVAR(win,player_extracted), EFUNC(win,onPlayerExtracted)] call CBA_fnc_addEventHandler;
 
     [] call EFUNC(win,createPersonalTasks);
+    [] call EFUNC(win,registerNotifications);
 };
 
 ISNILS(MISSION_timeout,3600);

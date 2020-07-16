@@ -20,6 +20,7 @@ class MISSION_win {
         class isDraw {};
         class isLost {};
         class onPlayerExtracted {};
+        class registerNotifications {};
         class updateFobSheepCount {};
     };
 };
