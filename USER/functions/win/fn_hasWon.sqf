@@ -6,7 +6,7 @@ params [
 
 assert(_side in [east, west]);
 
-private _otherSide = case (_side): {
+private _otherSide = switch (_side) do {
     case (east): { west };
     case (west): { east };
     default { throw "logic error" };
@@ -28,7 +28,7 @@ if (_timeIsUp) then {
 if (_otherSideIsEliminated || _timeIsUp) exitWith {
     private _win = ([_side] call grad_points_fnc_getPoints) > ([_otherSide] call grad_points_fnc_getPoints);
     if (_win) then {
-        
+
         INFO_1("%1 has won", _side);
     };
     _win

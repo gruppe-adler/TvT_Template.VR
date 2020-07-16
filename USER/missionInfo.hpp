@@ -7,6 +7,40 @@ onLoadName = "TvT Mähfest";                                                    
 onLoadMission = "Lammfleisch stammt von Tieren, die jünger sind als ein Jahr, Hammelfleisch von solchen, die jünger sind als zwei Jahre, Schaffleisch von mindestens zwei Jahre alten Tieren (Wikipedia:Lammfleisch)";                                                             //Beschreibung der Mission (wird im Ladebildschirm unterhalb des Ladebildes angezeigt)
 loadScreen = "data\loadpic.paa";                                                //Ladebild
 
+class CfgTaskDescriptions {
+    class bluMoreSheep {
+		title		= "Get more sheep than OPFOR!";
+		description	= "Steal sheep from trucks traversing the city from west to east along the highway";
+		marker		= "";
+	};
+	class bluSheepFob {
+		title		= "Move sheep to your FOB";
+		description	= "Move sheep to your FOB within the city. It might be in danger of raids, but it's close!";
+		marker		= "fob_blu_inner";
+	};
+	class bluSheepExtract {
+		title		= "Move sheep to your tribal areas";//$STR_myTask2Title;
+		description	= "move sheep out of the city to the tribal area far far away to the north. No one can take them from you there!";//$STR_myTask2Description;
+		marker		= "border_north";//$STR_myTask2Marker;
+	};
+
+    class opfMoreSheep {
+		title		= "Get more sheep than BLUFOR!";
+		description	= "Steal sheep from trucks traversing the city from west to east along the highway";
+		marker		= "";
+	};
+	class opfSheepFob {
+		title		= "Move sheep to your FOB";
+		description	= "Move sheep to your FOB within the city. It might be in danger of raids, but it's close!";
+		marker		= "fob_opf_inner";
+	};
+	class opfSheepExtract {
+		title		= "Move sheep to your tribal area";//$STR_myTask2Title;
+		description	= "move sheep out of the city to the tribal area far far away to the south. No one can take them from you there!";//$STR_myTask2Description;
+		marker		= "border_south";//$STR_myTask2Marker;
+	};
+};
+
 class CfgVehicles {
     class Land_Ind_SawMillPen {
     // class ACE_LogicDummy {

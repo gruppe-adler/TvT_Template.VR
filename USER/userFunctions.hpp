@@ -13,6 +13,8 @@ class MISSION_grievances {
 class MISSION_win {
     class does_not_matter {
         file = "USER\functions\win";
+        class createPersonalTasks {};
+        class createSideTasks {};
         class extractPlayers {};
         class hasWon {};
         class isDraw {};
