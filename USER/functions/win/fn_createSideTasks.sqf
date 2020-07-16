@@ -18,11 +18,11 @@ assert(isServer);
     ] call BIS_fnc_taskCreate;
 } forEach [
     [east, "opfSheep", "opfMoreSheep"],
-    [east, ["opfSheep", "opfSheepFob"], "opfSheepFob"],
-    [east, ["opfSheep", "opfSheepExtract"], "opfSheepExtract"],
+    [east, ["opfSheepFob", "opfSheep"], "opfSheepFob"],
+    [east, ["opfSheepExtract", "opfSheep"], "opfSheepExtract"],
     [west, "bluSheep", "bluMoreSheep"],
-    [west, ["bluSheep", "bluSheepFob"], "bluSheepFob"],
-    [west, ["bluSheep", "bluSheepExtract"], "bluSheepExtract"]
+    [west, ["bluSheepFob", "bluSheep"], "bluSheepFob"],
+    [west, ["bluSheepExtract", "bluSheep"], "bluSheepExtract"]
 ];
 
 ["mission_news", {
