@@ -1,3 +1,6 @@
+#include "component.hpp"
+
+assert(hasInterface);
 
 ["mission_news", {
     params ["_type","_side"];
@@ -67,3 +70,20 @@
         };
     };
 }] call CBA_fnc_addEventHandler;
+
+[
+    "mission_points",
+    {
+        params [
+            ["_eastPoints", 0, [0]],
+            ["_westPoints", 0, [0]]
+        ];
+        [
+            "grad_notification1",
+            [
+                "POINTS COMPARISON",
+                format ["opfor: %1, blufor: %2", _eastPoints, _westPoints]
+            ]
+        ] call BIS_fnc_showNotification;
+    }
+] call CBA_fnc_addEventHandler;

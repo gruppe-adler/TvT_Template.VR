@@ -119,6 +119,7 @@ if (isServer) then {
     [EFUNC(win,updateFobSheepCount), 5] call CBA_fnc_addPerFrameHandler;
 
     [] call EFUNC(win,createSideTasks);
+    [] call EFUNC(win,planPointNotifications);
 };
 
 ["grad_animalTransport_animal_unloaded", {
