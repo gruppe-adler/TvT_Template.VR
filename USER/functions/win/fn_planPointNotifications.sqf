@@ -13,10 +13,11 @@ assert(isServer);
                 ]
             ] call CBA_fnc_globalEvent;
         },
+        [],
         _x
-    ] CBA_fnc_waitAndExecute;
+    ] call CBA_fnc_waitAndExecute;
 } forEach [
     MISSION_timeout * 0.25,
     MISSION_timeout * 0.5,
-    MISSION_timeout * 0.75,
+    MISSION_timeout * 0.75
 ]

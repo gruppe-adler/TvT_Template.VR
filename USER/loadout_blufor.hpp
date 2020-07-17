@@ -19,7 +19,7 @@ class blufor: ind_me_terrorists {
         class Soldier_F: Soldier_F {
             uniform[] = {MISSION_BLUFOR_UNIFORMS};
         };
-        class Soldier_AR_F: Soldier_F {
+        class Soldier_AR_F: Soldier_AR_F {
             uniform[] = {MISSION_BLUFOR_UNIFORMS};
         };
     };

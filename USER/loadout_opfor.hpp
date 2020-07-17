@@ -18,7 +18,7 @@ class opfor: ind_me_terrorists {
         class Soldier_F: Soldier_F {
             uniform[] = {MISSION_OPFOR_UNIFORMS};
         };
-        class Soldier_AR_F: Soldier_F {
+        class Soldier_AR_F: Soldier_AR_F {
             uniform[] = {MISSION_OPFOR_UNIFORMS};
         };
     };
