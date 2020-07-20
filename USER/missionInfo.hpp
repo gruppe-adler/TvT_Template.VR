@@ -16,7 +16,7 @@ class CfgTaskDescriptions {
 	class bluSheepFob {
 		title		= "Move sheep to your FOB";
 		description	= "Move sheep to your FOB within the city. It might be in danger of raids, but it's close!";
-		marker		= "fob_blu_inner";
+		marker		= "marker_fob_blu";
 	};
 	class bluSheepExtract {
 		title		= "Move sheep to your tribal areas";//$STR_myTask2Title;
@@ -32,7 +32,7 @@ class CfgTaskDescriptions {
 	class opfSheepFob {
 		title		= "Move sheep to your FOB";
 		description	= "Move sheep to your FOB within the city. It might be in danger of raids, but it's close!";
-		marker		= "fob_opf_inner";
+		marker		= "marker_fob_opf";
 	};
 	class opfSheepExtract {
 		title		= "Move sheep to your tribal area";//$STR_myTask2Title;
