@@ -1,33 +1,30 @@
 #include "component.hpp"
 
-private _handle = "grad_points_playerKilledEH";
+private _handle = QGVAR(playerKilledEH);
 private _code = {
     params ["_victim","_victimSide","_victimIsPlayer","_killer","_killerSide","_killerIsPlayer","_killTime"];
-    private ["_points","_category"];
 
     if (_killerSide == CIVILIAN) exitWith {};
     if (_victim == _killer) exitWith {};
 
-    switch (true) do {
+    private _eventAndCategory = switch (true) do {
         case (_victimSide == CIVILIAN): {
-            _points = [_killerSide,"civKilled"] call grad_points_fnc_getPointsVar;
-            _category = "Civilians killed";
+            ["civKilled", "Civilians killed"]
         };
-        case (_victimSide getFriend _killerSide > 0): {
-            _points = 0;
-            _category = "";
+        case (_victimSide getFriend _killerSide >= 0.6): {
+            ["", ""]
         };
         case (_victimIsPlayer): {
-            _points = [_killerSide,"playerKilled"] call grad_points_fnc_getPointsVar;
-            _category = "Players killed";
+            ["playerKilled", "Players killed"]
         };
         default {
-            _points = [_killerSide,"aiKilled"] call grad_points_fnc_getPointsVar;
-            _category = "AI killed";
+            ["aiKilled", "AI killed"]
         };
     };
 
-    [_killerSide,_points,_category] call grad_points_fnc_addPoints;
+    private _bounty = [[GVAR(bounties), _eventAndCategory#0] call CBA_fnc_hashGet, _killerSide] call CBA_fnc_hashGet;
+    INFO_3("adding %1 points to %2 in category %3", _bounty, _killerSide, _eventAndCategory#1);
+    [_killerSide,_bounty,_eventAndCategory#1] call FUNC(addPoints);
 };
 
-[_handle,_code] call grad_common_fnc_addUnitKilledEH;
+[_handle,_code] call EFUNC(common,addUnitKilledEH);

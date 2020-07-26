@@ -28,7 +28,7 @@ _this spawn {
 
     // show points
     if (({[_x] call grad_points_fnc_getPoints > 0} count [WEST,EAST,INDEPENDENT,CIVILIAN]) > 0) then {
-        [] remoteExecCall ["grad_points_fnc_displayPoints",0,false];
+        [] remoteExecCall [QEFUNC(points,displayPoints),0,false];
         sleep 16;
     };
 

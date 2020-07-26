@@ -1,13 +1,12 @@
 #include "component.hpp"
 
-params ["_side"];
+params [
+    ["_side", sideUnknown, [sideUnknown]]
+];
 
-private _points = switch (_side) do {
-    case (WEST): {missionNamespace getVariable ["grad_common_points_west",0]};
-    case (EAST): {missionNamespace getVariable ["grad_common_points_east",0]};
-    case (INDEPENDENT): {missionNamespace getVariable ["grad_common_points_independent",0]};
-    case (CIVILIAN): {missionNamespace getVariable ["grad_common_points_civilian",0]};
-    default {0};
-};
+private _categorizedPoints = [[GVAR(points), _side] call CBA_fnc_hashGet] call CBA_fnc_hashValues;
 
-_points
+private _sum = 0;
+{ _sum = _sum + _x } forEach _categorizedPoints;
+
+_sum

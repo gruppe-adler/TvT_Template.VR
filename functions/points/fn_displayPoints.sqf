@@ -16,15 +16,15 @@
 #define DIVIDERWIDTH        0.4
 
 
-if (!isServer && !isRemoteExecuted) exitWith {[] remoteExec ["grad_points_fnc_displayPoints",2,false]};
+if (!isServer && !isRemoteExecuted) exitWith {[] remoteExec [QFUNC(displayPoints),2,false]};
 
 if (isServer && count _this == 0) exitWith {
     [
-        [([WEST] call grad_points_fnc_getPointsCategorized),[],{_x select 1},"DESCEND"] call BIS_fnc_sortBy,
-        [([EAST] call grad_points_fnc_getPointsCategorized),[],{_x select 1},"DESCEND"] call BIS_fnc_sortBy,
-        [([INDEPENDENT] call grad_points_fnc_getPointsCategorized),[],{_x select 1},"DESCEND"] call BIS_fnc_sortBy,
-        [([CIVILIAN] call grad_points_fnc_getPointsCategorized),[],{_x select 1},"DESCEND"] call BIS_fnc_sortBy
-    ] remoteExec ["grad_points_fnc_displayPoints",0,false];
+        [([WEST] call FUNC(getPointsCategorized)),[],{_x select 1},"DESCEND"] call BIS_fnc_sortBy,
+        [([EAST] call FUNC(getPointsCategorized)),[],{_x select 1},"DESCEND"] call BIS_fnc_sortBy,
+        [([INDEPENDENT] call FUNC(getPointsCategorized)),[],{_x select 1},"DESCEND"] call BIS_fnc_sortBy,
+        [([CIVILIAN] call FUNC(getPointsCategorized)),[],{_x select 1},"DESCEND"] call BIS_fnc_sortBy
+    ] remoteExec [QFUNC(displayPoints),0,false];
 };
 
 if (hasInterface && count _this > 0) then {
