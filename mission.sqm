@@ -10017,7 +10017,7 @@ class Mission
 			{
 			};
 			id=637;
-			type="LOP_IRAN_Static_DSHKM";
+			type="UK3CB_TKA_I_DSHKM";
 			atlOffset=1.14468;
 		};
 		class Item17
