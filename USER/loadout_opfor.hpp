@@ -1,9 +1,9 @@
-#define MISSION_OPFOR_UNIFORMS "LOP_U_TAK_Civ_Fatigue_07","LOP_U_TAK_Civ_Fatigue_09","LOP_U_TAK_Civ_Fatigue_13" // capacity 80
+#define MISSION_OPFOR_UNIFORMS "UK3CB_TKM_O_U_01", "UK3CB_TKM_O_U_01_B", "UK3CB_TKM_O_U_01_C"
 
 class opfor: ind_me_terrorists {
     class AllUnits: AllUnits {
         uniform[] = {MISSION_OPFOR_UNIFORMS};
-        vest[] = {"V_LegStrapBag_black_F","V_LegStrapBag_olive_F"}; // capacity 60
+        vest[] = {"UK3CB_V_Belt_KHK"};
     };
     class Type: Type {
         class Officer_F: Officer_F {

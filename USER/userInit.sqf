@@ -79,8 +79,8 @@ if (isServer) then {
 
         for "_i" from 1 to _count do {
             private _unit = _group createUnit ["C_Man_1", getPos _house, [], 0, "NONE"];
-            _unit addUniform selectRandom ["LOP_U_TAK_Civ_Fatigue_01", "LOP_U_TAK_Civ_Fatigue_02", "LOP_U_TAK_Civ_Fatigue_06", "LOP_U_TAK_Civ_Fatigue_08", "LOP_U_TAK_Civ_Fatigue_10", "LOP_U_TAK_Civ_Fatigue_11", "LOP_U_TAK_Civ_Fatigue_14"]; // capacity = 100
-            _unit addHeadgear "LOP_H_Turban";
+            _unit addUniform selectRandom ["UK3CB_ADC_C_U_01", "UK3CB_ADC_C_U_01_B", "UK3CB_ADC_C_U_01_C", "UK3CB_ADC_C_U_01_D", "UK3CB_ADC_C_U_01_E", "UK3CB_ADC_C_U_01_F", "UK3CB_ADC_C_U_01_G", "UK3CB_ADC_C_U_01_H", "UK3CB_ADC_C_U_01_I", "UK3CB_ADC_C_U_01_J", "UK3CB_ADC_C_U_01_K"];
+            _unit addHeadgear "UK3CB_TKC_H_Turban_01_1";
             if (random 1 > 0.5) then {
                 _unit addWeapon "rhs_weap_m38";
                 [_unit, "rhsgref_5Rnd_762x54_m38"] call CBA_fnc_addMagazine;

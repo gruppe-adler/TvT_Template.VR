@@ -1,8 +1,8 @@
 class civilian {
     class AllUnits {
-        uniform[] = {"LOP_U_TAK_Civ_Fatigue_01", "LOP_U_TAK_Civ_Fatigue_02", "LOP_U_TAK_Civ_Fatigue_06", "LOP_U_TAK_Civ_Fatigue_08", "LOP_U_TAK_Civ_Fatigue_10", "LOP_U_TAK_Civ_Fatigue_11", "LOP_U_TAK_Civ_Fatigue_14"}; // capacity = 100
+        uniform[] = {"UK3CB_ADC_C_U_01", "UK3CB_ADC_C_U_01_B", "UK3CB_ADC_C_U_01_C", "UK3CB_ADC_C_U_01_D", "UK3CB_ADC_C_U_01_E", "UK3CB_ADC_C_U_01_F", "UK3CB_ADC_C_U_01_G", "UK3CB_ADC_C_U_01_H", "UK3CB_ADC_C_U_01_I", "UK3CB_ADC_C_U_01_J", "UK3CB_ADC_C_U_01_K"};
         vest = "";
-        headgear = "LOP_H_Turban";
+        headgear = "UK3CB_TKC_H_Turban_01_1";
 
         // 10% get a rifle, 20% get a handgun
 

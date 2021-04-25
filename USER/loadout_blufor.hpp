@@ -1,9 +1,9 @@
-#define MISSION_BLUFOR_UNIFORMS "LOP_U_ISTS_Fatigue_02","LOP_U_ISTS_Fatigue_03","LOP_U_ISTS_Fatigue_04" // capacity 120
+#define MISSION_BLUFOR_UNIFORMS "UK3CB_TKM_I_U_05", "UK3CB_TKM_I_U_05_B", "UK3CB_TKM_I_U_05_C",
 
 class blufor: ind_me_terrorists {
     class AllUnits: AllUnits {
         uniform[] = {MISSION_BLUFOR_UNIFORMS};
-        vest[] = {"", "rhs_6sh46"}; // die Hälfte nix, die andere Hälfte 40
+        vest[] = {"UK3CB_V_Belt_KHK"}; // die Hälfte nix, die andere Hälfte 40
     };
     class Type: Type {
         class Officer_F: Officer_F {
@@ -14,7 +14,6 @@ class blufor: ind_me_terrorists {
         };
         class Soldier_TL_F: Soldier_TL_F {
             uniform[] = {MISSION_BLUFOR_UNIFORMS};
-            vest = "rhs_6sh46"; // die brauchen die
         };
         class Soldier_F: Soldier_F {
             uniform[] = {MISSION_BLUFOR_UNIFORMS};
