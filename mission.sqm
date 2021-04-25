@@ -4466,7 +4466,7 @@ class CustomAttributes
 																"STRING"
 															};
 														};
-														value="LOP_TAK_Civ_Ural_Open";
+														value="UK3CB_TKC_C_Ural_Open";
 													};
 												};
 												class Item1
@@ -9542,7 +9542,7 @@ class Mission
 			{
 			};
 			id=462;
-			type="LOP_IRAN_Static_DSHKM";
+			type="UK3CB_TKA_I_DSHKM";
 		};
 		class Item9
 		{
@@ -10017,7 +10017,7 @@ class Mission
 			{
 			};
 			id=637;
-			type="LOP_IRAN_Static_M2";
+			type="LOP_IRAN_Static_DSHKM";
 			atlOffset=1.14468;
 		};
 		class Item17
@@ -10033,7 +10033,7 @@ class Mission
 			{
 			};
 			id=646;
-			type="LOP_TAK_Civ_Ural_open";
+			type="UK3CB_TKC_C_Ural_Open";
 			atlOffset=0.86337662;
 		};
 		class Item18
@@ -10763,7 +10763,7 @@ class Mission
 			{
 			};
 			id=717;
-			type="LOP_IRAN_Static_DSHKM";
+			type="UK3CB_TKA_I_DSHKM";
 			atlOffset=-9.5367432e-007;
 		};
 		class Item30
@@ -12855,7 +12855,7 @@ class Mission
 				textures="Camo4";
 			};
 			id=981;
-			type="LOP_TAK_Civ_Ural";
+			type="UK3CB_TKC_C_Ural";
 			atlOffset=1.3020172;
 			class CustomAttributes
 			{
@@ -14110,7 +14110,7 @@ class Mission
 					{
 					};
 					id=1064;
-					type="LOP_IRAN_Infantry_crew";
+					type="UK3CB_TKA_I_CREW";
 					atlOffset=2.7306232;
 				};
 				class Item1
@@ -14127,7 +14127,7 @@ class Mission
 					{
 					};
 					id=1065;
-					type="LOP_IRAN_Infantry_crew";
+					type="UK3CB_TKA_I_CREW";
 					atlOffset=2.7306232;
 				};
 				class Item2
@@ -14144,7 +14144,7 @@ class Mission
 					{
 					};
 					id=1354;
-					type="LOP_IRAN_Infantry_crew";
+					type="UK3CB_TKA_I_CREW";
 				};
 				class Item3
 				{
@@ -14160,7 +14160,7 @@ class Mission
 					{
 					};
 					id=1355;
-					type="LOP_IRAN_Infantry_crew";
+					type="UK3CB_TKA_I_CREW";
 				};
 				class Item4
 				{
@@ -14176,7 +14176,7 @@ class Mission
 					{
 					};
 					id=1358;
-					type="LOP_IRAN_Infantry_crew";
+					type="UK3CB_TKA_I_CREW";
 				};
 				class Item5
 				{
@@ -14192,7 +14192,7 @@ class Mission
 					{
 					};
 					id=1359;
-					type="LOP_IRAN_Infantry_crew";
+					type="UK3CB_TKA_I_CREW";
 				};
 				class Item6
 				{
@@ -14392,7 +14392,7 @@ class Mission
 					{
 					};
 					id=1125;
-					type="LOP_IRAN_Infantry_pilot";
+					type="UK3CB_TKA_I_HELI_PILOT";
 				};
 				class Item1
 				{
@@ -14408,7 +14408,7 @@ class Mission
 					{
 					};
 					id=1126;
-					type="LOP_IRAN_Infantry_pilot";
+					type="UK3CB_TKA_I_HELI_PILOT";
 				};
 				class Item2
 				{
@@ -14530,7 +14530,7 @@ class Mission
 					{
 					};
 					id=1122;
-					type="LOP_IRAN_Infantry_pilot";
+					type="UK3CB_TKA_I_HELI_PILOT";
 				};
 				class Item1
 				{
@@ -14546,7 +14546,7 @@ class Mission
 					{
 					};
 					id=1123;
-					type="LOP_IRAN_Infantry_pilot";
+					type="UK3CB_TKA_I_HELI_PILOT";
 				};
 				class Item2
 				{
@@ -14701,7 +14701,7 @@ class Mission
 					{
 					};
 					id=1253;
-					type="LOP_IRAN_Infantry_crew";
+					type="UK3CB_TKA_I_CREW";
 				};
 				class Item1
 				{
@@ -14717,7 +14717,7 @@ class Mission
 					{
 					};
 					id=1254;
-					type="LOP_IRAN_Infantry_crew";
+					type="UK3CB_TKA_I_CREW";
 				};
 				class Item2
 				{
@@ -14966,7 +14966,7 @@ class Mission
 					{
 					};
 					id=1023;
-					type="LOP_IRAN_Infantry_crew";
+					type="UK3CB_TKA_I_CREW";
 					atlOffset=1.9073486e-006;
 				};
 				class Item1
@@ -14984,7 +14984,7 @@ class Mission
 						rank="LIEUTENANT";
 					};
 					id=1024;
-					type="LOP_IRAN_Infantry_crew";
+					type="UK3CB_TKA_I_CREW";
 					atlOffset=1.9073486e-006;
 					class CustomAttributes
 					{
@@ -15043,7 +15043,7 @@ class Mission
 					{
 					};
 					id=1346;
-					type="LOP_IRAN_Infantry_crew";
+					type="UK3CB_TKA_I_CREW";
 					atlOffset=-1.9073486e-006;
 				};
 				class Item3
@@ -15061,7 +15061,7 @@ class Mission
 						rank="LIEUTENANT";
 					};
 					id=1347;
-					type="LOP_IRAN_Infantry_crew";
+					type="UK3CB_TKA_I_CREW";
 					atlOffset=-1.9073486e-006;
 					class CustomAttributes
 					{
@@ -15120,7 +15120,7 @@ class Mission
 					{
 					};
 					id=1350;
-					type="LOP_IRAN_Infantry_crew";
+					type="UK3CB_TKA_I_CREW";
 				};
 				class Item5
 				{
@@ -15137,7 +15137,7 @@ class Mission
 						rank="LIEUTENANT";
 					};
 					id=1351;
-					type="LOP_IRAN_Infantry_crew";
+					type="UK3CB_TKA_I_CREW";
 					class CustomAttributes
 					{
 						class Attribute0
@@ -19549,7 +19549,7 @@ class Mission
 				textures="Camo3";
 			};
 			id=1453;
-			type="LOP_TAK_Civ_Ural";
+			type="UK3CB_TKC_C_Ural";
 			class CustomAttributes
 			{
 				class Attribute0
@@ -20194,7 +20194,7 @@ class Mission
 			{
 			};
 			id=1491;
-			type="LOP_IRAN_Static_DSHKM";
+			type="UK3CB_TKA_I_DSHKM";
 			atlOffset=3.8146973e-006;
 		};
 		class Item237
