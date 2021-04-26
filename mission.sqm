@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=392;
+		nextID=397;
 	};
 	class Camera
 	{
 		pos[]={4294.1299,2854.3923,1358.4305};
-		dir[]={0.21276456,-0.68248039,0.69925082};
-		up[]={0.19866857,0.73090386,0.65292436};
-		aside[]={0.95669323,0,-0.29109785};
+		dir[]={0.21276458,-0.68248039,0.69925088};
+		up[]={0.1986686,0.73090386,0.65292436};
+		aside[]={0.95669323,-1.4901161e-008,-0.29109788};
 	};
 };
 binarizationWanted=0;
@@ -70,7 +70,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=30;
+		items=29;
 		class Item0
 		{
 			className="A3_Modules_F_Curator";
@@ -237,33 +237,26 @@ class AddonsMetaData
 		};
 		class Item25
 		{
-			className="acex_sitting";
-			name="ACEX - Sitting";
-			author="ACE-Team";
-			url="http://ace3mod.com/";
-		};
-		class Item26
-		{
 			className="gm_vehicles_land_wheeled_p601_gc_civ_p601";
 			name="gm_vehicles_land_wheeled_p601_gc_civ_p601";
 			author="Global Mobilization";
 			url="global-mobilization.com";
 		};
-		class Item27
+		class Item26
 		{
 			className="gm_vehicles_air_planes_l410_gc_civ_l410";
 			name="gm_vehicles_air_planes_l410_gc_civ_l410";
 			author="Global Mobilization";
 			url="global-mobilization.com";
 		};
-		class Item28
+		class Item27
 		{
 			className="gm_vehicles_land_wheeled_typ1_ge_civ_typ1";
 			name="gm_vehicles_land_wheeled_typ1_ge_civ_typ1";
 			author="Global Mobilization";
 			url="global-mobilization.com";
 		};
-		class Item29
+		class Item28
 		{
 			className="grad_civs_common";
 			name="common";
@@ -8600,7 +8593,7 @@ class Mission
 				};
 			};
 			id=205;
-			atlOffset=5.4623871;
+			atlOffset=-126.7137;
 		};
 		class Item3
 		{
