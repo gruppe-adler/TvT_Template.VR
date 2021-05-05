@@ -1,6 +1,6 @@
 #include "node_modules\grad-tvtsettings\cba_settings.sqf"
 
-force grad_civs_cars_animalTransportChance = 0.85;
+force grad_civs_cars_animalTransportChance = 1;
 force grad_civs_cars_automaticVehicleGroupSize = true;
 force grad_civs_cars_animalTransportVehicles = "[""UK3CB_TKC_C_Ural_Open"", ""UK3CB_TKC_C_V3S_Open""]";
 force grad_civs_cars_vehicles = "[""UK3CB_TKC_C_Datsun_Civ_Open"",""UK3CB_TKC_C_Hatchback"",""UK3CB_TKC_C_Hilux_Civ_Open"",""UK3CB_TKC_C_Lada"",""UK3CB_TKC_C_LR_Open"",""UK3CB_TKC_C_V3S_Recovery"",""UK3CB_TKC_C_S1203"",""UK3CB_TKC_C_S1203_Amb"",""UK3CB_TKC_C_Tractor_Old"",""UK3CB_TKC_C_UAZ_Open"",""UK3CB_TKC_C_Ural"",""UK3CB_TKC_C_Gaz24"",""UK3CB_TKC_C_Old_Bike"",""UK3CB_TKC_C_YAVA""]";
