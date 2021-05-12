@@ -41,10 +41,10 @@ class CfgTaskDescriptions {
 	};
 };
 
-class CfgVehicles {
-    class Land_Ind_SawMillPen {
-    // class ACE_LogicDummy {
-        class GRAD_AnimalTransport {
+class GRAD_AnimalTransport {
+    class Vehicles {
+        class Land_Ind_SawMillPen {
+    // class ACE_LogicDummy {        
             unloadPoint[] = {7, 0, -2.5};
             unloadActionPoint[] = {6, 0, -2.5};
             class Sheep_random_F {

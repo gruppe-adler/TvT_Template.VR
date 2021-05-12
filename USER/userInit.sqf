@@ -143,6 +143,7 @@ if (hasInterface) then {
     {
         private _pen = _x;
         {
+            private _arrow = _x;
             private _positionedUnloadAction = [
                 QGVAR(unloadAction),
                 "remove animals from pen",
@@ -163,12 +164,12 @@ if (hasInterface) then {
             ] call ace_interact_menu_fnc_createAction;
 
             [
-                _x,
+                _arrow,
                 0,
                 [],
                 _positionedUnloadAction
             ] call ace_interact_menu_fnc_addActionToObject;
-        } forEach (nearestObjects [_x, ["Sign_Arrow_Yellow_F"], 20, true]);
+        } forEach (nearestObjects [_pen, ["Sign_Arrow_Yellow_F"], 20, true]);
     } forEach [pen_blu, pen_opf];
 
 
