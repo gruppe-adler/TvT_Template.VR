@@ -6,6 +6,9 @@ params [
     ["_extractToSide", sideUnknown, [sideUnknown]],
     ["_player", objNull, [objNull]]
 ];
-assert(_player isEqualTo player);
-
-[] call ace_spectator_fnc_setSpectator;
+assert(isPlayer _player);
+if (_player  isEqualTo player) then {
+    [] call ace_spectator_fnc_setSpectator;
+} else {
+    WARNING_1("player %1 is not local player!",_player);
+};

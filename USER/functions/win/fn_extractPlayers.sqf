@@ -25,13 +25,16 @@ if (isNil "CBA_fnc_hashValues") then {
 
 {
     private _vehicle = _x;
-    private _vehPlayers = crew _vehicle;
+    private _vehPlayers = (crew _vehicle) select {isPlayer _x};
     GVAR(extractedPlayers) = GVAR(extractedPlayers) + _vehPlayers;
     {
         [QGVAR(player_extracted), [_extractToSide, _x], _x] call CBA_fnc_targetEvent;
     } forEach _vehPlayers;
 
-    private _animals = [_vehicle getVariable ["grad_animalTransport_animals", [] call CBA_fnc_hashCreate]] call CBA_fnc_hashValues;
+    private _npcs = (crew _vehicle) select {!(isPlayer _x)};
+    { deleteVehicle _x; } forEach _npcs;
+
+    private _animals = [_vehicle getVariable ["grad_animalTransport_common_animals", [] call CBA_fnc_hashCreate]] call CBA_fnc_hashValues;
     private _num = count _animals;
 
     INFO_2("adding %1 points for sheep on %2", _num, _vehicle);

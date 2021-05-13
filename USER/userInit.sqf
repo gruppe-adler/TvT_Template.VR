@@ -122,7 +122,7 @@ if (isServer) then {
     [] call EFUNC(win,planPointNotifications);
 };
 
-["grad_animalTransport_animal_unloaded", {
+["grad_animalTransport_common_animal_unloaded", {
     params [
         ["_vehicle", objNull, [objNull]],
         ["_animal", objNull, [objNull]],
