@@ -141,35 +141,14 @@ if (isServer) then {
 if (hasInterface) then {
     // unload from pen
     {
-        private _pen = _x;
-        {
-            private _arrow = _x;
-            private _positionedUnloadAction = [
-                QGVAR(unloadAction),
-                "remove animals from pen",
-                "",
-                {
-                    params ["_target", "_player", "_params"];
-                    INFO_1("yay action params are: %1", _params);
-                    [_params#0] call grad_animaltransport_fnc_player_unloadAnimals;
-                },
-                {true},
-                {
-                    params ["_target", "_player", "_params"];
-                    [_params#0] call grad_animaltransport_fnc_interact_unloadChildren
-                },
-                [_pen],
-                [0, 0, 1.78],
-                4
-            ] call ace_interact_menu_fnc_createAction;
+        private _pen = _x;   
+        private _loadingPoints = [_pen] call grad_animalTransport_common_fnc_getActionOffsets;
 
-            [
-                _arrow,
-                0,
-                [],
-                _positionedUnloadAction
-            ] call ace_interact_menu_fnc_addActionToObject;
-        } forEach (nearestObjects [_pen, ["Sign_Arrow_Yellow_F"], 20, true]);
+        {        
+            [_pen, _y, _x] call grad_animalTransport_common_fnc_addUnloadActionPoint;
+            private _post = createSimpleObject ["Land_Wired_Fence_4mD_F",  (_pen modelToWorldWorld _y) vectorAdd [0, 0, -1.2]];
+            _post setDir (getDir _pen);
+        } forEach _loadingPoints;
     } forEach [pen_blu, pen_opf];
 
 

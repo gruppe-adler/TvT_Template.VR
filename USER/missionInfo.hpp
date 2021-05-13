@@ -44,9 +44,13 @@ class CfgTaskDescriptions {
 class GRAD_AnimalTransport {
     class Vehicles {
         class Land_Ind_SawMillPen {
-    // class ACE_LogicDummy {        
-            unloadPoint[] = {7, 0, -2.5};
-            unloadActionPoint[] = {6, 0, -2.5};
+            class LoadingPoints {            
+                class RightCenter {
+                    actionOffset[] = {5.8, 0, -2.3};
+                    dropOffset[]   = {6.7, 0, -2.5};
+                    dropDir = 90;
+                };
+            };
             class Sheep_random_F {
                 class Spaces {
                     class Q0 { offset[]={ -4, -11.866666666666665, -3}; };
