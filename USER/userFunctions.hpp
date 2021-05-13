@@ -22,6 +22,7 @@ class MISSION_win {
         class onPlayerExtracted {};
         class planPointNotifications {};
         class registerNotifications {};
+        class showOurPoints {};
         class updateFobSheepCount {};
     };
 };

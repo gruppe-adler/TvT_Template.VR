@@ -156,6 +156,7 @@ if (hasInterface) then {
 
     [] call EFUNC(win,createPersonalTasks);
     [] call EFUNC(win,registerNotifications);
+    [] call EFUNC(win,showOurPoints);
 };
 
 ISNILS(MISSION_timeout,3600);
