@@ -19,7 +19,6 @@ GVAR(checkPfhs) pushBackUnique ([{
         {
             [_x] call CBA_fnc_removePerFrameHandler;
         } forEach GVAR(checkPfhs);        
-        [_winName] call grad_endings_fnc_endMissionServer;
-        
+        [_winName] call grad_endings_fnc_endMissionServer;        
     };
 },_checkInterval,[_condition,_winName]] call CBA_fnc_addPerFrameHandler);
