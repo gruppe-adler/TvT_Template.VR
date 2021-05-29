@@ -5,10 +5,10 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=641;
+	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=1510;
+		nextID=1513;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=442;
+		nextID=447;
 	};
 	class Camera
 	{
-		pos[]={4510.1406,126.5742,6426.9409};
-		dir[]={-0.9283573,-0.32375103,-0.18273939};
-		up[]={-0.31769368,0.94612145,-0.062535636};
-		aside[]={-0.19313937,2.1280721e-007,0.98119909};
+		pos[]={3782.4917,32.672718,4331.5425};
+		dir[]={-0.47353563,-0.58701932,-0.65663713};
+		up[]={-0.3433595,0.80957288,-0.47612593};
+		aside[]={-0.81109071,-1.4901161e-008,0.58492029};
 	};
 };
 binarizationWanted=0;
@@ -9488,7 +9488,7 @@ class Mission
 				};
 			};
 			id=454;
-			atlOffset=-0.0059127808;
+			atlOffset=0.053066254;
 		};
 		class Item6
 		{
@@ -9505,7 +9505,7 @@ class Mission
 			};
 			id=455;
 			type="UK3CB_TKA_I_ZU23";
-			atlOffset=-0.0059127808;
+			atlOffset=0.053066254;
 		};
 		class Item7
 		{
@@ -10710,7 +10710,7 @@ class Mission
 				};
 			};
 			id=711;
-			atlOffset=-0.028057098;
+			atlOffset=0.030917168;
 		};
 		class Item26
 		{
@@ -10727,7 +10727,7 @@ class Mission
 			};
 			id=714;
 			type="UK3CB_TKA_I_ZU23";
-			atlOffset=-0.028057098;
+			atlOffset=0.030917168;
 		};
 		class Item27
 		{
@@ -11914,19 +11914,43 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={4923.3018,40.895744,4591.2163};
-				angles[]={0.01749678,4.595294,0.069885373};
+				position[]={4923.3018,40.895855,4591.2163};
+				angles[]={0.017488198,4.5952945,0.069882989};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
 				lock="UNLOCKED";
+				name="ural_opf";
 				textures="Camo4";
 			};
 			id=981;
 			type="UK3CB_TKC_C_Ural";
-			atlOffset=-0.0041122437;
+			atlOffset=-0.0040016174;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""FirstAidKit""],[10]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item75
 		{
@@ -12204,7 +12228,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={4923.8169,32.115501,6141.8857};
-				angles[]={-0,4.685317,6.2731905};
+				angles[]={0,4.685317,6.2731905};
 			};
 			side="Independent";
 			flags=4;
@@ -12214,6 +12238,7 @@ class Mission
 			};
 			id=1022;
 			type="UK3CB_TKA_I_BMP1";
+			atlOffset=-0.00076675415;
 		};
 		class Item92
 		{
@@ -12231,7 +12256,7 @@ class Mission
 			};
 			id=1066;
 			type="UK3CB_TKA_I_BMP1";
-			atlOffset=2.6585236;
+			atlOffset=2.6583481;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -12512,7 +12537,7 @@ class Mission
 				};
 			};
 			id=1085;
-			atlOffset=2.6585236;
+			atlOffset=2.6583481;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -12651,6 +12676,7 @@ class Mission
 				};
 			};
 			id=1102;
+			atlOffset=-2.2888184e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -12788,6 +12814,7 @@ class Mission
 				};
 			};
 			id=1109;
+			atlOffset=-0.0014438629;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -12828,6 +12855,7 @@ class Mission
 			};
 			id=1121;
 			type="UK3CB_TKA_I_Mi_24V";
+			atlOffset=-0.0014438629;
 		};
 		class Item97
 		{
@@ -12845,6 +12873,7 @@ class Mission
 			};
 			id=1124;
 			type="UK3CB_TKA_I_Mi_24V";
+			atlOffset=-2.2888184e-005;
 		};
 		class Item98
 		{
@@ -12970,7 +12999,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={4923.8115,29.873323,6141.9917};
-						angles[]={-0,4.685317,6.2731905};
+						angles[]={0,4.685317,6.2731905};
 					};
 					side="Independent";
 					flags=6;
@@ -12986,7 +13015,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={4923.8115,29.873323,6141.9917};
-						angles[]={-0,4.685317,6.2731905};
+						angles[]={0,4.685317,6.2731905};
 					};
 					side="Independent";
 					flags=4;
@@ -13345,6 +13374,7 @@ class Mission
 				};
 			};
 			id=1284;
+			atlOffset=-0.00076675415;
 		};
 		class Item101
 		{
@@ -13362,6 +13392,7 @@ class Mission
 			};
 			id=1348;
 			type="UK3CB_TKA_I_BMP1";
+			atlOffset=-0.00045013428;
 		};
 		class Item102
 		{
@@ -13379,6 +13410,7 @@ class Mission
 			};
 			id=1352;
 			type="UK3CB_TKA_I_BMP1";
+			atlOffset=-8.9645386e-005;
 		};
 		class Item103
 		{
@@ -13396,6 +13428,7 @@ class Mission
 			};
 			id=1356;
 			type="UK3CB_TKA_I_BMP1";
+			atlOffset=-0.00025749207;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -13436,6 +13469,7 @@ class Mission
 			};
 			id=1360;
 			type="UK3CB_TKA_I_BMP1";
+			atlOffset=-0.00017356873;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -15995,19 +16029,43 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3779.2712,16.657104,4309.8838};
-				angles[]={6.255693,0.84529614,0.017500184};
+				position[]={3779.2715,16.657146,4309.8843};
+				angles[]={6.2556963,0.84529781,0.017505653};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
 				lock="UNLOCKED";
+				name="ural_blu";
 				textures="Camo3";
 			};
 			id=1453;
 			type="UK3CB_TKC_C_Ural";
-			atlOffset=-0.0030250549;
+			atlOffset=-0.0030002594;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""FirstAidKit""],[10]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item157
 		{
@@ -16454,7 +16512,7 @@ class Mission
 				};
 			};
 			id=1485;
-			atlOffset=-0.00031280518;
+			atlOffset=0.058647156;
 		};
 		class Item170
 		{
@@ -16471,7 +16529,7 @@ class Mission
 			};
 			id=1488;
 			type="UK3CB_TKA_I_ZU23";
-			atlOffset=-0.00031280518;
+			atlOffset=0.058647156;
 		};
 		class Item171
 		{
