@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=447;
+		nextID=452;
 	};
 	class Camera
 	{
 		pos[]={3782.4917,32.672718,4331.5425};
-		dir[]={-0.47353563,-0.58701932,-0.65663713};
-		up[]={-0.3433595,0.80957288,-0.47612593};
-		aside[]={-0.81109071,-1.4901161e-008,0.58492029};
+		dir[]={0.81049043,-0.38113782,-0.44479212};
+		up[]={0.33412927,0.92451823,-0.18336822};
+		aside[]={-0.48110744,-2.8696377e-008,-0.87666267};
 	};
 };
 binarizationWanted=0;
@@ -11404,7 +11404,7 @@ class Mission
 		class Item42
 		{
 			dataType="Marker";
-			position[]={8525.8691,284.7438,5015.8442};
+			position[]={8500,284.74399,5000};
 			name="border_south";
 			markerType="RECTANGLE";
 			type="rectangle";
@@ -11413,12 +11413,12 @@ class Mission
 			b=500;
 			angle=90;
 			id=782;
-			atlOffset=3.0517578e-005;
+			atlOffset=7.7139893;
 		};
 		class Item43
 		{
 			dataType="Marker";
-			position[]={-495.13361,166.00278,4967.0303};
+			position[]={-500,166.00301,5000};
 			name="border_north";
 			markerType="RECTANGLE";
 			type="rectangle";
@@ -11427,7 +11427,7 @@ class Mission
 			b=500;
 			angle=90;
 			id=783;
-			atlOffset=28.972977;
+			atlOffset=28.361099;
 		};
 		class Item44
 		{
@@ -11547,7 +11547,7 @@ class Mission
 		class Item52
 		{
 			dataType="Trigger";
-			position[]={-488.33496,139.10297,4921.7959};
+			position[]={-500,137.64191,5000};
 			angle=1.5707964;
 			class Attributes
 			{
@@ -11567,7 +11567,7 @@ class Mission
 		class Item53
 		{
 			dataType="Trigger";
-			position[]={8516.791,279.80774,4962.0156};
+			position[]={8500,277.03,5000};
 			angle=1.5707964;
 			class Attributes
 			{

@@ -19,9 +19,9 @@ class CfgTaskDescriptions {
 		marker		= "marker_fob_blu";
 	};
 	class bluSheepExtract {
-		title		= "Move sheep to your tribal areas";//$STR_myTask2Title;
-		description	= "move sheep out of the city to the tribal area far far away to the north. No one can take them from you there!";//$STR_myTask2Description;
-		marker		= "border_north";//$STR_myTask2Marker;
+		title		= "Move sheep to your tribal areas";
+		description	= "move sheep out of the city to the tribal area far far away to the north. No one can take them from you there!";
+		marker		= "border_north";
 	};
 
     class opfMoreSheep {
