@@ -1,9 +1,5 @@
 #include "component.hpp"
 
-if (isNil "CBA_fnc_hashValues") then { // https://github.com/CBATeam/CBA_A3/pull/1350
-    CBA_fnc_hashValues = {+((_this#0) select 2)};
-};
-
 private _cfg = missionConfigFile >> "CfgPoints";
 private _sideToStr = [
     [west, "BLUFOR"],

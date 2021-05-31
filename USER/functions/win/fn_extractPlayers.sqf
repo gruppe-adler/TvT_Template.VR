@@ -19,10 +19,6 @@ INFO_1("already extracted are: %1", GVAR(extractedPlayers));
 
 GVAR(extractedPlayers) = GVAR(extractedPlayers) + _players;
 
-if (isNil "CBA_fnc_hashValues") then {
-    CBA_fnc_hashValues = { +((_this#0) select 2); };
-};
-
 {
     private _vehicle = _x;
     private _vehPlayers = (crew _vehicle) select {isPlayer _x};
