@@ -50,6 +50,6 @@ GVAR(extractedPlayers) = GVAR(extractedPlayers) + _players;
 } forEach _npcs;
 
 {
-    WARNING_1("moving something thats neither car nor man: %1", _x);
-    deleteVehicle _x;
+    WARNING_1("moving something off-map thats neither car nor man: %1", _x);
+    _x setPos [4000, -1000];
 } forEach _rest;
