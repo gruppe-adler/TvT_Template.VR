@@ -2,30 +2,25 @@
 
 params [
     ["_extractToSide", sideUnknown, [sideUnknown]],
-    ["_playersOrVehicles", [], [[]]]
+    ["_triggerUnits", [], [[]]]
 ];
-
-private _players = _playersOrVehicles select { _x isKindOf "Man"};
-private _vehicles = _playersOrVehicles select { _x isKindOf "Car"};
-
-INFO_3("extracting vehicles %1 and players %2 to side ", _vehicles, _players, _extractToSide);
 
 assert(isServer);
 
+private _triggerMen = (_triggerUnits select { _x isKindOf "Man"});
+
+private _cars = _triggerUnits select { _x isKindOf "Car"};
+private _men = _triggerMen + flatten (_cars apply {crew _x});
+private _players = _men arrayIntersect playableUnits;
+private _rest = _triggerUnits - _men - _cars;
+
 ISNILS(GVAR(extractedPlayers), []);
-_players = _players - GVAR(extractedPlayers);
-
-INFO_1("already extracted are: %1", GVAR(extractedPlayers));
-
+INFO_1("already extracted were: %1", GVAR(extractedPlayers));
+INFO_4("now extracting cars %1 and units %2 to side %3, ignoring %4...", _cars, _men, _extractToSide, _rest);
 GVAR(extractedPlayers) = GVAR(extractedPlayers) + _players;
 
 {
     private _vehicle = _x;
-    private _vehPlayers = (crew _vehicle) select {isPlayer _x};
-    GVAR(extractedPlayers) = GVAR(extractedPlayers) + _vehPlayers;
-    {
-        [QGVAR(player_extracted), [_extractToSide, _x], _x] call CBA_fnc_targetEvent;
-    } forEach _vehPlayers;
 
     private _npcs = (crew _vehicle) select {!(isPlayer _x)};
     { deleteVehicle _x; } forEach _npcs;
@@ -38,7 +33,7 @@ GVAR(extractedPlayers) = GVAR(extractedPlayers) + _players;
 
     { deleteVehicle _x; } forEach _animals;
     deleteVehicle _vehicle;
-} forEach _vehicles;
+} forEach _cars;
 
 {
     private _sheep = (_x nearEntities ["Sheep_Random_F", 25]);
@@ -48,5 +43,10 @@ GVAR(extractedPlayers) = GVAR(extractedPlayers) + _players;
     };
     { deleteVehicle _x; } forEach _sheep;
 
-    [QGVAR(player_extracted), [_extractToSide, _x], _x] call CBA_fnc_targetEvent;
+    if (isPlayer _x) then {
+        _x setPos [-1000, -1000];
+        [QGVAR(player_extracted), [_extractToSide, _x], _x] call CBA_fnc_targetEvent;
+    } else {
+        deleteVehicle _x;
+    };
 } forEach _players;
