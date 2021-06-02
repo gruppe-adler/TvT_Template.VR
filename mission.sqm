@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={8191.8838,743.98267,2064.3872};
-		dir[]={-0.0305076,-0.48089996,0.87626803};
-		up[]={-0.016732924,0.87676674,0.48062184};
-		aside[]={0.99941665,1.6046397e-007,0.034794368};
+		pos[]={4446.2466,796.1416,5727.4556};
+		dir[]={-0.26888153,-0.53228933,-0.80275172};
+		up[]={-0.16908886,0.84650761,-0.50481516};
+		aside[]={-0.94824433,-6.321352e-008,0.31761509};
 	};
 };
 binarizationWanted=0;
@@ -9802,8 +9802,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4951.4121,29.698576,6216.3018};
-						angles[]={6.278194,0,6.2731905};
+						position[]={4951.4038,29.6987,6216.3096};
+						angles[]={6.2781935,0,6.2731848};
 					};
 					side="Independent";
 					flags=6;
@@ -9818,8 +9818,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4951.4121,29.698576,6216.3018};
-						angles[]={6.278194,0,6.2731905};
+						position[]={4951.4038,29.6987,6216.3096};
+						angles[]={6.2781935,0,6.2731848};
 					};
 					side="Independent";
 					flags=4;
@@ -9904,7 +9904,6 @@ class Mission
 				};
 			};
 			id=1102;
-			atlOffset=-2.2888184e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -9935,8 +9934,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={5004.6196,29.372849,6223.0806};
-						angles[]={0.012496647,0,0.014998405};
+						position[]={5004.6841,29.374712,6223.0088};
+						angles[]={0.012496558,0,0.014992379};
 					};
 					side="Independent";
 					flags=6;
@@ -9951,8 +9950,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={5004.6196,29.372849,6223.0806};
-						angles[]={0.012496647,0,0.014998405};
+						position[]={5004.6841,29.374712,6223.0088};
+						angles[]={0.012496558,0,0.014992379};
 					};
 					side="Independent";
 					flags=4;
@@ -10036,7 +10035,6 @@ class Mission
 				};
 			};
 			id=1109;
-			atlOffset=-0.0014438629;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -10060,36 +10058,68 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={5004.6357,32.545956,6222.999};
-				angles[]={0.012496647,0,0.014998405};
+				position[]={5004.6362,32.547413,6222.9985};
+				angles[]={0.012496558,0,0.014992379};
 			};
 			side="Independent";
 			flags=6;
 			class Attributes
 			{
-				pylons=";rhs_mag_M151_19_green[0];rhs_mag_M151_19_green;rhs_mag_M151_19_green;rhs_mag_M151_19_green[0];;rhsusf_ANALE39_CMFlare_Chaff_Magazine_x4;";
+				pylons="rhs_mag_b8v20a_s8df;rhs_mag_b8v20a_s8df[0];rhs_mag_b8v20a_s8kom;rhs_mag_b8v20a_s8kom;rhs_mag_9M120M_Mi24_2x[0];rhs_mag_9M120M_Mi24_2x;rhs_ASO2_CMFlare_Chaff_Magazine_x4;";
 			};
 			id=1121;
 			type="UK3CB_TKA_I_Mi_24V";
-			atlOffset=-0.0014438629;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="[[[[""FirstAidKit"",""Medikit""],[8,1]],[[""rhs_30Rnd_545x39_7N10_AK"",""rhs_mag_rgd5"",""rhs_mag_nspn_red"",""rhs_mag_rdg2_white""],[30,10,10,4]],[[""ToolKit""],[1]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item97
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={4951.436,32.87178,6216.2441};
-				angles[]={6.278194,0,6.2731905};
+				position[]={4951.4355,32.871807,6216.2437};
+				angles[]={6.2781935,0,6.2731848};
 			};
 			side="Independent";
 			flags=6;
 			class Attributes
 			{
-				pylons=";rhs_mag_M151_19_green[0];rhs_mag_M151_19_green;rhs_mag_M151_19_green;rhs_mag_M151_19_green[0];;rhsusf_ANALE39_CMFlare_Chaff_Magazine_x4;";
+				pylons="rhs_mag_b8v20a_s8df;rhs_mag_b8v20a_s8df[0];rhs_mag_b8v20a_s8kom;rhs_mag_b8v20a_s8kom;rhs_mag_9M120M_Mi24_2x[0];rhs_mag_9M120M_Mi24_2x;rhs_ASO2_CMFlare_Chaff_Magazine_x4;";
 			};
 			id=1124;
 			type="UK3CB_TKA_I_Mi_24V";
-			atlOffset=-2.2888184e-005;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="[[[[""FirstAidKit"",""Medikit""],[8,1]],[[""rhs_30Rnd_545x39_7N10_AK"",""rhs_mag_rgd5"",""rhs_mag_nspn_red"",""rhs_mag_rdg2_white""],[30,10,10,4]],[[""ToolKit""],[1]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item98
 		{
