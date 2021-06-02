@@ -8,10 +8,11 @@ params [
 assert(isServer);
 
 private _triggerMen = (_triggerUnits select { _x isKindOf "Man"});
-
 private _cars = _triggerUnits select { _x isKindOf "Car"};
+
 private _men = _triggerMen + flatten (_cars apply {crew _x});
 private _players = _men arrayIntersect playableUnits;
+private _npcs = _men - _players;
 private _rest = _triggerUnits - _men - _cars;
 
 ISNILS(GVAR(extractedPlayers), []);
@@ -21,9 +22,6 @@ GVAR(extractedPlayers) = GVAR(extractedPlayers) + _players;
 
 {
     private _vehicle = _x;
-
-    private _npcs = (crew _vehicle) select {!(isPlayer _x)};
-    { deleteVehicle _x; } forEach _npcs;
 
     private _animals = [_vehicle getVariable ["grad_animalTransport_common_animals", [] call CBA_fnc_hashCreate]] call CBA_fnc_hashValues;
     private _num = count _animals;
@@ -43,10 +41,17 @@ GVAR(extractedPlayers) = GVAR(extractedPlayers) + _players;
     };
     { deleteVehicle _x; } forEach _sheep;
 
-    if (isPlayer _x) then {
-        _x setPos [-1000, -1000];
-        [QGVAR(player_extracted), [_extractToSide, _x], _x] call CBA_fnc_targetEvent;
-    } else {
-        deleteVehicle _x;
-    };
+    _x setPos [-1000, -1000];
+    [QGVAR(player_extracted), [_extractToSide, _x], _x] call CBA_fnc_targetEvent;
 } forEach _players;
+
+{
+    deleteVehicle _x;
+} forEach _npcs;
+
+/*
+{
+    WARNING_1("hmm deleting something thats neither car nor man: %1", _x);
+    deleteVehicle _x;
+} forEach _rest;
+*/
