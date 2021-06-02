@@ -49,9 +49,7 @@ GVAR(extractedPlayers) = GVAR(extractedPlayers) + _players;
     deleteVehicle _x;
 } forEach _npcs;
 
-/*
 {
-    WARNING_1("hmm deleting something thats neither car nor man: %1", _x);
+    WARNING_1("moving something thats neither car nor man: %1", _x);
     deleteVehicle _x;
 } forEach _rest;
-*/
