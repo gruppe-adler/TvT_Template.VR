@@ -2,6 +2,12 @@
 
 assert(isServer);
 
+[east, 0, "extracted sheep"] call grad_points_fnc_addPoints;
+[west, 0, "extracted sheep"] call grad_points_fnc_addPoints;
+[east, 0, "sheep in FOB"] call grad_points_fnc_setPoints;
+[west, 0, "sheep in FOB"] call grad_points_fnc_setPoints;
+
+
 // tasks
 
 {

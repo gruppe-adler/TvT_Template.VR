@@ -37,7 +37,7 @@ GVAR(extractedPlayers) = GVAR(extractedPlayers) + _players;
     private _sheep = (_x nearEntities ["Sheep_Random_F", 25]);
     INFO_2("adding %1 points for sheep at %2", count _sheep, _x);
     if (count _sheep > 0) then {
-        [_extractToSide, count _sheep, "extracted sheep (walking)"] call grad_points_fnc_addPoints;
+        [_extractToSide, count _sheep, "extracted sheep"] call grad_points_fnc_addPoints;
     };
     { deleteVehicle _x; } forEach _sheep;
 
