@@ -5,7 +5,4 @@ params [
     ["_category", "Other", [""]]
 ];
 
-[
-    [GVAR(points), _side] call CBA_fnc_hashGet,
-    _category
-] call CBA_fnc_hashGet
+(GVAR(points) getOrDefault [_side, createHashMap]) getOrDefault [_category, 0]
