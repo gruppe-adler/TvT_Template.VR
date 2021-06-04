@@ -24,3 +24,9 @@ player addEventHandler ["Killed", {
     params ["_unit", "_killer", "_instigator", "_useEffects"];
     ["stayAlive", "FAILED", false] call BIS_fnc_taskSetState;
 }];
+
+["grad_endings_endingInProgress", {
+    if (("stayAlive" call BIS_fnc_taskState) in ["FAILED", "SUCCEEDED"]) exitWith {};
+
+    ["stayAlive", if (alive player) then {"SUCCEEDED"} else {"FAILED"}, false] call BIS_fnc_taskSetState;
+}] call CBA_fnc_addEventHandler;
