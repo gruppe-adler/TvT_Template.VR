@@ -11,7 +11,7 @@ private _triggerMen = (_triggerUnits select { _x isKindOf "Man"});
 private _cars = _triggerUnits select { _x isKindOf "Car"};
 
 private _men = _triggerMen + flatten (_cars apply {crew _x});
-private _players = _men arrayIntersect playableUnits;
+private _players = _men arrayIntersect PLAYABLE_UNITS;
 private _npcs = _men - _players;
 private _rest = _triggerUnits - _men - _cars;
 
