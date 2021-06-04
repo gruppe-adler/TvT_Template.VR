@@ -12,26 +12,19 @@ private _otherSide = switch (_side) do {
     default { throw "logic error" };
 };
 
-
-// other side is eliminated? if yes, points rule.
-
 private _otherSideIsEliminated = ({ (side _x == _otherSide) && ((incapacitatedState _x) in ["HEALTHY", "INJURED"]) } count allPlayers) isEqualTo [];
-private _timeIsUp = CBA_missionTime > MISSION_timeout;
+private _timeIsUp = ( CBA_missionTime > MISSION_timeout );
+private _sideHasMorePoints = { ([_side] call grad_points_fnc_getPoints) > ([_otherSide] call grad_points_fnc_getPoints) };
 
-if (_otherSideIsEliminated) then {
-    INFO_1("%1 has been eliminated", _otherSide);
-};
-if (_timeIsUp) then {
-    INFO_1("time is up after %1s", MISSION_timeout);
-};
-
-if (_otherSideIsEliminated || _timeIsUp) exitWith {
-    private _win = ([_side] call grad_points_fnc_getPoints) > ([_otherSide] call grad_points_fnc_getPoints);
-    if (_win) then {
-
-        INFO_1("%1 has won", _side);
+if ((_otherSideIsEliminated || _timeIsUp) && _sideHasMorePoints) exitWith {
+    if (_otherSideIsEliminated) then {
+        INFO_1("%1 has been eliminated.", _otherSide);
     };
-    _win
+    if (_timeIsUp) then {
+        INFO_1("time is up after %1s.", MISSION_timeout);
+    };
+    INFO_1("%1 has more points & wins", _side);
+    true
 };
 
 false
