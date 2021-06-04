@@ -15,7 +15,7 @@ GVAR(checkPfhs) pushBackUnique ([{
     _args params ["_condition","_winName"];
 
     if (call _condition) exitWith {
-        INFO_1("win condition %1 fulfilled, stopping all win condition checks", _winName);
+        INFO_1("Win condition %1 fulfilled. Stopping all win condition checks...", _winName);
         {
             [_x] call CBA_fnc_removePerFrameHandler;
         } forEach GVAR(checkPfhs);        
