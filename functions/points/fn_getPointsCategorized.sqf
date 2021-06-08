@@ -5,9 +5,8 @@ params [
 ];
 
 private _pairs = [];
-[
-    [GVAR(points), _side] call CBA_fnc_hashGet,
-    { _pairs pushBack [_key, _value] }
-] call CBA_fnc_hashEachPair;
+{
+    _pairs pushBack [_x, _y];
+} forEach (GVAR(points) getOrDefault [_side, createHashMap]);
 
 _pairs

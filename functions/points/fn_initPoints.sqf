@@ -26,6 +26,6 @@ ISNILS(GVAR(bounties), [ARR_2([], [ARR_2([], 0)] call CBA_fnc_hashCreate)] call 
 ];
 
 // this is a map<side:SIDE,map<category:STRING,points:SCALAR>>
-ISNILS(GVAR(points), [ARR_2([], [ARR_2([], 0)] call CBA_fnc_hashCreate)] call CBA_fnc_hashCreate);
+ISNILS(GVAR(points), createHashMap);
 
 [] call grad_points_fnc_addKilledEH;
