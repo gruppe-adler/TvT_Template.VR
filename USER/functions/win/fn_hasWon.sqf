@@ -12,7 +12,7 @@ private _otherSide = switch (_side) do {
     default { throw "logic error" };
 };
 
-private _otherSideIsEliminated = ({ (side _x == _otherSide) && ((incapacitatedState _x) in ["HEALTHY", "INJURED"]) } count allPlayers) isEqualTo [];
+private _otherSideIsEliminated = ({ (side _x == _otherSide) && ((incapacitatedState _x) in ["HEALTHY", "INJURED"]) } count PLAYABLE_UNITS) isEqualTo [];
 private _timeIsUp = ( CBA_missionTime > MISSION_timeout );
 private _sideHasMorePoints = { ([_side] call grad_points_fnc_getPoints) > ([_otherSide] call grad_points_fnc_getPoints) };
 
