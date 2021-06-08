@@ -3,6 +3,8 @@
 if (missionNamespace getVariable ["grad_endings_endingInProgress",false]) exitWith {};
 missionNamespace setVariable ["grad_endings_endingInProgress",true];
 
+["grad_endings_endingInProgress", _this] call CBA_fnc_globalEvent;
+
 _this spawn {
     params ["_configName","_winText","_winners","_winTextParams"];
     private ["_winText","_winners","_winTextParams"];
