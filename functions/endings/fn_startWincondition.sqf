@@ -8,12 +8,17 @@ private _winName = configName _winCondition;
 
 INFO_1("Initialized wincondition %1.",_winName);
 
-[{
-    params ["_args","_handle"];
+ISNILS(GVAR(checkPfhs),[]);
+
+GVAR(checkPfhs) pushBackUnique ([{
+    params ["_args", ""];
     _args params ["_condition","_winName"];
 
     if (call _condition) exitWith {
-        [_winName] call grad_endings_fnc_endMissionServer;
-        [_handle] call CBA_fnc_removePerFrameHandler;
+        INFO_1("Win condition %1 fulfilled. Stopping all win condition checks...", _winName);
+        {
+            [_x] call CBA_fnc_removePerFrameHandler;
+        } forEach GVAR(checkPfhs);        
+        [_winName] call grad_endings_fnc_endMissionServer;        
     };
-},_checkInterval,[_condition,_winName]] call CBA_fnc_addPerFrameHandler;
+},_checkInterval,[_condition,_winName]] call CBA_fnc_addPerFrameHandler);
