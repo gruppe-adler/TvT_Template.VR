@@ -118,6 +118,20 @@ if (isServer) then {
 
     [EFUNC(win,updateFobSheepCount), 5] call CBA_fnc_addPerFrameHandler;
 
+    {
+        [{
+            params ["_args"];
+            _args params ["_marker", "_side"];
+            private _extractables = (vehicles + allUnits) inAreaArray _marker;
+            if (_extractables isNotEqualTo []) then {
+                [_side, _extractables] call mission_win_fnc_extractPlayers; 
+            };
+        }, 5, _x] call CBA_fnc_addPerFrameHandler;
+    } forEach [
+        ["border_north", west],
+        ["border_south", east]
+    ];
+
     [] call EFUNC(win,createSideTasks);
     [] call EFUNC(win,planPointNotifications);
 };
