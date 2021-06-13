@@ -8,11 +8,11 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=1513;
+		nextID=1515;
 	};
 	class MarkerIDProvider
 	{
-		nextID=10;
+		nextID=12;
 	};
 	class LayerIndexProvider
 	{
@@ -21,9 +21,9 @@ class EditorData
 	class Camera
 	{
 		pos[]={3904.7417,34.257248,4121.8423};
-		dir[]={0.20801945,-0.26470006,0.94165611};
-		up[]={0.057123225,0.96430141,0.25857827};
-		aside[]={0.97648716,-5.1496318e-007,-0.21571521};
+		dir[]={0.20801364,-0.2646929,0.9416306};
+		up[]={0.057096198,0.96433276,0.25846153};
+		aside[]={0.97645819,-3.7252903e-009,-0.21570733};
 	};
 };
 binarizationWanted=0;
@@ -2898,7 +2898,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=179;
+		items=180;
 		class Item0
 		{
 			dataType="Layer";
@@ -13656,6 +13656,18 @@ class Mission
 			};
 			id=1509;
 			type="grad_civs_transit_transitSink";
+		};
+		class Item179
+		{
+			dataType="Marker";
+			position[]={4013.073,40.014999,5586.9512};
+			name="marker_sheep_transports";
+			text="sheep transports";
+			type="mil_arrow";
+			colorName="ColorCIV";
+			angle=164.99992;
+			id=1514;
+			atlOffset=-0.00012588501;
 		};
 	};
 	class Connections
