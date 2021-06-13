@@ -11,12 +11,12 @@ assert(isServer);
 // tasks
 
 {
-    _x params ["_side", "_taskId", "_taskCfgClass"];
+    _x params ["_side", "_taskId", "_taskCfgClass", "_taskDestination"];
     [
         _side,
         _taskId,
         _taskCfgClass,
-         objNull,
+        _taskDestination,
         "ASSIGNED",
         -1,
         false,
@@ -24,12 +24,12 @@ assert(isServer);
     ] call BIS_fnc_taskCreate;
 
 } forEach [
-    [east, "opfSheep", "opfMoreSheep"],
-    [east, ["opfSheepFob", "opfSheep"], "opfSheepFob"],
-    [east, ["opfSheepExtract", "opfSheep"], "opfSheepExtract"],
-    [west, "bluSheep", "bluMoreSheep"],
-    [west, ["bluSheepFob", "bluSheep"], "bluSheepFob"],
-    [west, ["bluSheepExtract", "bluSheep"], "bluSheepExtract"]
+    [east, "opfSheep", "opfMoreSheep", objNull],
+    [east, ["opfSheepFob", "opfSheep"], "opfSheepFob", pen_opf],
+    [east, ["opfSheepExtract", "opfSheep"], "opfSheepExtract", markerPos "border_south"],
+    [west, "bluSheep", "bluMoreSheep", objNull],
+    [west, ["bluSheepFob", "bluSheep"], "bluSheepFob", pen_blu],
+    [west, ["bluSheepExtract", "bluSheep"], "bluSheepExtract", markerPos "border_north"]
 ];
 
 [

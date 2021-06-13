@@ -7,11 +7,7 @@ assert(hasInterface);
     "stayAlive",
     player,
     ["stay alive", "no one wants to die, you included", ""],
-    switch (playerSide) do {
-        case (east): {trigger_south};
-        case (west): { trigger_north};
-        default { throw "logic error" };
-    },
+    nil,
     "CREATED",
     1,
     false,
