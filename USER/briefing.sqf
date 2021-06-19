@@ -23,13 +23,13 @@ Let's go, brothers! Let's bring back enough sheep so we may feast a thousand yea
 //BRIEFING =====================================================================
                                                                                 //Briefingeinträge - Wenn Variable leeren String enthält (Bsp.: _lage = ""), wird dieser Eintrag nicht erstellt.
 _lage =                                                                         //Geschehnisse bis jetzt, Feindlage (Stärke, Verhalten, Absicht), eigene Lage (Stärke, Position, Absicht)
-"Fallujah";
+"Zargabad";
 
 _auftrag =                                                                      //Darlegung des Missionszieles
 "Bringt soviele Schafe wie möglich ins Heimatdorf!";
 
 _durchfuehrung =                                                                //Wie soll das Missionsziel erreicht werden? Truppeneinteilung, Sicherung, Gefechtsaufklärung
-"Begebt euch nach Fallujah, und stehlt Schafe. Auf der Hauptstraße sind Schaftransporter unterwegs, die mit Handzeichen oder Androhung von Waffengewalt zum Halt gezwungen werden können. Es könnte auch einige Tiermärkte geben. ";
+"Begebt euch nach Zargabad, und stehlt Schafe. Auf der Hauptstraße sind Schaftransporter unterwegs, die mit Handzeichen oder Androhung von Waffengewalt zum Halt gezwungen werden können.";
 
 _einsatzunterstuetzung =                                                        //Informationen über unterstützende Einheiten (Luft, Artillerie, etc.) und Nachschub / Versorgungsmöglichkeiten
 "";
