@@ -10,6 +10,14 @@ class MISSION_grievances {
         class isArmyRetaliating {};
     };
 };
+class MISSION_gameAreaBarrier {
+    class does_not_matter {
+        file = "USER\functions\gameAreaBarrier";
+        class addGameAreaBarrierFromMarker {}; 
+        class addGameAreaBarrierBetweenPoints {};
+    };
+};
+
 class MISSION_win {
     class does_not_matter {
         file = "USER\functions\win";
