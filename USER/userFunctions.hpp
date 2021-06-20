@@ -13,6 +13,7 @@ class MISSION_grievances {
 class MISSION_gameAreaBarrier {
     class does_not_matter {
         file = "USER\functions\gameAreaBarrier";
+        class init { postInit = 1; }; 
         class addGameAreaBarrierFromMarker {}; 
         class addGameAreaBarrierBetweenPoints {};
     };

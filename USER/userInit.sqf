@@ -209,6 +209,10 @@ if (hasInterface) then {
     [] call EFUNC(win,createPersonalTasks);
     [] call EFUNC(win,registerNotifications);
     [] call EFUNC(win,showOurPoints);
+
+    [[0, 0, 0], [0, 8000, 0]] call mission_gameAreaBarrier_fnc_addGameAreaBarrierBetweenPoints;
+    [[8192, 0, 0], [8192, 8000, 0], "left"] call mission_gameAreaBarrier_fnc_addGameAreaBarrierBetweenPoints;
+    
 };
 
 ISNILS(MISSION_timeout,3600);

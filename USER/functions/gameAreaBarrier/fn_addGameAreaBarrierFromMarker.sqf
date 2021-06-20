@@ -2,7 +2,8 @@
 
 params [
 	["_marker", "", [""]], // area marker name
-	["_sides", ["N","E","S","W"], [[]]] // which of the four sides of a marker should get a barrier. for an unrotated marker, these would be: N,E,S,W sides
+	["_sides", ["N","E","S","W"], [[]]], // which of the four sides of a marker should get a barrier. for an unrotated marker, these would be: N,E,S,W sides
+	["_isVisibleFrom", "outside", ["outside", "inside"]]
 ];
 
 assert((markerShape _marker) isEqualTo "RECTANGLE");
@@ -44,6 +45,11 @@ private _centerPos = getMarkerPos _marker;
 		default { ERROR_1("")};
 	};
 
+	[
+		_p1, 
+		_p2, 
+		if (_isVisibleFrom isEqualTo "inside") then {"right"} else {"left"}
+	] call FUNC(addGameAreaBarrierBetweenPoints);
 	
 
 } forEach _sides;
