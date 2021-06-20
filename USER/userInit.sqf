@@ -14,6 +14,44 @@ if (isServer) then {
     MISSION_overtime = "overtime" call BIS_fnc_getParamValue;
     publicVariable "MISSION_overtime";
 
+    ["grad_waverespawn_waveRespawn", {
+        params [
+            ["_side", sideUnknown, [sideUnknown]],
+            ["_playerCount", 0, [0]]
+        ];
+
+        private _carPos = [4236.7,4161.36,0]; // the mosque
+        private _carClass = "UK3CB_Factions_Vehicles_Ikarus"; // this one should fit even the largest waves. also with that many players, there can be dedicated logistics teams.
+        private _marker ="";
+        
+        switch (_side) do {
+            case west: {
+                _marker = "respawn_west";
+                if (_playerCount < 5) then {
+                    _carClass = "gm_ge_civ_typ1200";
+                };
+                if (_playerCount < 3) then {
+                    _carClass = "gm_ge_bgs_k125";
+                };
+            };
+            case east: {
+                _marker = "respawn_east";
+                if (_playerCount < 6) then {
+                    _carClass = "gm_vehicles_land_wheeled_p601_gc_civ_p601";
+                };
+                if (_playerCount < 3) then {
+                    _carClass = "UK3CB_TKC_B_YAVA";
+                };                
+            };
+            default {
+                ERROR_1("unexpected grad_waverespawn_waveRespawn event with side %1", _side);
+            };
+        };
+
+        private _pos = (getMarkerPos _marker) findEmptyPosition [0, 50, _carClass];
+        createVehicle [_carClass, _pos, [], 0, "NONE"];
+    }] call CBA_fnc_addEventHandler;
+
     ["grad_civs_civKilled",
         {
             params [

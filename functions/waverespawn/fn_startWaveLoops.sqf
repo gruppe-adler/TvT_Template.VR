@@ -22,6 +22,9 @@
 
         GVAR(WAVERESPAWNBLU) = true;
         publicVariable QGVAR(WAVERESPAWNBLU);
+
+        [QGVAR(waveRespawn), [west, count GVAR(wavePlayersBlu)]] call CBA_fnc_serverEvent;
+
         INFO("Respawning now possible for Blufor.");
 
         [{
@@ -57,6 +60,9 @@
 
         GVAR(WAVERESPAWNOPF) = true;
         publicVariable QGVAR(WAVERESPAWNOPF);
+
+        [QGVAR(waveRespawn), [east, count GVAR(wavePlayersOpf)]] call CBA_fnc_serverEvent;
+
         INFO("Respawning now possible for Opfor.");
 
         [{
@@ -92,6 +98,9 @@
 
         GVAR(WAVERESPAWNIND) = true;
         publicVariable QGVAR(WAVERESPAWNIND);
+
+        [QGVAR(waveRespawn), [independent, count GVAR(wavePlayersInd)]] call CBA_fnc_serverEvent;
+
         INFO("Respawning now possible for Independent.");
 
         [{
