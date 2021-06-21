@@ -1,5 +1,7 @@
 #include "component.hpp"
 
+if (!isServer) exitWith {};
+
 if (([missionConfigFile >> "missionsettings","waveRespawnEnabled",0] call BIS_fnc_returnConfigEntry) == 0) exitWith {};
 
 GVAR(WAVERESPAWNTIMEPLAYER) = [missionConfigFile >> "missionsettings","waverespawntimePlayer",30] call BIS_fnc_returnConfigEntry;
