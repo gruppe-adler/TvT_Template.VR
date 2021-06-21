@@ -15,8 +15,8 @@ indepInterruptCondition = "false";                                              
 
 waverespawntimePlayer = 60;                                                     //Spielerrespawnzeit, bevor er der Welle hinzugefügt wird
 
-waverespawntimeBlu = 600;                                                        //Wellenrespawnzeit Blufor in Sekunden
-waverespawntimeOpf = 600;                                                        //Wellenrespawnzeit Opfor in Sekunden
+waverespawntimeBlu = 300;                                                        //Wellenrespawnzeit Blufor in Sekunden
+waverespawntimeOpf = 300;                                                        //Wellenrespawnzeit Opfor in Sekunden
 waverespawntimeInd = 30;                                                        //Wellenrespawnzeit Independent in Sekunden
 
 
