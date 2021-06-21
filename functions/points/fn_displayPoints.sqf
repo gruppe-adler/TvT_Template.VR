@@ -16,7 +16,7 @@
 #define DIVIDERWIDTH        0.4
 
 
-if (!isServer && !isRemoteExecuted) exitWith {[] remoteExec [QFUNC(displayPoints),2,false]};
+// if (!isServer && !isRemoteExecuted) exitWith {[] remoteExec [QFUNC(displayPoints),2,false]}; // do not exec globally unless by server
 
 if (isServer && count _this == 0) exitWith {
     [
