@@ -10,7 +10,7 @@ loadScreen = "data\loadpic.paa";                                                
 class CfgTaskDescriptions {
     class bluMoreSheep {
 		title		= "Get more sheep than OPFOR!";
-		description	= "Steal sheep from trucks traversing the city from west to east along the highway";
+		description	= "Steal sheep from trucks traversing the city from north to south along the main roads";
 		marker		= "";
 	};
 	class bluSheepFob {
@@ -20,13 +20,13 @@ class CfgTaskDescriptions {
 	};
 	class bluSheepExtract {
 		title		= "Move sheep to your tribal areas";
-		description	= "move sheep out of the city to the tribal area far far away to the north. No one can take them from you there!";
+		description	= "Move sheep out of the city to the tribal area far far away to the north. No one can take them from you there!";
 		marker		= "border_north";
 	};
 
     class opfMoreSheep {
 		title		= "Get more sheep than BLUFOR!";
-		description	= "Steal sheep from trucks traversing the city from west to east along the highway";
+		description	= "Steal sheep from trucks traversing the city from north to south along the main roads";
 		marker		= "";
 	};
 	class opfSheepFob {
@@ -36,7 +36,7 @@ class CfgTaskDescriptions {
 	};
 	class opfSheepExtract {
 		title		= "Move sheep to your tribal area";//$STR_myTask2Title;
-		description	= "move sheep out of the city to the tribal area far far away to the south. No one can take them from you there!";//$STR_myTask2Description;
+		description	= "Move sheep out of the city to the tribal area far far away to the south. No one can take them from you there!";//$STR_myTask2Description;
 		marker		= "border_south";//$STR_myTask2Marker;
 	};
 };
