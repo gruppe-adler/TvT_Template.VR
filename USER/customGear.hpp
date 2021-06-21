@@ -27,5 +27,6 @@ customGearAllowedCategories[] = {
     "handgunWeaponPointer",
     "handgunWeaponUnderbarrel",
     "headgear",
+    "uniform",
     "goggles",
 };

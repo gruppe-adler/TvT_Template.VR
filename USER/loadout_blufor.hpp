@@ -1,4 +1,5 @@
 #define MISSION_BLUFOR_UNIFORMS "UK3CB_TKM_I_U_05", "UK3CB_TKM_I_U_05_B", "UK3CB_TKM_I_U_05_C",
+#define MISSION_BLUFOR_HEADGEAR "UK3CB_H_Turban_Neckwrap_01_Blu", "UK3CB_H_Turban_Neckwrap_02_Blu", "UK3CB_H_Turban_Neckwrap_03_Blu",
 
 class blufor: ind_me_terrorists {
     class AllUnits: AllUnits {
@@ -8,18 +9,28 @@ class blufor: ind_me_terrorists {
     class Type: Type {
         class Officer_F: Officer_F {
             uniform[] = {MISSION_BLUFOR_UNIFORMS};
+            headgear[] = {MISSION_BLUFOR_HEADGEAR};
+            goggles = "";
         };
         class Soldier_SL_F: Soldier_SL_F {
             uniform[] = {MISSION_BLUFOR_UNIFORMS};
+            headgear[] = {MISSION_BLUFOR_HEADGEAR};
+            goggles = "";
         };
         class Soldier_TL_F: Soldier_TL_F {
             uniform[] = {MISSION_BLUFOR_UNIFORMS};
+            headgear[] = {MISSION_BLUFOR_HEADGEAR};
+            goggles = "";
         };
         class Soldier_F: Soldier_F {
             uniform[] = {MISSION_BLUFOR_UNIFORMS};
+            headgear[] = {MISSION_BLUFOR_HEADGEAR};
+            goggles = "";
         };
         class Soldier_AR_F: Soldier_AR_F {
             uniform[] = {MISSION_BLUFOR_UNIFORMS};
+            headgear[] = {MISSION_BLUFOR_HEADGEAR};
+            goggles = "";
         };
     };
 };
