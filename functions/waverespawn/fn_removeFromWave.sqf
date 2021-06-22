@@ -30,20 +30,37 @@ switch (_side) do {
         };
     };
 
+    case (CIVILIAN): {
+        if (_unit in GVAR(wavePlayersCiv)) then {
+            GVAR(wavePlayersCiv) deleteAt (GVAR(wavePlayersCiv) find _unit);
+            INFO_1("Player %1 respawned and has been removed from wavePlayersCiv.", _unit);
+        } else {
+            ERROR_1("Player %1 is not in wavePlayersCiv", _unit);
+        };
+    };
+
     default {
-        INFO_1("Player %1 is neither WEST nor EAST nor INDEPENDENT.", _unit);
-        if (_unit in GVAR(wavePlayersInd)) exitWith {
-            GVAR(wavePlayersInd) deleteAt (GVAR(wavePlayersInd) find _unit);
-            INFO("...but could be found in and has been removed from wavePlayersInd.");
-        };
-        if (_unit in GVAR(wavePlayersOpf)) exitWith {
-            GVAR(wavePlayersOpf) deleteAt (GVAR(wavePlayersOpf) find _unit);
-            INFO("...but could be found in and has been removed from wavePlayersOpf.");
-        };
+        INFO_1("Player %1 is neither WEST nor EAST nor INDEPENDENT nor CIVILIAN.", _unit);
+
         if (_unit in GVAR(wavePlayersBlu)) exitWith {
             GVAR(wavePlayersBlu) deleteAt (GVAR(wavePlayersBlu) find _unit);
             INFO("...but could be found in and has been removed from wavePlayersBlu.");
         };
+        
+        if (_unit in GVAR(wavePlayersOpf)) exitWith {
+            GVAR(wavePlayersOpf) deleteAt (GVAR(wavePlayersOpf) find _unit);
+            INFO("...but could be found in and has been removed from wavePlayersOpf.");
+        };
+
+        if (_unit in GVAR(wavePlayersInd)) exitWith {
+            GVAR(wavePlayersInd) deleteAt (GVAR(wavePlayersInd) find _unit);
+            INFO("...but could be found in and has been removed from wavePlayersInd.");
+        };
+
+        if (_unit in GVAR(wavePlayersCiv)) exitWith {
+            GVAR(wavePlayersCiv) deleteAt (GVAR(wavePlayersCiv) find _unit);
+            INFO("...but could be found in and has been removed from wavePlayersCiv.");
+        };        
 
         ERROR_1("Player %1 is neither WEST nor EAST nor INDEPENDENT and not in any of the respawn arrays.", _unit);
     };
@@ -53,7 +70,9 @@ switch (_side) do {
     GVAR(WAVERESPAWNPLAYERSLEFTBLU) = GVAR(BLUFORWAVESIZE) - (count GVAR(wavePlayersBlu));
     GVAR(WAVERESPAWNPLAYERSLEFTOPF) = GVAR(OPFORWAVESIZE) - (count GVAR(wavePlayersOpf));
     GVAR(WAVERESPAWNPLAYERSLEFTIND) = GVAR(INDEPWAVESIZE) - (count GVAR(wavePlayersInd));
+    GVAR(WAVERESPAWNPLAYERSLEFTCIV) = GVAR(CIVWAVESIZE) - (count GVAR(wavePlayersCiv));
     publicVariable QGVAR(WAVERESPAWNPLAYERSLEFTBLU);
     publicVariable QGVAR(WAVERESPAWNPLAYERSLEFTOPF);
     publicVariable QGVAR(WAVERESPAWNPLAYERSLEFTIND);
+    publicVariable QGVAR(WAVERESPAWNPLAYERSLEFTCIV);
 }, [], (GVAR(RESPAWNWAVEEXTRATIME) max 7)] call CBA_fnc_waitAndExecute;

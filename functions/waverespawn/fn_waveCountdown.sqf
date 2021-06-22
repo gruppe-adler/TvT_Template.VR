@@ -1,15 +1,18 @@
 #include "component.hpp"
 
+params ["_timeOfDeath"];
+
 if (player getVariable "wr_interrupted") exitWith {player setVariable ["wr_waveCountdownDone", true]};
 if (player getVariable "wr_isFreeRespawn") exitWith {player setVariable ["wr_waveCountdownDone", true]};
 
 INFO("Player countdown done. Starting wave countdown...");
 
-[player,playerSide] remoteExec [QFUNC(addToWave),2,false];
+private _playerSide = [player, true] call BIS_fnc_objectSide; // JIP/init proof alternative to playerSide
+[player, _playerSide] remoteExec [QFUNC(addToWave),2,false];
 
 [{
-
-    _timeOfDeath = (_this select 0) select 0;
+    params ["_args", "_handle"];
+    _args params ["_timeOfDeath", "_playerSide"];
 
     //check interrupt
     if (call (player getVariable "wr_interruptCondition")) exitWith {
@@ -32,6 +35,6 @@ INFO("Player countdown done. Starting wave countdown...");
         player setVariable ["wr_waveCountdownDone", true];
     };
 
-    [playerSide] call FUNC(respawnHint);
+    [_playerSide] call FUNC(respawnHint);
 
-}, 1, _this] call CBA_fnc_addPerFrameHandler;
+}, 1, [_timeOfDeath, _playerSide]] call CBA_fnc_addPerFrameHandler;

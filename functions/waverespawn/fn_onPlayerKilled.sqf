@@ -11,22 +11,35 @@ if (player getVariable ["wr_interrupted", false]) exitWith {};
 
 //check JIP player is spawning for the first time
 private _joinTime = player getVariable ["joinTime", 0];
-if (serverTime - _joinTime < 30 && didJIP) exitWith {INFO("Player is JIP. Exiting onPlayerKilled.")};
+private _playerSide = [player, true] call BIS_fnc_objectSide; // JIP/init proof alternative to playerSide
+INFO("onPlayerKilled playerSide is " + str _playerSide);
 
-["Terminate"] call BIS_fnc_EGSpectator;
-["Initialize", [player, [playerside], false, false, false, true, true, true, true, true]] call BIS_fnc_EGSpectator;
+// if (serverTime - _joinTime < 30 && didJIP) exitWith {INFO("Player is JIP. Exiting onPlayerKilled.")};
 
-private _maxRespawns = switch (playerSide) do {
+[false] call ace_spectator_fnc_setSpectator;
+
+// set spectator attributes
+[[], [west, east, independent, civilian]] call ace_spectator_fnc_updateSides;
+private _side = player getVariable ["FF_originalSide", sideUnknown];
+private _playersOfSide = [];
+    { 
+        if (_x getVariable ["FF_originalSide", sideUnknown] == _side) then { _playersOfSide pushBackUnique _x; };
+    } forEach (playableUnits + switchableUnits);
+[_playersOfSide, []] call ace_spectator_fnc_updateUnits;
+[true] call ace_spectator_fnc_setSpectator;
+
+private _maxRespawns = switch (_playerSide) do {
     case (WEST): {[missionConfigFile >> "missionsettings","bluforWaveLifes",9999] call BIS_fnc_returnConfigEntry};
     case (EAST): {[missionConfigFile >> "missionsettings","opforWaveLifes",9999] call BIS_fnc_returnConfigEntry};
     case (INDEPENDENT): {[missionConfigFile >> "missionsettings","indepWaveLifes",9999] call BIS_fnc_returnConfigEntry};
+    case (CIVILIAN): {[missionConfigFile >> "missionsettings","civWaveLifes",9999] call BIS_fnc_returnConfigEntry};
     default {9999};
 };
 
 if (player getVariable ["wr_respawnCount",0] >= _maxRespawns) then {
     player setVariable ["wr_interrupted",true,true]
 } else {
-    [player,playerSide] remoteExec [QFUNC(addToWaiting),2,false];
+    [player,_playerSide] remoteExec [QFUNC(addToWaiting),2,false];
 };
 
 INFO("Starting waverespawn procedure...");

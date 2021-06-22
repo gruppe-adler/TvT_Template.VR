@@ -14,6 +14,7 @@ class GRAD_waverespawn {
         class removeFromWave {};
         class resetPlayerVars {};
         class respawnHint {};
+        class selfHelp {postInit = 1;};
         class setWaveSize {};
         class startWaveLoops {};
         class waveCountdown {};

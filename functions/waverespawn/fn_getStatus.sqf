@@ -46,5 +46,19 @@ if (_side == INDEPENDENT) then {
     };
 };
 
+if (_side == CIVILIAN) then {
+    _status = switch (true) do {
+        case (GVAR(CIVWAVESIZE) > 0): {
+            "Waiting for wave-countdown.";
+        };
+        case (count GVAR(wavePlayersCiv) < GVAR(CIVWAVESIZE)): {
+            "Waiting for more players.";
+        };
+        default {
+            "Preparing respawn...";
+        };
+    };
+};
+
 
 _status
