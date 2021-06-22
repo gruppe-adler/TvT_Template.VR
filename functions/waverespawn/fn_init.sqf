@@ -5,20 +5,25 @@ if (([missionConfigFile >> "missionsettings","waveRespawnEnabled",0] call BIS_fn
 GVAR(wavePlayersBlu) = [];
 GVAR(wavePlayersOpf) = [];
 GVAR(wavePlayersInd) = [];
+GVAR(wavePlayersCiv) = [];
 GVAR(waitingPlayersBlu) = [];
 GVAR(waitingPlayersOpf) = [];
 GVAR(waitingPlayersInd) = [];
+GVAR(waitingPlayersCiv) = [];
 GVAR(newBluSpawns) = [];
 GVAR(newOpfSpawns) = [];
 GVAR(newIndSpawns) = [];
+GVAR(newCivSpawns) = [];
 
 if (isServer) then {
     [] call FUNC(setWaveSize);
     [] call FUNC(startWaveLoops);
     addMissionEventHandler ["HandleDisconnect", {
         params [["_unit",objNull]];
-        [_unit,side _unit] call FUNC(removeFromWave);
-        [_unit,side _unit,false] call FUNC(addToWaiting);
+        private _unitSide = [_unit, true] call BIS_fnc_objectSide; // JIP/init proof alternative to playerSide
+
+        [_unit, [_unitSide]] call FUNC(removeFromWave);
+        [_unit, _unitSide, false] call FUNC(addToWaiting);
     }];
 };
 
