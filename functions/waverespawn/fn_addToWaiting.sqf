@@ -5,12 +5,14 @@ params ["_deadPlayer",["_deadPlayerSide", sideUnknown],["_add",true]];
 if (isNil QGVAR(waitingPlayersBlu)) then {GVAR(waitingPlayersBlu) = []};
 if (isNil QGVAR(waitingPlayersOpf)) then {GVAR(waitingPlayersOpf) = []};
 if (isNil QGVAR(waitingPlayersInd)) then {GVAR(waitingPlayersInd) = []};
+if (isNil QGVAR(waitingPlayersCiv)) then {GVAR(waitingPlayersCiv) = []};
 
 //add player to array
 private _array = switch (_deadPlayerSide) do {
     case (WEST): {GVAR(waitingPlayersBlu)};
     case (EAST): {GVAR(waitingPlayersOpf)};
     case (INDEPENDENT): {GVAR(waitingPlayersInd)};
+    case (CIVILIAN): {GVAR(waitingPlayersCiv)};
     default {[]};
 };
 

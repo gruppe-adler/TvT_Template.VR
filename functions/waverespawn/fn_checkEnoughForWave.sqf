@@ -9,6 +9,7 @@ private _waitingPlayersArray = switch (_side) do {
     case (WEST): {GVAR(waitingPlayersBlu)};
     case (EAST): {GVAR(waitingPlayersOpf)};
     case (INDEPENDENT): {GVAR(waitingPlayersInd)};
+    case (CIVILIAN): {GVAR(waitingPlayersCiv)};
     default {[]};
 };
 
@@ -25,11 +26,12 @@ private _waveSize = switch (_side) do {
     case (WEST): {GVAR(BLUFORWAVESIZE)};
     case (EAST): {GVAR(OPFORWAVESIZE)};
     case (INDEPENDENT): {GVAR(INDEPWAVESIZE)};
+    case (CIVILIAN): {GVAR(CIVWAVESIZE)};
     default {-1};
 };
 if (_waveSize < 0) exitWith {};
 
 
-if ((({side _x == _side} count PLAYABLE_UNITS) + (count _waitingPlayersArray)) < _waveSize) then {
+if ((({private _unitSide = [_x, true] call BIS_fnc_objectSide; _unitSide == _side} count (playableUnits + switchableUnits)) + (count _waitingPlayersArray)) < _waveSize) then {
     [FUNC(checkEnoughForWave),[_side,_iteration + 1],5] call CBA_fnc_waitAndExecute;
 };
