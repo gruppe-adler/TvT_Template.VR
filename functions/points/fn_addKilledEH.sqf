@@ -22,7 +22,7 @@ private _code = {
         };
     };
 
-    private _bounty = [[GVAR(bounties), _eventAndCategory#0] call CBA_fnc_hashGet, _killerSide] call CBA_fnc_hashGet;
+    private _bounty = (GVAR(bounties) getOrDefault [_eventAndCategory#0, createHashMap]) getOrDefault [_killerSide, 0];
     if (_bounty isNotEqualTo 0) then {
         INFO_3("adding %1 points to %2 in category %3", _bounty, _killerSide, _eventAndCategory#1);
         [_killerSide,_bounty,_eventAndCategory#1] call FUNC(addPoints);
