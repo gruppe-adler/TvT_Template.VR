@@ -86,7 +86,7 @@ if (hasInterface && count _this > 0) then {
             };
         } forEach _this;
 
-        [{"grad_common_displayPoints" cutRsc ["RscTitleDisplayEmpty","PLAIN",0,false];}, [], 15] call CBA_fnc_waitAndExecute;
+        [{"grad_common_displayPoints" cutRsc ["RscTitleDisplayEmpty","PLAIN",0,false];}, [], GVAR(displayPointsTime)] call CBA_fnc_waitAndExecute;
 
     }, _this] call CBA_fnc_waitUntilAndExecute;
 };

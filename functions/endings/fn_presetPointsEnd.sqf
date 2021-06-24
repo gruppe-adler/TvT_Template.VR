@@ -25,4 +25,4 @@ if (_isDraw) then {
     _winParams = _winParams + ["Time is up. No winner by points.",[WEST,EAST,INDEPENDENT,CIVILIAN]];
 };
 
-[{_this call grad_endings_fnc_endMissionServer}, _winParams, 15] call CBA_fnc_waitAndExecute;
+[{_this call grad_endings_fnc_endMissionServer}, _winParams, EGVAR(points,displayPointsTime)] call CBA_fnc_waitAndExecute;

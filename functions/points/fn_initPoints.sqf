@@ -7,6 +7,8 @@ private _sideToStr = [
     [independent, "INDEPENDENT"]
 ];
 
+ISNILS(GVAR(displayPointsTime), 15);
+
 // this is a map<event:STRING,map<side:SIDE,bounty:SCALAR>>
 ISNILS(GVAR(bounties), createHashMap);
 {
