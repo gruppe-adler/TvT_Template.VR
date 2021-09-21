@@ -20,7 +20,8 @@ private _house = [
 	500,
 	1000,
 	"house"
-] call grad_civs_legacy_fnc_findSpawnPosition;
+] call grad_civs_lifecycle_fnc_findSpawnPosition;
+assert(!(isNil "_house"));
 if (isNull _house) exitWith {INFO("cant find house for attacking civs, sad");};
 
 for "_i" from 1 to _count do {
