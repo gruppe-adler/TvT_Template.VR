@@ -1,7 +1,7 @@
 #include "component.hpp"
 
 ISNILS(GVAR(attackingCivs), []);
-// if (random 1 > 0.2) exitWith {};
+if (random 1 > 0.2) exitWith {};
 GVAR(attackingCivs) = GVAR(attackingCivs) select { alive _x};
 if (count GVAR(attackingCivs) > 50) exitWith { WARNING("a lot of civs are attacking. not spawning any more.")};
 // attack some FOB
@@ -29,9 +29,10 @@ for "_i" from 1 to _count do {
 };
 GVAR(attackingCivs) = GVAR(attackingCivs) + (units _group);
 
-private _icon = _group addGroupIcon ["o_inf", [0, 0]];
+// WHY?
+// private _icon = _group addGroupIcon ["o_inf", [0, 0]];
 //_group setGroupIcon [_icon, "hc_selectedEnemy"];
-_group setGroupIconParams [[0.8, 0, 0.8, 1],"attacking civs", 1, true, true, [0, 0, 0, 1]];
+// _group setGroupIconParams [[0.8, 0, 0.8, 1],"attacking civs", 1, true, true, [0, 0, 0, 1]];
 
 INFO_3("%1 is at %2 and will attack %3", _group, getPos leader _group, _fob);
 [_group, _fob] call FUNC(attackLocation);
