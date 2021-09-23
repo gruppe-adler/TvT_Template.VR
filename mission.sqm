@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={4946.7583,232.69765,6051.4146};
-		dir[]={-0.034112226,-0.63870066,0.76869881};
-		up[]={-0.028315486,0.76945531,0.63807273};
-		aside[]={0.99901688,0,0.044332951};
+		pos[]={5042.2173,49.684772,1868.1417};
+		dir[]={-0.5823732,-0.40231064,-0.70644557};
+		up[]={-0.25591865,0.91549194,-0.31044146};
+		aside[]={-0.77164286,-2.370216e-007,0.63611847};
 	};
 };
 binarizationWanted=0;
@@ -5237,23 +5237,23 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3867.9875,14.08391,2823.9321};
+				position[]={3869.6528,13.632816,2825.915};
 				angles[]={6.2756844,6.0436869,0.0075011365};
 			};
 			side="Empty";
+			flags=4;
 			class Attributes
 			{
 			};
 			id=721;
 			type="UK3CB_TKA_I_V3S_Reammo";
-			atlOffset=0.4774847;
 		};
 		class Item32
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3862.5286,13.604212,2824.3872};
+				position[]={3862.5286,13.722325,2824.3872};
 				angles[]={6.2631865,6.0905929,0};
 			};
 			side="Empty";
@@ -5263,7 +5263,6 @@ class Mission
 			};
 			id=722;
 			type="UK3CB_TKA_I_V3S_Open";
-			atlOffset=-0.11811352;
 		};
 		class Item33
 		{
@@ -5421,7 +5420,7 @@ class Mission
 				class Item8
 				{
 					dataType="Waypoint";
-					position[]={3820.7771,15.975646,2815.833};
+					position[]={3820.7771,12.25528,2815.833};
 					type="CBA_Task_Garrison";
 					script="\x\cba\addons\ai\fnc_waypointGarrison.sqf";
 					class Effects
@@ -5467,17 +5466,17 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3820.7771,16.365337,2815.833};
+				position[]={3820.7771,12.644972,2815.833};
 				angles[]={6.278194,3.1540892,6.278194};
 			};
 			side="Empty";
+			flags=4;
 			class Attributes
 			{
 				name="bonker3";
 			};
 			id=734;
 			type="Land_BagBunker_Large_F";
-			atlOffset=3.7203655;
 		};
 		class Item36
 		{
@@ -9843,16 +9842,16 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={5002.4829,36.264069,1829.3372};
+				position[]={5001.9639,35.761543,1828.957};
 				angles[]={0.010000871,3.480494,0.0024897563};
 			};
 			side="Empty";
+			flags=4;
 			class Attributes
 			{
 			};
 			id=1495;
 			type="UK3CB_TKA_I_V3S_Reammo";
-			atlOffset=0.50502777;
 		};
 		class Item149
 		{
@@ -10028,7 +10027,7 @@ class Mission
 				class Item8
 				{
 					dataType="Waypoint";
-					position[]={5046.4683,42.952229,1810.3613};
+					position[]={5046.4683,34.830902,1810.3613};
 					type="CBA_Task_Garrison";
 					script="\x\cba\addons\ai\fnc_waypointGarrison.sqf";
 					class Effects
@@ -10057,7 +10056,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={5046.8848,35.260029,1863.8085};
+				position[]={5046.8848,35.260021,1863.8085};
 				angles[]={0,2.1196127,0};
 			};
 			side="Empty";
@@ -10068,14 +10067,13 @@ class Mission
 			};
 			id=1507;
 			type="Land_BagBunker_Tower_F";
-			atlOffset=7.6293945e-006;
 		};
 		class Item152
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={5046.4683,43.341919,1810.3613};
+				position[]={5046.4683,35.220592,1810.3613};
 				angles[]={0.034986377,0.59089637,0.02999169};
 			};
 			side="Empty";
@@ -10085,7 +10083,7 @@ class Mission
 			};
 			id=1508;
 			type="Land_BagBunker_Large_F";
-			atlOffset=8.3908272;
+			atlOffset=0.26950073;
 		};
 		class Item153
 		{
