@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=532;
+		nextID=537;
 	};
 	class Camera
 	{
 		pos[]={4946.7583,232.69765,6051.4146};
-		dir[]={-0.034114625,-0.6387428,0.7687493};
-		up[]={-0.028319368,0.76938969,0.63813084};
-		aside[]={0.99909359,-1.1623488e-006,0.044335563};
+		dir[]={-0.034112226,-0.63870066,0.76869881};
+		up[]={-0.028315486,0.76945531,0.63807273};
+		aside[]={0.99901688,0,0.044332951};
 	};
 };
 binarizationWanted=0;
@@ -3938,6 +3938,7 @@ class Mission
 				};
 			};
 			id=461;
+			atlOffset=2.8342896;
 		};
 		class Item8
 		{
@@ -3948,12 +3949,13 @@ class Mission
 				angles[]={0.0038602047,4.5955992,0.0055565536};
 			};
 			side="Independent";
-			flags=6;
+			flags=2;
 			class Attributes
 			{
 			};
 			id=462;
 			type="UK3CB_TKA_I_DSHKM";
+			atlOffset=2.8342896;
 		};
 		class Item9
 		{
@@ -6871,12 +6873,12 @@ class Mission
 						angles[]={6.2781935,0,6.2731848};
 					};
 					side="Independent";
-					flags=4;
 					class Attributes
 					{
 					};
 					id=1530;
 					type="UK3CB_TKA_I_HELI_PILOT";
+					atlOffset=2.3217392;
 				};
 				class Item2
 				{
@@ -6887,12 +6889,12 @@ class Mission
 						angles[]={6.2781935,0,6.2731848};
 					};
 					side="Independent";
-					flags=4;
 					class Attributes
 					{
 					};
 					id=1531;
 					type="UK3CB_TKA_I_HELI_PILOT";
+					atlOffset=2.3217392;
 				};
 				class Item3
 				{
@@ -6903,24 +6905,26 @@ class Mission
 						angles[]={6.2781935,0,6.2731848};
 					};
 					side="Independent";
-					flags=4;
 					class Attributes
 					{
 					};
 					id=1532;
 					type="UK3CB_TKA_I_HELI_PILOT";
+					atlOffset=2.3217392;
 				};
 				class Item4
 				{
 					dataType="Waypoint";
-					position[]={5019.3652,29.830294,6314.0112};
-					type="Loiter";
-					expCond="call{[west] call mission_grievances_fnc_isArmyRetaliating}";
+					position[]={4951.395,29.703798,6217.0771};
+					completitionRadius=15;
+					expCond="[west] call mission_grievances_fnc_isArmyRetaliating";
 					class Effects
 					{
 					};
 					showWP="NEVER";
 					id=1117;
+					type="Move";
+					atlOffset=1.9073486e-006;
 				};
 				class Item5
 				{
@@ -7007,6 +7011,7 @@ class Mission
 				};
 			};
 			id=1102;
+			atlOffset=-1.9073486e-006;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7057,12 +7062,12 @@ class Mission
 						angles[]={0.012496558,0,0.014992379};
 					};
 					side="Independent";
-					flags=4;
 					class Attributes
 					{
 					};
 					id=1535;
 					type="UK3CB_TKA_I_HELI_PILOT";
+					atlOffset=2.322031;
 				};
 				class Item2
 				{
@@ -7073,12 +7078,12 @@ class Mission
 						angles[]={0.012496558,0,0.014992379};
 					};
 					side="Independent";
-					flags=4;
 					class Attributes
 					{
 					};
 					id=1536;
 					type="UK3CB_TKA_I_HELI_PILOT";
+					atlOffset=2.322031;
 				};
 				class Item3
 				{
@@ -7089,24 +7094,25 @@ class Mission
 						angles[]={0.012496558,0,0.014992379};
 					};
 					side="Independent";
-					flags=4;
 					class Attributes
 					{
 					};
 					id=1537;
 					type="UK3CB_TKA_I_HELI_PILOT";
+					atlOffset=2.322031;
 				};
 				class Item4
 				{
 					dataType="Waypoint";
-					position[]={4964.4517,29.767187,6337.2075};
-					type="Loiter";
-					expCond="call{[east] call mission_grievances_fnc_isArmyRetaliating}";
+					position[]={5004.7129,29.368876,6224.5669};
+					completitionRadius=15;
+					expCond="[east] call mission_grievances_fnc_isArmyRetaliating";
 					class Effects
 					{
 					};
 					showWP="NEVER";
 					id=1119;
+					type="Move";
 				};
 				class Item5
 				{
@@ -13044,6 +13050,7 @@ class Mission
 			};
 			id=1528;
 			type="UK3CB_TKA_I_UH1H_GUNSHIP";
+			atlOffset=-1.9073486e-006;
 			class CustomAttributes
 			{
 				class Attribute0
