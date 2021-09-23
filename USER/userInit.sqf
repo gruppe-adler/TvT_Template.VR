@@ -14,6 +14,11 @@ if (isServer) then {
     MISSION_overtime = "overtime" call BIS_fnc_getParamValue;
     publicVariable "MISSION_overtime";
 
+    ["CAManBase", "FiredMan", {
+        params ["_unit"];
+        _unit setVariable ["grad_replay_track", true];
+    }] call CBA_fnc_addClassEventHandler;
+
     ["grad_waverespawn_waveRespawn", {
         params [
             ["_side", sideUnknown, [sideUnknown]],
