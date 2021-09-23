@@ -11,7 +11,7 @@ ISNILS(GVAR(previewSeconds), 0);
 	private _posOffset = (velocity player) vectorMultiply GVAR(previewSeconds);
 	private _texturesShown = player getVariable [QGVAR(visibleTextures), []];
 	private _nearTextures = nearestObjects [(getPos player) vectorAdd _posOffset, ["UserTexture10m_F"], 100];
-	INFO_2("shown %1, near textures %2", count _texturesShown, count _nearTextures);
+	TRACE_2("shown %1, near textures %2", count _texturesShown, count _nearTextures);
 
 	player setVariable [QGVAR(visibleTextures), _nearTextures];
 
