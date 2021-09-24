@@ -25,7 +25,6 @@ if (isServer) then {
             ["_playerCount", 0, [0]]
         ];
 
-        private _carPos = [4236.7,4161.36,0]; // the mosque
         private _carClass = "UK3CB_Factions_Vehicles_Ikarus"; // this one should fit even the largest waves. also with that many players, there can be dedicated logistics teams.
         private _marker ="";
         
@@ -54,6 +53,7 @@ if (isServer) then {
         };
 
         private _pos = (getMarkerPos _marker) findEmptyPosition [0, 50, _carClass];
+        INFO_3("spawning %1 for %2 %3 players", _carClass, _playerCount, _side);
         createVehicle [_carClass, _pos, [], 0, "NONE"];
     }] call CBA_fnc_addEventHandler;
 
