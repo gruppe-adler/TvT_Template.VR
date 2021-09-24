@@ -13,6 +13,14 @@ if (isServer) then {
     publicVariable "MISSION_timeout";
     MISSION_overtime = "overtime" call BIS_fnc_getParamValue;
     publicVariable "MISSION_overtime";
+    MISSION_grievance_theft_sheep = "grievance_theft_sheep" call BIS_fnc_getParamValue;
+    publicVariable "MISSION_grievance_theft_sheep";
+    MISSION_grievance_theft_car = "grievance_theft_car" call BIS_fnc_getParamValue;
+    publicVariable "MISSION_grievance_theft_car";
+    MISSION_grievance_theft_car_transit = "grievance_theft_car_transit" call BIS_fnc_getParamValue;
+    publicVariable "MISSION_grievance_theft_car_transit";
+    MISSION_grievance_murder = "grievance_murder" call BIS_fnc_getParamValue;
+    publicVariable "MISSION_grievance_murder";
 
     ["CAManBase", "FiredMan", {
         params ["_unit"];
@@ -65,7 +73,7 @@ if (isServer) then {
             ];
             if (isNull _killer) exitWith {};
 
-            [side _killer, 0.2] call EFUNC(grievances,addGrievance);
+            [side _killer, MISSION_grievance_murder] call EFUNC(grievances,addGrievance);
         }
     ] call CBA_fnc_addEventHandler;
 
@@ -81,7 +89,7 @@ if (isServer) then {
             };
             INFO_1("vehicle stolen. adding grievance to %1.", side _thief);
             private _owner = leader (_vehicle getVariable ["grad_civs_owner", grpNull]);
-            private _grievance = if ((_owner getVariable ["grad_civs_primaryTask", ""]) == "transit") then { 0.025 } else { 0.05 };
+            private _grievance = if ((_owner getVariable ["grad_civs_primaryTask", ""]) == "transit") then { MISSION_grievance_theft_car_transit } else { MISSION_grievance_theft_car };
             [side _thief, _grievance] call EFUNC(grievances,addGrievance);
         }
     ] call CBA_fnc_addEventHandler;
@@ -92,7 +100,7 @@ if (isServer) then {
             ["_thief", objNull, [objNull]]
         ];
         INFO_1("animal stolen. adding grievance to %1.", side _thief);
-        [side _thief, 0.0025] call EFUNC(grievances,addGrievance);
+        [side _thief, MISSION_grievance_theft_sheep] call EFUNC(grievances,addGrievance);
 
     }] call CBA_fnc_addEventHandler;
 
