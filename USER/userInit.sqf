@@ -13,13 +13,13 @@ if (isServer) then {
     publicVariable "MISSION_timeout";
     MISSION_overtime = "overtime" call BIS_fnc_getParamValue;
     publicVariable "MISSION_overtime";
-    MISSION_grievance_theft_sheep = "grievance_theft_sheep" call BIS_fnc_getParamValue;
+    MISSION_grievance_theft_sheep = ("grievance_theft_sheep" call BIS_fnc_getParamValue) / 1000;
     publicVariable "MISSION_grievance_theft_sheep";
-    MISSION_grievance_theft_car = "grievance_theft_car" call BIS_fnc_getParamValue;
+    MISSION_grievance_theft_car = ("grievance_theft_car" call BIS_fnc_getParamValue) / 1000;
     publicVariable "MISSION_grievance_theft_car";
-    MISSION_grievance_theft_car_transit = "grievance_theft_car_transit" call BIS_fnc_getParamValue;
+    MISSION_grievance_theft_car_transit = ("grievance_theft_car_transit" call BIS_fnc_getParamValue) / 1000;
     publicVariable "MISSION_grievance_theft_car_transit";
-    MISSION_grievance_murder = "grievance_murder" call BIS_fnc_getParamValue;
+    MISSION_grievance_murder = ("grievance_murder" call BIS_fnc_getParamValue) / 1000;
     publicVariable "MISSION_grievance_murder";
 
     ["CAManBase", "FiredMan", {
