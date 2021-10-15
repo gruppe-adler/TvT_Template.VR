@@ -19,7 +19,7 @@ if (([missionConfigFile >> "missionsettings","waveRespawnEnabled",0] call BIS_fn
 
     if (_respawnTime > 1800) then {
         ["Terminate"] call BIS_fnc_EGSpectator;
-        ["Initialize", [player, [WEST,EAST,INDEPENDENT], true]] call BIS_fnc_EGSpectator;
+        ["Initialize", [player, [WEST, EAST, INDEPENDENT, CIVILIAN], true]] call BIS_fnc_EGSpectator;
     } else {
         ["Terminate"] call BIS_fnc_EGSpectator;
         ["Initialize", [player, [playerside], false, false, false, true, true, true, true, true]] call BIS_fnc_EGSpectator;

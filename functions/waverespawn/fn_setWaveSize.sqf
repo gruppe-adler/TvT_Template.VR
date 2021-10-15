@@ -11,19 +11,19 @@ GVAR(CIVWAVESIZE) = [missionConfigFile >> "missionsettings","civWaveSize",1] cal
 
 private _allPlayers = [] call BIS_fnc_listPlayers;
 if (GVAR(BLUFORWAVESIZE) < 0) then {
-    _teamSize = count ({_x getVariable ["FF_originalSide", sideUnknown] == WEST} count _allPlayers);
+    _teamSize = west countside _allPlayers;
     GVAR(BLUFORWAVESIZE) = (ceil ((_teamSize / 3) - 0.5)) max 1;
 };
 if (GVAR(OPFORWAVESIZE) < 0) then {
-    _teamSize = count ({_x getVariable ["FF_originalSide", sideUnknown] == EAST} count _allPlayers);
+    _teamSize = east countside _allPlayers;
     GVAR(OPFORWAVESIZE) = (ceil ((_teamSize / 3) - 0.5)) max 1;
 };
 if (GVAR(INDEPWAVESIZE) < 0) then {
-    _teamSize = count ({_x getVariable ["FF_originalSide", sideUnknown] == INDEPENDENT} count _allPlayers);
+    _teamSize = independent countside _allPlayers;
     GVAR(INDEPWAVESIZE) = (ceil ((_teamSize / 3) - 0.5)) max 1;
 };
 if (GVAR(CIVWAVESIZE) < 0) then {
-    _teamSize = count ({_x getVariable ["FF_originalSide", sideUnknown] == CIVILIAN} count _allPlayers);
+    _teamSize = civilian countside _allPlayers;
     GVAR(CIVWAVESIZE) = (ceil ((_teamSize / 3) - 0.5)) max 1;
 };
 

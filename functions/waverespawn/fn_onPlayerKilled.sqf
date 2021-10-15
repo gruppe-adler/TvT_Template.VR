@@ -16,17 +16,8 @@ INFO("onPlayerKilled playerSide is " + str _playerSide);
 
 // if (serverTime - _joinTime < 30 && didJIP) exitWith {INFO("Player is JIP. Exiting onPlayerKilled.")};
 
-[false] call ace_spectator_fnc_setSpectator;
-
-// set spectator attributes
-[[], [west, east, independent, civilian]] call ace_spectator_fnc_updateSides;
-private _side = player getVariable ["FF_originalSide", sideUnknown];
-private _playersOfSide = [];
-    { 
-        if (_x getVariable ["FF_originalSide", sideUnknown] == _side) then { _playersOfSide pushBackUnique _x; };
-    } forEach (playableUnits + switchableUnits);
-[_playersOfSide, []] call ace_spectator_fnc_updateUnits;
-[true] call ace_spectator_fnc_setSpectator;
+["Terminate"] call BIS_fnc_EGSpectator;
+["Initialize", [player, [_playerSide], false, false, false, true, true, true, true, true]] call BIS_fnc_EGSpectator;
 
 private _maxRespawns = switch (_playerSide) do {
     case (WEST): {[missionConfigFile >> "missionsettings","bluforWaveLifes",9999] call BIS_fnc_returnConfigEntry};

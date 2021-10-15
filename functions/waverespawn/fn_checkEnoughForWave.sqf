@@ -32,6 +32,6 @@ private _waveSize = switch (_side) do {
 if (_waveSize < 0) exitWith {};
 
 
-if ((({private _unitSide = [_x, true] call BIS_fnc_objectSide; _unitSide == _side} count (playableUnits + switchableUnits)) + (count _waitingPlayersArray)) < _waveSize) then {
+if ((({private _unitSide = [_x, true] call BIS_fnc_objectSide; _unitSide == _side} count PLAYABLE_UNITS) + (count _waitingPlayersArray)) < _waveSize) then {
     [FUNC(checkEnoughForWave),[_side,_iteration + 1],5] call CBA_fnc_waitAndExecute;
 };

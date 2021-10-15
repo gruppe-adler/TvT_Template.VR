@@ -4,5 +4,5 @@
 
 // don't start spectator in between rounds, because player will respawn shortly
 if (GVAR(roundInProgress)) then {
-    ["Initialize", [player, [WEST,EAST,INDEPENDENT], true]] call BIS_fnc_EGSpectator;
+    ["Initialize", [player, [WEST, EAST, INDEPENDENT, CIVILIAN], true]] call BIS_fnc_EGSpectator;
 };
