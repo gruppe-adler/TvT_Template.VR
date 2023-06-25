@@ -15,6 +15,10 @@ _canRespawn = switch (_side) do {
         count GVAR(wavePlayersInd) >= GVAR(INDEPWAVESIZE) &&
         GVAR(WAVERESPAWNTIMELEFTIND) <= 0
     };
+    case ("CIVILIAN"): {
+        count GVAR(wavePlayersCiv) >= GVAR(CIVWAVESIZE) &&
+        GVAR(WAVERESPAWNTIMELEFTCIV) <= 0
+    };
     default {
         false
     };

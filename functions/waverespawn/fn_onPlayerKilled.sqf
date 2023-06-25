@@ -11,22 +11,26 @@ if (player getVariable ["wr_interrupted", false]) exitWith {};
 
 //check JIP player is spawning for the first time
 private _joinTime = player getVariable ["joinTime", 0];
-if (serverTime - _joinTime < 30 && didJIP) exitWith {INFO("Player is JIP. Exiting onPlayerKilled.")};
+private _playerSide = [player, true] call BIS_fnc_objectSide; // JIP/init proof alternative to playerSide
+INFO("onPlayerKilled playerSide is " + str _playerSide);
+
+// if (serverTime - _joinTime < 30 && didJIP) exitWith {INFO("Player is JIP. Exiting onPlayerKilled.")};
 
 ["Terminate"] call BIS_fnc_EGSpectator;
-["Initialize", [player, [playerside], false, false, false, true, true, true, true, true]] call BIS_fnc_EGSpectator;
+["Initialize", [player, [_playerSide], false, false, false, true, true, true, true, true]] call BIS_fnc_EGSpectator;
 
-private _maxRespawns = switch (playerSide) do {
+private _maxRespawns = switch (_playerSide) do {
     case (WEST): {[missionConfigFile >> "missionsettings","bluforWaveLifes",9999] call BIS_fnc_returnConfigEntry};
     case (EAST): {[missionConfigFile >> "missionsettings","opforWaveLifes",9999] call BIS_fnc_returnConfigEntry};
     case (INDEPENDENT): {[missionConfigFile >> "missionsettings","indepWaveLifes",9999] call BIS_fnc_returnConfigEntry};
+    case (CIVILIAN): {[missionConfigFile >> "missionsettings","civWaveLifes",9999] call BIS_fnc_returnConfigEntry};
     default {9999};
 };
 
 if (player getVariable ["wr_respawnCount",0] >= _maxRespawns) then {
     player setVariable ["wr_interrupted",true,true]
 } else {
-    [player,playerSide] remoteExec [QFUNC(addToWaiting),2,false];
+    [player,_playerSide] remoteExec [QFUNC(addToWaiting),2,false];
 };
 
 INFO("Starting waverespawn procedure...");

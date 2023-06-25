@@ -2,7 +2,7 @@
 
 if (!isServer) exitWith {};
 
-params ["_logic",["_sectorName","UNKNOWN SECTOR"],["_pointsForCapture",1],["_pointsPerSecond",0],["_lockAfterCapture",false],["_captureSides",[WEST,EAST,INDEPENDENT]],["_owner",sideUnknown],["_notifyTakingControl",false],["_onSectorCaptured",{}],["_sectorData",""],["_captureMode",[0]]];
+params ["_logic",["_sectorName","UNKNOWN SECTOR"],["_pointsForCapture",1],["_pointsPerSecond",0],["_lockAfterCapture",false],["_captureSides",[WEST, EAST, INDEPENDENT, CIVILIAN]],["_owner",sideUnknown],["_notifyTakingControl",false],["_onSectorCaptured",{}],["_sectorData",""],["_captureMode",[0]]];
 
 if (!(_logic isKindOf "LocationArea_F") && {!(_logic isKindOf "Logic")}) exitWith {ERROR_1("%1 is not an area or game logic.",_logic)};
 
