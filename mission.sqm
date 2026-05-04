@@ -31,7 +31,6 @@ addons[]=
 {
 	"A3_Modules_F_Curator_Curator",
 	"A3_Modules_F_Heli_Misc",
-	"Desert",
 	"A3_Ui_F",
 	"A3_Characters_F",
 	"A3_Characters_F_Mark",
